@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 
 class FifaCardEntity extends Equatable{
-  final String playingTime;
+  final dynamic playingTime;
   final dynamic goalsNo;
-  final String attemptsAtGoalNo;
+  final dynamic attemptsAtGoalNo;
 
   FifaCardEntity({
     required this.playingTime,
