@@ -15,6 +15,16 @@ class TrendingNews extends StatelessWidget {
   final List<NewsModel> news;
 
   const TrendingNews({Key? key, required this.news}) : super(key: key);
+  int countWords(String text) {
+    // Define a regular expression to match words (sequences of characters separated by spaces)
+    final regex = RegExp(r'\b\w+\b');
+
+    // Use the regular expression to split the text into words
+    final Iterable<Match> matches = regex.allMatches(text);
+
+    // Return the number of matches, which corresponds to the number of words
+    return matches.length;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,55 +34,69 @@ class TrendingNews extends StatelessWidget {
           title: LocaleKeys.trendingNews.tr(),
           description: LocaleKeys.trendingNewsHint.tr(),
         ),
-
         Container(
-          height:250.h,
+          height: 250.h,
           child: ListView.separated(
               padding: EdgeInsets.symmetric(horizontal: 16),
               itemCount: 4,
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              separatorBuilder: (context,_)=>SizedBox(width:20.w,),
-              itemBuilder: (context,index){
+              separatorBuilder: (context, _) => SizedBox(
+                    width: 20.w,
+                  ),
+              itemBuilder: (context, index) {
+                int wordCount = countWords(news[index].title.toString());
+                print("words in trending are  :$wordCount");
                 return GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     RouteManager.navigateTo(NewsDetailsScreen(
                       newsEntity: news[index],
-
                     ));
                   },
                   child: Container(
-
                     height: 250.h,
                     width: 280.w,
-                      // CachedImageNetwork(image: news[index].cover,)
+                    // CachedImageNetwork(image: news[index].cover,)
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(news[index].cover),
-                            fit: BoxFit.cover
-                        )
-                    ),
+                            fit: BoxFit.cover)),
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 25,vertical:27),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 25, vertical: 27),
                       height: 250.h,
-                      width: 280.w,
-                      color: Colors.black38
-                      ,
+                     width: 280.w,
+                      color: Colors.black38,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: wordCount > 15
+                            ? CrossAxisAlignment.start
+                            : CrossAxisAlignment.center,
                         children: [
-                          MainText(text: news[index].title,
-                            family: TextFontApp.boldFont,font: 16,color: ColorApp.white,height: 1.5,
-                            maxLines: 4,
+                          MainText(
+                            text: news[index].title,
+                            family: TextFontApp.boldFont,
+                            font: 16,
+                            color: ColorApp.white,
+                            center: wordCount>15? false:true,
+                            height: 1.5,
+                            maxLines:wordCount>15?2:3,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          SizedBox(height: 15.h,),
+                          SizedBox(
+                            height: 15.h,
+                          ),
                           Container(
-                            height:30.h ,
+                            height: 30.h,
                             width: 160.w,
                             color: ColorApp.red,
-                            child: Center(child: MainText(text: news[index].date,  family: TextFontApp.boldFont,font: 12,color: ColorApp.white,)),
+                            child: Center(
+                                child: MainText(
+                              text: news[index].date,
+                              family: TextFontApp.boldFont,
+                              font: 12,
+                              color: ColorApp.white,
+                            )),
                           ),
                         ],
                       ),

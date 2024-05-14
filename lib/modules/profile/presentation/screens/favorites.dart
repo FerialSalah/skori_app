@@ -25,7 +25,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
      FavoritePlayersList(),
      FavoriteTeamsList(),
      FavoritesLeaguesList(),
-     FavoritesLeaguesList(),
+     //FavoritesLeaguesList(),
    ];
   @override
   Widget build(BuildContext context) {
@@ -45,10 +45,12 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
               activeFgColor: Colors.white,
               inactiveBgColor: Colors.white,
               inactiveFgColor: ColorApp.hintGray,
-              totalSwitches: 4,
+              totalSwitches: 3,
               fontSize: 14,
               //fontFamily: TextFontApp.semiBoldFont,
-              labels: [LocaleKeys.players.tr(),LocaleKeys.teams.tr(),LocaleKeys.leagues.tr(),LocaleKeys.newKey.tr()],
+              labels: [LocaleKeys.players.tr(),LocaleKeys.teams.tr(),LocaleKeys.leagues.tr(),
+                //LocaleKeys.newKey.tr()
+        ],
               activeBgColor: [ColorApp.yellow, ColorApp.yellow],
               onToggle: (index) {
                 setState(() {

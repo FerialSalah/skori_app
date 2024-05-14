@@ -3,8 +3,8 @@
 
 // const BASE_URL_AUTH = "https://api.apothecary.dafa.dev/v1/mobile";
 
-//const BASE_URL = "https://dev.azraqna.com/api";
-const BASE_URL = "https://dev.skori.ibtdi.com/api";
+const BASE_URL = "https://dev.azraqna.com/api";
+//const BASE_URL = "https://dev.skori.ibtdi.com/api";
 const LOGIN_URL_AUTH = "/auth/login";
 const SIGNUP_URL_AUTH = "/auth/register";
 const OTP_URL_AUTH = "/verify";

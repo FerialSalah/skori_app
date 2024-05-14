@@ -50,6 +50,8 @@ class ManagePackagesWhatsAppWidget extends StatelessWidget {
                   icon:ProfileIcons.whatsapp  ,
                   icon_color: ColorApp.white,
                   onPressed: () {
+
+                    print("setting.settingModel!.contacts!.subscribtionPhone: ${setting.settingModel!.contacts!.subscribtionPhone}");
                     String whatsupPhone=setting.settingModel!.contacts!.subscribtionPhone!;
 
                     String url="https://wa.me/$whatsupPhone";

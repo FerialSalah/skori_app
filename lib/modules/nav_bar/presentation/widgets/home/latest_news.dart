@@ -20,6 +20,17 @@ class LatestNews extends StatelessWidget {
   final List<NewsModel> news;
   const LatestNews({Key? key, required this.news}) : super(key: key);
 
+  int countWords(String text) {
+    // Define a regular expression to match words (sequences of characters separated by spaces)
+    final regex = RegExp(r'\b\w+\b');
+
+    // Use the regular expression to split the text into words
+    final Iterable<Match> matches = regex.allMatches(text);
+
+    // Return the number of matches, which corresponds to the number of words
+    return matches.length;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -40,6 +51,8 @@ class LatestNews extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               separatorBuilder: (context,_)=>SizedBox(width:20.w,),
               itemBuilder: (context,index){
+                int wordCount=countWords(news[index].title.toString());
+                print("words are  :$wordCount");
                 return GestureDetector(
                   onTap: (){
                     RouteManager.navigateTo(NewsDetailsScreen(
@@ -69,10 +82,10 @@ class LatestNews extends StatelessWidget {
                         SizedBox(height: 10.h,),
                         Container(
                           margin: EdgeInsets.symmetric(horizontal: 5),
-                          width: 200.w,
+                          //width: 300.w,
                           child: MainText(text:news[index].title,
                             maxLines: 2,
-                            overflow: TextOverflow.clip,
+                           // overflow: TextOverflow.,
                             font: 16,
                             hor: 2,
                             height: 1.5,
