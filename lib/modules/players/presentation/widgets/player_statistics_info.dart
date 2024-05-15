@@ -21,7 +21,7 @@ class PlayerStatisticsInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 330.h,
+      height: 350.h,
       child: new GridView.count(
           crossAxisCount: 2,
           childAspectRatio: 4/3,
@@ -32,27 +32,7 @@ class PlayerStatisticsInfo extends StatelessWidget {
               value: mainStats[index].value.toString(),
             );
 
-            // return   SingleChildScrollView(
-            //   child: Column(
-            //     children: [
-            //       Row(
-            //         children: [
-            //           PlayStatisticInfoCard(title: "Appearances", value: '52',),
-            //           PlayStatisticInfoCard(title: "Goals", value: '52',)
-            //
-            //         ],
-            //       ),
-            //       Row(
-            //         children: [
-            //           PlayStatisticInfoCard(title: "Wins", value: '52',),
-            //           PlayStatisticInfoCard(title: "Losses", value: '52',)
-            //
-            //         ],
-            //       )
-            //
-            //     ],
-            //   ),
-            // );
+
           })),
     );
   }

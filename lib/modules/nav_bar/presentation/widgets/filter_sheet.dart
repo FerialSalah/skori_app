@@ -232,13 +232,13 @@ class _FilterSheetState extends State<FilterSheet> {
                   builder: (context, state) {
                     final seasons =
                         BlocProvider.of<SeasonsCubit>(context).seasonModel;
-                    print(seasons!.data);
+                    print("seasons in match filter : ${seasons!.data}");
                     return DropDownTextField(
                       hint: LocaleKeys.stages.tr(),
                       icon: AppIcons.filter,
                       isModel: true,
                       isFilterMatchTeam: false,
-                      items: seasons!.data,
+                      items: seasons.data,
                       team: false,
                       country: false,
                       season: true,

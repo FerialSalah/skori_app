@@ -34,7 +34,7 @@ class NewsCart extends StatelessWidget {
               height: 140.h,
               width: 130.w,
               // color: Colors.red,
-             child:CachedImageNetwork(image: newsEntity.cover,fit: BoxFit.cover,) ,
+             child:CachedImageNetwork(image: newsEntity.cover,fit: BoxFit.fill,) ,
             ),
             Padding(
               padding:  EdgeInsets.symmetric(horizontal:15,vertical:10.h),

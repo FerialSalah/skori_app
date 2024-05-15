@@ -71,7 +71,7 @@ class PlayerPerformanceItem extends StatelessWidget {
                                  family: TextFontApp.mediumFont),
                              IconButton(onPressed:(){
                                print(playerPerformanceList[0].name);
-                             }, icon: Icon(Icons.question_mark,size: 20,),tooltip: playerPerformanceList[0].name,)
+                             }, icon: Image.asset(ProfileIcons.information,width: 20.w,height: 20.h,),tooltip: playerPerformanceList[0].name,)
                            ],
                          ),
                          Row(
@@ -91,7 +91,7 @@ class PlayerPerformanceItem extends StatelessWidget {
                                  family: TextFontApp.mediumFont),
                              IconButton(onPressed:(){
                                print(playerPerformanceList[1].name);
-                             }, icon: Icon(Icons.question_mark,size: 20,),tooltip: playerPerformanceList[1].name,)
+                             }, icon: Image.asset(ProfileIcons.information,width: 20.w,height: 20.h,),tooltip: playerPerformanceList[1].name,)
                            ],
                          )
                         ],
@@ -141,7 +141,7 @@ class PlayerPerformanceItem extends StatelessWidget {
                                family: TextFontApp.mediumFont),
                            IconButton(onPressed:(){
                              print(playerPerformanceList[1].name);
-                           }, icon: Icon(Icons.question_mark,size: 20,),tooltip: playerPerformanceList[3].name,),
+                           }, icon: Image.asset(ProfileIcons.information,width: 20.w,height: 20.h,),tooltip: playerPerformanceList[3].name,),
 
                          ],
                        ),
@@ -160,7 +160,7 @@ class PlayerPerformanceItem extends StatelessWidget {
                                family: TextFontApp.mediumFont),
                            IconButton(onPressed:(){
                              print(playerPerformanceList[4].name);
-                           }, icon: Icon(Icons.question_mark,size: 20,),tooltip: playerPerformanceList[4].name,),
+                           }, icon: Image.asset(ProfileIcons.information,width: 20.w,height: 20.h,),tooltip: playerPerformanceList[4].name,),
                          ],
                        )
                      ],

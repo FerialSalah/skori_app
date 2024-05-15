@@ -24,7 +24,7 @@ class NavBarDataSource implements BaseNavBarDataSource{
       print("=========${date}");
       print("url is ${"${MATCHES_URL}?page=$page&date=${date??" "}&tournament_id=${tournamentId??" "}&team_id=${teamId??""}&country_id=${countryId??""}&season_id=${seasonId??""}"}");
       final result = await DioHelper.get("${MATCHES_URL}?page=$page&date=${date??""}&tournament_id=${tournamentId??""}&team_id=${teamId??""}&country_id=${countryId??""}&season_id=${seasonId??""}");
-      print("matches data: ${result}");
+      print("matches home data: ${result.data}");
       MatchesModel response = MatchesModel.fromJson(result.data);
 
       return response;
@@ -42,6 +42,7 @@ class NavBarDataSource implements BaseNavBarDataSource{
       final result = await DioHelper.get("${HOME_URL}");
       HomeModel response = HomeModel.fromJson(result.data);
       print(result.data);
+      print("home matches:${response.liveMatches.length}");
       print("stutaas========${result.statusCode}");
       return response;
     } on DioError catch (e) {

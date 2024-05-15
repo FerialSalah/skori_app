@@ -255,7 +255,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ? percentageHomeTeam:
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
 
                                 maxPercentage = maxPercentage > 1.0
@@ -337,7 +339,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -392,6 +394,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -443,7 +448,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                   "premium"
                                               ? MainText(
                                                   text: matchStatistics
-                                                      .goalsNo![index]
+                                                      .passesNo![index]
                                                       .value
                                                       .awayPassesNo,
                                                   color: ColorApp.red,
@@ -472,7 +477,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -532,6 +537,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -619,7 +627,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -683,6 +691,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -773,7 +784,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -836,7 +847,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ? percentageHomeTeam :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -925,7 +938,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -987,7 +1000,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ? percentageHomeTeam :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -1082,7 +1097,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -1124,14 +1139,14 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                         .value
                                         .awayPenaltiesNo);
                                 double percentageHomeTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .penaltiesNo![index]
                                             .value
                                             .homePenaltiesNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .penaltiesNo![index]
                                             .value
@@ -1142,10 +1157,14 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 print(
                                     "percentageHomeTeam : $percentageHomeTeam");
 
-                                double maxPercentage =
+                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
+                                print( percentageHomeTeam == percentageAwayTeam);
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -1231,7 +1250,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -1293,6 +1312,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -1382,7 +1404,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -1444,6 +1466,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -1530,7 +1555,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -1572,14 +1597,14 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                         .value
                                         .awayYellowCardsNo);
                                 double percentageHomeTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .yellowCardsNo![index]
                                             .value
                                             .homeYellowCardsNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .yellowCardsNo![index]
                                             .value
@@ -1593,6 +1618,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -1682,7 +1710,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -1723,14 +1751,14 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                         .value
                                         .awayRedCardsNo);
                                 double percentageHomeTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .redCardsNo![index]
                                             .value
                                             .homeRedCardsNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .redCardsNo![index]
                                             .value
@@ -1744,6 +1772,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -1830,7 +1861,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -1876,7 +1907,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                             .homeAssistsNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .assistsNo![index]
                                             .value
@@ -1890,6 +1921,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -1974,7 +2008,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -2018,7 +2052,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                             .homeSavesNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .savesNo![index]
                                             .value
@@ -2032,6 +2066,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -2114,7 +2151,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -2158,7 +2195,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                             .homeCornerNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .cornerNo![index]
                                             .value
@@ -2172,6 +2209,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -2255,7 +2295,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -2305,7 +2345,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                             .homePenaltiesMissedNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .penaltiesMissedNo![index]
                                             .value
@@ -2319,6 +2359,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -2411,7 +2454,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -2451,7 +2494,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                     double.parse(matchStatistics
                                         .offsideNo![index].value.awayOffsideNo);
                                 double percentageHomeTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .offsideNo![index]
                                             .value
@@ -2472,6 +2515,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -2557,7 +2603,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -2603,7 +2649,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                             .homeCrossesNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .crossesNo![index]
                                             .value
@@ -2617,6 +2663,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -2702,7 +2751,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -2745,14 +2794,14 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                         .value
                                         .awayCrossSetPiecesNo);
                                 double percentageHomeTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .crossSetPiecesNo![index]
                                             .value
                                             .homeCrossSetPiecesNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .crossSetPiecesNo![index]
                                             .value
@@ -2766,6 +2815,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -2858,7 +2910,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
@@ -2911,7 +2963,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                             .homeExpectedGoalsAgainstNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
-                                    ? 0
+                                    ? 0.0
                                     : (double.parse(matchStatistics
                                             .expectedGoalsAgainstNo![index]
                                             .value
@@ -2925,6 +2977,9 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
                                         ? percentageHomeTeam
+                                        :
+                                    percentageHomeTeam == percentageAwayTeam?
+                                    0.5
                                         : 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -3025,7 +3080,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
-                                            : 0.0
+                                            : 0.5
                                         : 0.0,
                                     progressColor: ColorApp.darkBlue,
                                     backgroundColor: ColorApp.red,
