@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b91bc2ce-7caf-48d5-87de-6f6ab1526b3f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/core/cubit/player_league/player_league_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/core/cubit/player_league/player_leagues_cubit.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/core/cubit/season/player_season_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/../.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/../.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/android.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/lang/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/lang/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/injection/injection_app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/injection/injection_app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/network/urls_app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/network/urls_app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/provider_list/provider_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/provider_list/provider_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/generated/codegen_loader.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/generated/codegen_loader.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/generated/locale_keys.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/generated/locale_keys.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/matches/presentation/widgets/match_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/matches/presentation/widgets/match_app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/nav_bar/domain/entity/match_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/nav_bar/domain/entity/match_entity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/nav_bar/presentation/widgets/matches_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/nav_bar/presentation/widgets/matches_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/news/data/datasource/news_datasource.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/data/datasource/news_datasource.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/screens/news_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/screens/news_details.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/all_news_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/all_news_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/exclusive_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/exclusive_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/highlight_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/highlight_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/interview_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/interview_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/new_news_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/new_news_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/news_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/news_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/screens/player_profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/screens/player_profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_Info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_Info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_filter_statistics_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_filter_statistics_sheet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_new_statistic_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_new_statistic_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_new_statistics.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_new_statistics.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_news.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_news.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_performance_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_performance_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/teams/presentation/widgets/team_news.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/teams/presentation/widgets/team_news.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/ferialsalah/.android/avd/Pixel_2_API_30.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/app/skori.jks" />
+    <option name="KEY_ALIAS" value="upload" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2ghdRkeTMmuYwZZETnGymArDnNx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;BundleExportedModule&quot;: &quot;android.app&quot;,
+    &quot;ExportBundle.BundlePathForandroid.app&quot;: &quot;/Users/ferialsalah/Documents/flutterprojects/skori_project/android/app&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;ExportApk.BuildVariants&quot;: [
+      &quot;release&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="android.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b91bc2ce-7caf-48d5-87de-6f6ab1526b3f" name="Changes" comment="" />
+      <created>1716153736688</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716153736688</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

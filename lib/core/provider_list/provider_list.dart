@@ -1,5 +1,6 @@
 import 'dart:core';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skori/core/cubit/player_league/player_leagues_cubit.dart';
 import 'package:skori/core/cubit/season/season_cubit.dart';
 import 'package:skori/modules/matches/presentation/bloc/match_statistics_bloc.dart';
 import 'package:skori/modules/matches/presentation/bloc/recent_away_matches_bloc.dart';
@@ -61,6 +62,7 @@ import '../cubit/country/country_cubit.dart';
 import '../cubit/favorite_cubit.dart';
 import '../cubit/follow_cubit.dart';
 import '../cubit/gender_cubit.dart';
+import '../cubit/season/player_season_cubit.dart';
 import '../cubit/setting/setting_cubit.dart';
 import '../injection/injection_app.dart' as di;
 
@@ -81,6 +83,8 @@ class BlocProvidersList {
     BlocProvider<AvailabilityCubit>(create: (_) => di.getIt<AvailabilityCubit>()..getAvailability()),
     BlocProvider<CountriesCubit>(create: (_) => di.getIt<CountriesCubit>()..getCountries(),lazy: false,),
     BlocProvider<SeasonsCubit>(create: (_) => di.getIt<SeasonsCubit>()..getSeasons(),lazy: false,),
+    BlocProvider<PlayerSeasonsCubit>(create: (_) => di.getIt<PlayerSeasonsCubit>()),
+    BlocProvider<PlayerLeaguesCubit>(create: (_) => di.getIt<PlayerLeaguesCubit>()),
 
     BlocProvider<TeamsBloc>(create: (_) => di.getIt<TeamsBloc>()..add(GetTeamsData())),
     BlocProvider<TeamsBloc>(create: (_) => di.getIt<TeamsBloc>()..add(GetFilterTeamsData())),

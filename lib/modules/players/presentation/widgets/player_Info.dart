@@ -44,7 +44,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                 Container(
                   height: 300.h,
                   margin:
-                      EdgeInsets.symmetric(vertical: 20.h, horizontal: 10.w),
+                      EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
                   child: ClipPath(
                     clipper: MyClipper(),
                     child: Container(
@@ -61,7 +61,8 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                 children: [
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Column(
                                         mainAxisAlignment:
@@ -70,7 +71,8 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                           SizedBox(
                                               width: 70.w,
                                               child: MainText(
-                                                text: playerInfo!.teamEntity.id
+                                                text: playerInfo!
+                                                    .clubShirtNumber
                                                     .toString(),
                                                 font: 14,
                                                 color: ColorApp.red,
@@ -94,8 +96,8 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                           ),
                                           Image.network(
                                             playerInfo.teamEntity.logo,
-                                            height: 40.h,
-                                            width: 40.w,
+                                            height: 25.h,
+                                            width: 25.w,
                                           ),
                                           SizedBox(
                                             height: 10.h,
@@ -106,8 +108,8 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         children: [
                                           Image.network(
                                             playerInfo.avatar,
-                                            height: 100.h,
-                                            width: 100.w,
+                                            height: 125.h,
+                                            width: 125.w,
                                             fit: BoxFit.contain,
                                           ),
                                         ],
@@ -123,8 +125,8 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         children: [
                                           Image.network(
                                             playerInfo.teamEntity.countryFlag,
-                                            height: 40.h,
-                                            width: 40.w,
+                                            height: 25.h,
+                                            width: 25.w,
                                           ),
                                         ],
                                       ),
@@ -142,7 +144,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Container(
-                                  margin:EdgeInsets.symmetric(vertical: 10.h),
+                                  margin: EdgeInsets.symmetric(vertical: 10.h),
                                   child: MainText(
                                     text: playerInfo.name.toString(),
                                     font: 14,
@@ -153,17 +155,21 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                 ),
                               ],
                             ),
-
                             Container(
-                              margin: EdgeInsets.symmetric(horizontal: 50.w,vertical: 10.h),
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 50.w, vertical: 10.h),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       MainText(
-                                        text: playerInfo.fifaCardEntity.playingTime.toString(),
+                                        text: playerInfo
+                                            .fifaCardEntity.playingTime
+                                            .toString(),
                                         font: 15,
                                         family: TextFontApp.boldFont,
                                       ),
@@ -177,12 +183,13 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                       ),
                                     ],
                                   ),
-
                                   Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       MainText(
-                                        text: playerInfo.fifaCardEntity.goalsNo.toString(),
+                                        text: playerInfo.fifaCardEntity.goalsNo
+                                            .toString(),
                                         font: 15,
                                         family: TextFontApp.boldFont,
                                       ),
@@ -204,13 +211,13 @@ class _PlayerInfoState extends State<PlayerInfo> {
                               children: [
                                 Container(
                                   margin: EdgeInsets.symmetric(vertical: 30.h),
-
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-
                                     children: [
                                       MainText(
-                                        text: playerInfo.fifaCardEntity.attemptsAtGoalNo.toString(),
+                                        text: playerInfo
+                                            .fifaCardEntity.attemptsAtGoalNo
+                                            .toString(),
                                         font: 15,
                                         family: TextFontApp.boldFont,
                                       ),
@@ -227,14 +234,15 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                 ),
                               ],
                             ),
-
                           ],
                         )),
                   ),
                 ),
                 Container(
                   height: 400.h,
-                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  margin: EdgeInsets.symmetric(
+                    horizontal: 20,
+                  ),
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 25),
                   decoration: BoxDecoration(
                       border: Border.all(color: ColorApp.borderGray, width: 1),
@@ -266,6 +274,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                   MainText(
                                     text: LocaleKeys.club.tr(),
                                     font: 12,
+                                    family: TextFontApp.mediumFont,
                                     color: ColorApp.hintGray,
                                   ),
                                 ],
@@ -301,6 +310,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                   MainText(
                                     text: LocaleKeys.nationality.tr(),
                                     font: 12,
+                                    family: TextFontApp.mediumFont,
                                     color: ColorApp.hintGray,
                                   ),
                                 ],
@@ -323,59 +333,52 @@ class _PlayerInfoState extends State<PlayerInfo> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              MainText(
-                                text: playerInfo.position,
-                                font: 15,
-                                family: TextFontApp.boldFont,
+                          Expanded(
+                            child: Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  MainText(
+                                    text: playerInfo.position,
+                                    font: 15,
+                                    family: TextFontApp.boldFont,
+                                  ),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
+                                  MainText(
+                                    text: LocaleKeys.playerCategory.tr(),
+                                    font: 12,
+                                    family: TextFontApp.mediumFont,
+                                    color: ColorApp.hintGray,
+                                  ),
+                                ],
                               ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              MainText(
-                                text: LocaleKeys.playerCategory.tr(),
-                                font: 12,
-                                color: ColorApp.hintGray,
-                              ),
-                            ],
+                            ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              MainText(
-                                text: playerInfo.age.toString(),
-                                font: 15,
-                                family: TextFontApp.boldFont,
+                          
+                          Expanded(
+                            child: Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  MainText(
+                                    text: playerInfo.age.toString(),
+                                    font: 15,
+                                    family: TextFontApp.boldFont,
+                                  ),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
+                                  MainText(
+                                    text: LocaleKeys.age.tr(),
+                                    font: 12,
+                                    family: TextFontApp.mediumFont,
+                                    color: ColorApp.hintGray,
+                                  ),
+                                ],
                               ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              MainText(
-                                text: LocaleKeys.age.tr(),
-                                font: 12,
-                                color: ColorApp.hintGray,
-                              ),
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              MainText(
-                                text: playerInfo.gender,
-                                font: 15,
-                                family: TextFontApp.boldFont,
-                              ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              MainText(
-                                text: LocaleKeys.gender.tr(),
-                                font: 12,
-                                color: ColorApp.hintGray,
-                              ),
-                            ],
+                            ),
                           )
                         ],
                       ),
@@ -386,60 +389,50 @@ class _PlayerInfoState extends State<PlayerInfo> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              MainText(
-                                text: playerInfo.height ?? "" + " " + "CM",
-                                font: 15,
-                                family: TextFontApp.boldFont,
+                          Expanded(
+                            child: Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  MainText(
+                                    text: playerInfo.gender,
+                                    font: 15,
+                                    family: TextFontApp.boldFont,
+                                  ),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
+                                  MainText(
+                                    text: LocaleKeys.gender.tr(),
+                                    font: 12,
+                                    family: TextFontApp.mediumFont,
+                                    color: ColorApp.hintGray,
+                                  ),
+                                ],
                               ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              MainText(
-                                text: LocaleKeys.height.tr(),
-                                font: 12,
-                                color: ColorApp.hintGray,
-                              ),
-                            ],
+                            ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              MainText(
-                                text: playerInfo.weight ?? "" + " " + "KG",
-                                font: 15,
-                                family: TextFontApp.boldFont,
-                              ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              MainText(
-                                text: LocaleKeys.weight.tr(),
-                                font: 12,
-                                color: ColorApp.hintGray,
-                              ),
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              MainText(
-                                text: playerInfo.clubShirtNumber,
-                                font: 15,
-                                family: TextFontApp.boldFont,
-                              ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              MainText(
-                                text: LocaleKeys.shirtNum.tr(),
-                                font: 12,
-                                color: ColorApp.hintGray,
-                              ),
-                            ],
-                          )
+                          Expanded(child: Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                MainText(
+                                  text: playerInfo.height ?? "" + " " + "CM",
+                                  font: 15,
+                                  family: TextFontApp.boldFont,
+                                ),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                MainText(
+                                  text: LocaleKeys.height.tr(),
+                                  font: 12,
+                                  family: TextFontApp.mediumFont,
+                                  color: ColorApp.hintGray,
+                                ),
+                              ],
+                            ),
+                          )),
                         ],
                       ),
                       //////////////////////////////////////Row3
@@ -447,46 +440,105 @@ class _PlayerInfoState extends State<PlayerInfo> {
                         height: 25,
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              MainText(
-                                text: playerInfo.countryName ?? "",
-                                font: 15,
-                                family: TextFontApp.boldFont,
+                          Expanded(
+                            child: Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  MainText(
+                                    text: playerInfo.weight ?? "" + " " + "KG",
+                                    font: 15,
+                                    family: TextFontApp.boldFont,
+                                  ),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
+                                  MainText(
+                                    text: LocaleKeys.weight.tr(),
+                                    font: 12,
+                                    family: TextFontApp.mediumFont,
+                                    color: ColorApp.hintGray,
+                                  ),
+                                ],
                               ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              MainText(
-                                text: LocaleKeys.nationalTeam.tr(),
-                                font: 12,
-                                color: ColorApp.hintGray,
-                              ),
-                            ],
+                            ),
                           ),
-                          SizedBox(
-                            width: 50.w,
+                          Expanded(child: Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                MainText(
+                                  text: playerInfo.clubShirtNumber,
+                                  font: 15,
+                                  family: TextFontApp.boldFont,
+                                ),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                MainText(
+                                  text: LocaleKeys.shirtNum.tr(),
+                                  font: 12,
+                                  family: TextFontApp.mediumFont,
+                                  color: ColorApp.hintGray,
+                                ),
+                              ],
+                            ),
+                          ))
+                        ],
+                      ),
+                      SizedBox(
+                        height: 25,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  MainText(
+                                    text: playerInfo.countryName ?? "",
+                                    font: 15,
+                                    family: TextFontApp.boldFont,
+                                  ),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
+                                  MainText(
+                                    text: LocaleKeys.nationalTeam.tr(),
+                                    font: 12,
+                                    family: TextFontApp.mediumFont,
+                                    color: ColorApp.hintGray,
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              MainText(
-                                text: playerInfo.nationalShirtNumber ?? "",
-                                font: 15,
-                                family: TextFontApp.boldFont,
+                          Expanded(
+                            child: Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  MainText(
+                                    text: playerInfo.nationalShirtNumber ?? "",
+                                    font: 15,
+                                    family: TextFontApp.boldFont,
+                                  ),
+                                  SizedBox(
+                                    height: 8,
+                                  ),
+                                  MainText(
+                                    text: LocaleKeys.shirtNum.tr(),
+                                    font: 12,
+                                    family: TextFontApp.mediumFont,
+                                    color: ColorApp.hintGray,
+                                  ),
+                                ],
                               ),
-                              SizedBox(
-                                height: 8,
-                              ),
-                              MainText(
-                                text: LocaleKeys.shirtNum.tr(),
-                                font: 12,
-                                color: ColorApp.hintGray,
-                              ),
-                            ],
+                            ),
                           ),
                         ],
                       )

@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-// ignore_for_file: prefer_single_quotes
+// ignore_for_file: prefer_single_quotes, avoid_renaming_method_parameters
 
 import 'dart:ui';
 
@@ -174,7 +174,8 @@ class CodegenLoader extends AssetLoader{
   "cancel": "Cancel",
   "alreadySubscribe": "You are already subscribed ",
   "packageWhatsUp": "For more information about our packages, please contact us on WhatsApp",
-  "messageUs": "Message us"
+  "messageUs": "Message us",
+  "matchDetails": "Match Details"
 };
 static const Map<String,dynamic> ar = {
   "guest": "الدخول كزائر",
@@ -287,7 +288,7 @@ static const Map<String,dynamic> ar = {
   "notifications": "الاشعارات",
   "club": "النادي",
   "nationality": "الجنسية",
-  "playerCategory": "فئة اللاعب",
+  "playerCategory": "تصنيف اللاعب",
   "age": "العمر",
   "weight": "الوزن",
   "height": "الطول",
@@ -336,7 +337,8 @@ static const Map<String,dynamic> ar = {
   "cancel": "الغاء",
   "alreadySubscribe": "انت مشترك بالفعل ",
   "packageWhatsUp": "لمزيد من المعلومات حول باقاتنا يرجى التواصل على الواتساب",
-  "messageUs": "راسلنا"
+  "messageUs": "راسلنا",
+  "matchDetails": "تفاصيل المباراة"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "ar": ar};
 }

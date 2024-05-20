@@ -33,13 +33,14 @@ class TeamNews extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 25,horizontal: 5),
                 itemCount: teamNews.length,
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                //physics: NeverScrollableScrollPhysics(),
                 primary: false,
                 separatorBuilder:(_,c)=>SizedBox(height: 15,),
                 itemBuilder: (context,index){
                   return NewsCart(
                     newsEntity: teamNews[index],
                     isPlayer: false,
+                    isTeam: true,
                   );
                 });
           }else if(state is OfflineState){

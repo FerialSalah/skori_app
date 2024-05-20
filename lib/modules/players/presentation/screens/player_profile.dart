@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skori/core/cubit/player_league/player_leagues_cubit.dart';
 import 'package:skori/core/state/base_state.dart';
 import 'package:skori/core/theme/textFont_app.dart';
 import 'package:skori/generated/locale_keys.g.dart';
@@ -11,6 +12,7 @@ import 'package:skori/modules/players/presentation/bloc/players_event.dart';
 import 'package:skori/modules/players/presentation/widgets/player_Info.dart';
 import 'package:skori/modules/players/presentation/widgets/player_new_statistics.dart';
 import '../../../../core/app_storage/app_storage.dart';
+import '../../../../core/cubit/season/player_season_cubit.dart';
 import '../../../../core/theme/color_app.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/widgets/loader.dart';
@@ -53,6 +55,9 @@ class _PlayerProfileState extends State<PlayerProfile>
   TabController? tabController;
   @override
   void initState() {
+    BlocProvider.of<PlayerSeasonsCubit>(context)..getPlayerSeasons(widget.id);
+    BlocProvider.of<PlayerLeaguesCubit>(context)..getPlayerLeagues(widget.id);
+
     super.initState();
   }
 

@@ -266,6 +266,33 @@ class MatchesCard extends StatelessWidget {
             //     ],
             //   ),
             // ),
+           if(isMatchScreen)
+             if (stadium.isNotEmpty)
+               Padding(
+                 padding:
+                 EdgeInsets.symmetric(horizontal: 30.w,),
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.start,
+                   children: [
+                     Image.asset(
+                       AppIcons.location,
+                       height: 40.h,
+                       width: 24.w,
+                     ),
+                     SizedBox(
+                       width: 10.h,
+                     ),
+                     MainText(
+                       text: stadium,
+                       font: 14,
+                       family: TextFontApp.mediumFont,
+                       center: true,
+                       color: ColorApp.red,
+                     )
+                   ],
+                 ),
+               ),
+
             if (isMatchScreen)
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 20.h),

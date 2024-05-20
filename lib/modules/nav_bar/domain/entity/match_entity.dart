@@ -14,7 +14,7 @@ class MatchEntity extends Equatable {
   final String currentTime;
   final String date;
   final String tournamentLogo;
-  final String round;
+  final dynamic round;
   final String type;
   final String season;
   final int homeTeamId;

@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:skori/core/cubit/gender_cubit.dart';
+import 'package:skori/core/cubit/player_league/player_leagues_cubit.dart';
 import 'package:skori/core/cubit/season/season_cubit.dart';
 import 'package:skori/modules/authentication/presentation/bloc/login/login_bloc.dart';
 import 'package:skori/modules/authentication/presentation/bloc/reset_password/reset_password_bloc.dart';
@@ -91,6 +92,7 @@ import '../cubit/availability_cubit.dart';
 import '../cubit/country/country_cubit.dart';
 import '../cubit/favorite_cubit.dart';
 import '../cubit/follow_cubit.dart';
+import '../cubit/season/player_season_cubit.dart';
 import '../cubit/setting/setting_cubit.dart';
 import '../validation/cubit/datePicker_cubit.dart';
 import '../validation/cubit/validation_cubit.dart';
@@ -112,7 +114,8 @@ Future<void> init() async {
   getIt.registerFactory(() => SettingCubit());
   getIt.registerFactory(() => CountriesCubit());
   getIt.registerFactory(() => SeasonsCubit());
-
+  getIt.registerFactory(() => PlayerSeasonsCubit(getIt()));
+  getIt.registerFactory(() => PlayerLeaguesCubit());
   getIt.registerFactory(() => AddCommentCubit(getIt()));
   getIt.registerFactory(() => CommentCubit(getIt()));
   getIt.registerFactory(() => PackagesCubit(getIt()));

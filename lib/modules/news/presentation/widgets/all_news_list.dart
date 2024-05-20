@@ -45,6 +45,7 @@ class _AllNewsListState extends State<AllNewsList> {
     return BlocBuilder<NewsBloc, BaseState>(
       builder: (context, state) {
         final result = BlocProvider.of<NewsBloc>(context).news;
+
         if (state is LoadingState) {
           return ShimmerWidget();
         } else if (state is SuccessState ||state is PaginateState) {
@@ -58,8 +59,9 @@ class _AllNewsListState extends State<AllNewsList> {
                       controller: scrollController,
                       padding: EdgeInsets.symmetric(horizontal: 15.w,vertical:15.h),
                       itemBuilder: (context,index)=>NewsCart(
+                        isTeam: false,
                         newsEntity: result[index],
-                        isPlayer: null,
+                        isPlayer: false,
                       ),
                       separatorBuilder: (context,_)=>SizedBox(height: 10.h,),
                       itemCount: result.length),

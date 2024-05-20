@@ -92,12 +92,12 @@ class PlayerNewStatisticCard extends StatelessWidget {
                              crossAxisAlignment: CrossAxisAlignment.start,
                              children: [
                                statistics[index].absoluteValue=="premium"?SizedBox(
-                                 width:70,
+                                 width:40,
                                    child: Image.asset(AppIcons.premium,height: 30,width: 30,)):
                                SizedBox(
-                                 width:70,
+                                 width:40,
                                  child: MainText(
-                                     text: "${statistics[index].absoluteValue}",
+                                     text: "${statistics[index].absoluteValue.toString()}",
                                      font: 16,
                                      family: TextFontApp.mediumFont,
                                      hor: 20,
@@ -108,7 +108,7 @@ class PlayerNewStatisticCard extends StatelessWidget {
                                //   width:  statistics[index].absoluteValue=="premium"? 45:5,
                                // ),
                                statistics[index].absoluteValue=="premium"?SizedBox(
-                                 width:70,
+                                 width:40,
                                    child: Image.asset(AppIcons.premium,height: 30,width: 30,)):
                                SizedBox(
                                  width:70,

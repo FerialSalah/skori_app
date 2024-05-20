@@ -2,6 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skori/core/cubit/player_league/player_leagues_cubit.dart';
+import 'package:skori/core/cubit/season/player_season_cubit.dart';
 import 'package:skori/core/state/base_state.dart';
 import 'package:skori/core/theme/color_app.dart';
 import 'package:skori/modules/players/domain/entity/player_new_statistics_entity.dart';
@@ -83,16 +85,38 @@ class _PlayerFilterStatisticsSheetState extends State<PlayerFilterStatisticsShee
                 ),
 
 
-                BlocBuilder<LeaguesBloc, BaseState>(
+                // BlocBuilder<LeaguesBloc, BaseState>(
+                //   builder: (context, state) {
+                //     final leagues =
+                //         BlocProvider.of<LeaguesBloc>(context).leagues;
+                //     return DropDownTextField(
+                //       hint: LocaleKeys.leagues.tr(),
+                //       icon: AppIcons.filter,
+                //       isModel: true,
+                //       isFilterMatchTeam: false,
+                //       items: leagues,
+                //       team: false,
+                //       paddingVer: 5,
+                //       paddingHor: 0,
+                //       onChanged: (val) {
+                //         print("leagues val is:$val");
+                //         BlocProvider.of<PlayerStatisticsBloc>(context).tournamentId =
+                //             val;
+                //
+                //       },
+                //     );
+                //   },
+                // ),
+                BlocBuilder<PlayerLeaguesCubit, BaseState>(
                   builder: (context, state) {
                     final leagues =
-                        BlocProvider.of<LeaguesBloc>(context).leagues;
+                        BlocProvider.of<PlayerLeaguesCubit>(context).playerLeagueModel;
                     return DropDownTextField(
                       hint: LocaleKeys.leagues.tr(),
                       icon: AppIcons.filter,
                       isModel: true,
                       isFilterMatchTeam: false,
-                      items: leagues,
+                      items: leagues!.data,
                       team: false,
                       paddingVer: 5,
                       paddingHor: 0,
@@ -100,6 +124,7 @@ class _PlayerFilterStatisticsSheetState extends State<PlayerFilterStatisticsShee
                         print("leagues val is:$val");
                         BlocProvider.of<PlayerStatisticsBloc>(context).tournamentId =
                             val;
+                        print(BlocProvider.of<PlayerStatisticsBloc>(context).tournamentId);
 
                       },
                     );
@@ -109,27 +134,53 @@ class _PlayerFilterStatisticsSheetState extends State<PlayerFilterStatisticsShee
                   height: 10.h,
                 ),
 
-                BlocBuilder<SeasonsCubit, BaseState>(
-                  builder: (context, state) {
-                    final seasons =
-                        BlocProvider.of<SeasonsCubit>(context).seasonModel;
-                    return DropDownTextField(
-                      hint: LocaleKeys.stages.tr(),
-                      icon: AppIcons.filter,
-                      isModel: true,
-                      isFilterMatchTeam: false,
-                      items: seasons!.data,
-                      team: false,
-                      country: false,
-                      season: true,
-                      paddingVer: 5,
-                      paddingHor: 0,
-                      onChanged: (val) {
-                        BlocProvider.of<PlayerStatisticsBloc>(context).seasonId = val;
-                      },
-                    );
-                  },
-                ),
+                // BlocBuilder<SeasonsCubit, BaseState>(
+                //   builder: (context, state) {
+                //     final seasons =
+                //         BlocProvider.of<SeasonsCubit>(context).seasonModel;
+                //     seasons!.data;
+                //     return DropDownTextField(
+                //       hint: LocaleKeys.stages.tr(),
+                //       icon: AppIcons.filter,
+                //       isModel: true,
+                //       isFilterMatchTeam: false,
+                //       items: seasons!.data,
+                //       team: false,
+                //       country: false,
+                //       season: true,
+                //       paddingVer: 5,
+                //       paddingHor: 0,
+                //       onChanged: (val) {
+                //         BlocProvider.of<PlayerStatisticsBloc>(context).seasonId = val;
+                //       },
+                //     );
+                //   },
+                // ),
+
+          BlocBuilder<PlayerSeasonsCubit, BaseState>(
+            builder: (context, state) {
+              final seasons =
+                  BlocProvider.of<PlayerSeasonsCubit>(context).seasonModel;
+
+              return DropDownTextField(
+                hint: LocaleKeys.stages.tr(),
+                icon: AppIcons.filter,
+                isModel: true,
+                isFilterMatchTeam: false,
+                items: seasons!.data,
+                team: false,
+                country: false,
+                season: true,
+                paddingVer: 5,
+                paddingHor: 0,
+                onChanged: (val) {
+                  BlocProvider.of<PlayerStatisticsBloc>(context).seasonId = val;
+                  print(BlocProvider.of<PlayerStatisticsBloc>(context).seasonId);
+                },
+              );
+            },
+          ),
+
                 SizedBox(
                   height: 10.h,
                 ),

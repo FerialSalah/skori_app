@@ -12,6 +12,7 @@ const FORGET_PASSWORD_URL_AUTH = "/auth/password/forget";
 const RESET_PASSWORD_URL_AUTH = "/auth/password/reset";
 const COUNTRIES_URL = "/select/countries";
 const SEASONS_URL="/select/seasons";
+const PLAYER_LEAGUES_URL="/select/tournaments/";
 const HOME_URL = "/select/home";
 const TEAMS_URL = "/teams";
 const FILTER_TEAMS_URL="/select/teams";

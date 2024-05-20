@@ -31,7 +31,8 @@ class PlayerPerformanceItem extends StatelessWidget {
             children: [
               MainText(text: title, font: 18, family: TextFontApp.boldFont),
               MainText(
-                text: playerPerformanceList[4].value.toString(),
+                text: playerPerformanceList[4].value.toString().contains("%")? playerPerformanceList[4].value.toString():
+                playerPerformanceList[4].value.toString()+" %",
                 font: 18,
                 family: TextFontApp.boldFont,
                 color: ColorApp.darkBlue,
@@ -106,7 +107,8 @@ class PlayerPerformanceItem extends StatelessWidget {
                         lineHeight: 13.0,
                         percent:
                             playerPerformanceList[4].value.toString() != "0 %" &&
-                                playerPerformanceList[4].value.toString() != "premium"&&
+                                playerPerformanceList[4].value.toString() != "0"&&
+                          playerPerformanceList[4].value.toString() != "premium"&&
                                 playerPerformanceList[4]
                                 .value.toString().isNotEmpty
                                 ? double.parse(playerPerformanceList[4]

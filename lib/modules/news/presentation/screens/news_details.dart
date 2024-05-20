@@ -66,6 +66,7 @@ class _NewsDetailsScreenState extends State<NewsDetailsScreen> {
             body: BlocBuilder<NewsDetailsBloc, BaseState>(
               builder: (context, state) {
                 final result = BlocProvider.of<NewsDetailsBloc>(context).newsDetails;
+
                 if (state is LoadingState) {
                   return ShimmerWidget();
                 } else if (state is SuccessState ||state is PaginateState) {

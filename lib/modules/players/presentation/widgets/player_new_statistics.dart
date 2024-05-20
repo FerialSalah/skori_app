@@ -54,16 +54,18 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
                   PlayerStatisticsInfo(mainStats: playerNewStatistics!.mainStats!,),
                   Container(
                    height:500.h,
-
+                    width: 350.w,
                     child: DefaultTabController(
                       length: 2,
                       child: Column(
                         children: [
                           SizedBox(
-                            height: 15,
+                            height: 5,
                           ),
                           Container(
+
                             //height: 100.h,
+                            width: 315.w,
                             decoration: BoxDecoration(
                                 border: Border.all(
                                     color: ColorApp.borderGray, width: .5)),
@@ -72,18 +74,18 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
                               unselectedBackgroundColor: ColorApp.white,
                               borderWidth: 0,
                               contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 25, vertical: 10),
+                                  horizontal: 30, vertical: 10),
                               borderColor: ColorApp.borderGray,
                               labelSpacing: 0,
                               radius: 0,
                               buttonMargin: EdgeInsets.zero,
                               labelStyle: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontFamily: TextFontApp.boldFont),
                               unselectedLabelStyle: TextStyle(
                                   color: ColorApp.hintGray,
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontFamily: TextFontApp.mediumFont),
                               // Add your tabs here
                               tabs: [
@@ -106,29 +108,32 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
                                     title: LocaleKeys.featured_statistics.tr(),
                                   ),
                                 ),
-                                ListView(
-                                  shrinkWrap: true,
-                                  physics: ScrollPhysics(),
-                                  children: [
-                                    PlayerPerformanceCard(playerPerformance: playerNewStatistics.playerPerformance!,
-                                      title: LocaleKeys.playerPerformance.tr(),),
-                                    PlayerNewStatisticCard(
-                                      statistics: playerNewStatistics.defensive!,
-                                      title: LocaleKeys.defensive.tr(),
-                                    ),
-                                    PlayerNewStatisticCard(
-                                      statistics: playerNewStatistics.offensive!,
-                                      title: LocaleKeys.offensive.tr(),
-                                    ),
-                                    PlayerNewStatisticCard(
-                                      statistics: playerNewStatistics.administrative!,
-                                      title: LocaleKeys.administrative.tr(),
-                                    ),
-                                    PlayerNewStatisticCard(
-                                      statistics: playerNewStatistics.ballLost!,
-                                      title: LocaleKeys.ballLost.tr(),
-                                    ),
-                                  ],
+                                SingleChildScrollView(
+                                  child: Column(
+                                    // shrinkWrap: true,
+                                    // primary: true,
+                                    // physics: ScrollPhysics(),
+                                    children: [
+                                      PlayerPerformanceCard(playerPerformance: playerNewStatistics.playerPerformance!,
+                                        title: LocaleKeys.playerPerformance.tr(),),
+                                      PlayerNewStatisticCard(
+                                        statistics: playerNewStatistics.defensive!,
+                                        title: LocaleKeys.defensive.tr(),
+                                      ),
+                                      PlayerNewStatisticCard(
+                                        statistics: playerNewStatistics.offensive!,
+                                        title: LocaleKeys.offensive.tr(),
+                                      ),
+                                      PlayerNewStatisticCard(
+                                        statistics: playerNewStatistics.administrative!,
+                                        title: LocaleKeys.administrative.tr(),
+                                      ),
+                                      PlayerNewStatisticCard(
+                                        statistics: playerNewStatistics.ballLost!,
+                                        title: LocaleKeys.ballLost.tr(),
+                                      ),
+                                    ],
+                                  ),
                                 )
                               ],
                             ),

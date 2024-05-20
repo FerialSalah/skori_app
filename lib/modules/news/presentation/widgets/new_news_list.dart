@@ -58,7 +58,8 @@ class _NewNewsListState extends State<NewNewsList> {
                       padding: EdgeInsets.symmetric(horizontal: 15.w,vertical:15.h),
                       itemBuilder: (context,index)=>NewsCart(
                         newsEntity: result[index],
-                        isPlayer: null,
+                        isTeam: false,
+                        isPlayer: false,
                       ),
                       separatorBuilder: (context,_)=>SizedBox(height: 10.h,),
                       itemCount: result.length),

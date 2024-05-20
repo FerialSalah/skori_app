@@ -49,7 +49,7 @@ class _NewsOfPlayerState extends State<NewsOfPlayer> {
                   return NewsCart(
                     newsEntity: playerNews[index],
                     isPlayer: true,
-
+                    isTeam: true,
 
 
 

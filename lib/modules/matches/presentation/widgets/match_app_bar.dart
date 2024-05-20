@@ -67,7 +67,7 @@ class MatchAppBar extends StatelessWidget {
             color: ColorApp.white,
           )),
       title: MainText(
-        text: title,
+        text:  LocaleKeys.matchDetails.tr(),
         color: ColorApp.white,
         font: 14,
         family: TextFontApp.boldFont,

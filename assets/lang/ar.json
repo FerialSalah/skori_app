@@ -113,7 +113,7 @@
 
   "club": "النادي",
   "nationality": "الجنسية",
-  "playerCategory": "فئة اللاعب",
+  "playerCategory": "تصنيف اللاعب",
   "age": "العمر",
   "weight": "الوزن",
   "height": "الطول",
@@ -163,7 +163,8 @@
   "cancel": "الغاء",
   "alreadySubscribe": "انت مشترك بالفعل ",
   "packageWhatsUp": "لمزيد من المعلومات حول باقاتنا يرجى التواصل على الواتساب",
-  "messageUs": "راسلنا"
+  "messageUs": "راسلنا",
+  "matchDetails": "تفاصيل المباراة"
 
 
 

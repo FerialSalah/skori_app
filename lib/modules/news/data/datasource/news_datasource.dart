@@ -26,7 +26,7 @@ class NewsDataSource implements BaseNewsDataSource{
       final result = await DioHelper.get("${NEWS_URL}?page=$page&type=$type");
       AllNewsModel response = AllNewsModel.fromJson(result.data);
 
-      print(result.data);
+      print("news data :${result.data}");
       return response;
     } on DioError catch (e) {
        print(runtimeType);

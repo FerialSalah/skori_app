@@ -10,46 +10,57 @@ import '../../../../core/widgets/main_text.dart';
 import '../screens/news_details.dart';
 
 class NewsCart extends StatelessWidget {
- final  NewsEntity newsEntity;
- final bool? isPlayer;
-  const NewsCart({Key? key, required this.newsEntity,  this.isPlayer, }) : super(key: key);
+  final NewsEntity newsEntity;
+  final bool? isPlayer;
+  final bool? isTeam;
+  const NewsCart(
+      {Key? key,
+      required this.newsEntity,
+      required this.isPlayer,
+      required this.isTeam})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    print(newsEntity.leagueName!.isEmpty);
+    print("newsEntity.teamId: ${newsEntity.teamId}");
     return GestureDetector(
-      onTap: (){
-        RouteManager.navigateTo(
-            NewsDetailsScreen(
-              newsEntity: newsEntity,
-              isPlayer: isPlayer,
+      onTap: () {
+        RouteManager.navigateTo(NewsDetailsScreen(
+          newsEntity: newsEntity,
+          isPlayer: isPlayer,
         ));
-
       },
       child: Container(
-        height: 150.h,
+        //height:3.h,
         color: Colors.white,
-        child: Row(
+        child: Column(
           children: [
             SizedBox(
-              height: 140.h,
-              width: 130.w,
-              // color: Colors.red,
-             child:CachedImageNetwork(image: newsEntity.cover,fit: BoxFit.fill,) ,
+              height: 171.h,
+              //width: 314.w,
+              child: CachedImageNetwork(
+                image: newsEntity.cover,
+                fit: BoxFit.cover,
+              ),
             ),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal:15,vertical:10.h),
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15.h),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   MainText(
                     text: newsEntity.date,
-                    color:ColorApp.hintGray,
+                    color: ColorApp.hintGray,
                     font: 12,
                     family: TextFontApp.regularFont,
                   ),
                   SizedBox(
-                    width: 180.w,
+                    height: 10.h,
+                  ),
+                  SizedBox(
+                    width: 350.w,
                     child: MainText(
                       text: newsEntity.title,
                       maxLines: 2,
@@ -59,68 +70,118 @@ class NewsCart extends StatelessWidget {
                       family: TextFontApp.boldFont,
                     ),
                   ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image.asset(NewsImages.redUser,width: 14.w,height: 17.h,),
-                      SizedBox(width: 5.w,),
+                      Image.asset(
+                        NewsImages.redUser,
+                        width: 14.w,
+                        height: 17.h,
+                      ),
                       SizedBox(
-                        width: 70.w,
+                        width: 5.w,
+                      ),
+                      SizedBox(
+                        // width: 70.w,
                         child: MainText(
                           text: newsEntity.writerName,
-                          color:ColorApp.red,
+                          color: ColorApp.red,
                           font: 12,
                           overflow: TextOverflow.ellipsis,
                           family: TextFontApp.mediumFont,
                         ),
                       ),
-
-                      newsEntity.playerId==0?SizedBox():Image.asset(NewsImages.redUser,width: 14.w,height: 17.h,),
-                      SizedBox(width: 5.w,),
-                      newsEntity.playerId==0?SizedBox():SizedBox(
-                        width: 70.w,
-                        child: MainText(
-                          text: newsEntity.playerName,
-                          color:ColorApp.red,
-                          font: 12,
-                          overflow: TextOverflow.ellipsis,
-                          family: TextFontApp.mediumFont,
-                        ),
+                      SizedBox(
+                        width: 10.w,
                       ),
-
+                      if (!isPlayer!)
+                        newsEntity.playerId == 0
+                            ? Container()
+                            : Image.asset(
+                                NewsImages.redUser,
+                                width: 14.w,
+                                height: 17.h,
+                              ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      if (!isPlayer!)
+                        newsEntity.playerId == 0
+                            ? Container()
+                            : SizedBox(
+                                // width: 70.w,
+                                child: MainText(
+                                  text: newsEntity.playerName,
+                                  color: ColorApp.red,
+                                  font: 12,
+                                  overflow: TextOverflow.ellipsis,
+                                  family: TextFontApp.mediumFont,
+                                ),
+                              ),
                     ],
                   ),
-                  Row(children: [
-                    newsEntity.leagueName==null?SizedBox():SizedBox(
-                      height: 17,width: 17,
-                        child: CachedImageNetwork(image:newsEntity.leagueLogo,fit: BoxFit.cover,)),
-                    SizedBox(width: 5.w,),
-                    newsEntity.leagueName==null?SizedBox():SizedBox(
-                      // width: 80.w,
-                      child: MainText(
-                        text: newsEntity.leagueName,
-                        color:ColorApp.red,
-                        font: 12,
-                        overflow: TextOverflow.ellipsis,
-                        family: TextFontApp.mediumFont,
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  newsEntity.leagueName!.isNotEmpty?        Row(
+                    children: [
+                     SizedBox(
+                              height: 17,
+                              width: 17,
+                              child: CachedImageNetwork(
+                                image: newsEntity.leagueLogo,
+                                fit: BoxFit.cover,
+                              )),
+                      SizedBox(
+                        width: 5.w,
                       ),
-                    ),
-                  ],),
-                  Row(children: [
-                    newsEntity.teamId==0?SizedBox(): Image.network(newsEntity.teamLogo??"",width: 14.w,height: 17.h,),
-                    SizedBox(width: 5.w,),
-                    newsEntity.teamId==0?SizedBox():SizedBox(
-                      // width: 80.w,
-                      child: MainText(
-                        text: newsEntity.teamName,
-                        color:ColorApp.red,
-                        font: 12,
-                        overflow: TextOverflow.ellipsis,
-                        family: TextFontApp.mediumFont,
-                      ),
-                    ),
-                  ],)
-                ],),
+                     SizedBox(
+                              // width: 80.w,
+                              child: MainText(
+                                text: newsEntity.leagueName,
+                                color: ColorApp.red,
+                                font: 12,
+                                overflow: TextOverflow.ellipsis,
+                                family: TextFontApp.mediumFont,
+                              ),
+                            ),
+                    ],
+                  ):Container(),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  if (!isTeam!)
+                    Row(
+                      children: [
+                        newsEntity.teamId == 0
+                            ? Container()
+                            : Image.network(
+                                newsEntity.teamLogo ?? "",
+                                width: 14.w,
+                                height: 17.h,
+                              ),
+                        SizedBox(
+                          width: 5.w,
+                        ),
+                        newsEntity.teamId == 0
+                            ? Container()
+                            : SizedBox(
+                                // width: 80.w,
+                                child: MainText(
+                                  text: newsEntity.teamName,
+                                  color: ColorApp.red,
+                                  font: 12,
+                                  overflow: TextOverflow.ellipsis,
+                                  family: TextFontApp.mediumFont,
+                                ),
+                              ),
+                      ],
+                    )
+                ],
+              ),
             ),
           ],
         ),
