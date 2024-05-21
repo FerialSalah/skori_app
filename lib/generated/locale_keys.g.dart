@@ -16,6 +16,7 @@ abstract class  LocaleKeys {
   static const orLoginThrough = 'orLoginThrough';
   static const doNotHaveAcc = 'doNotHaveAcc';
   static const createNow = 'createNow';
+  static const loginWithApple = 'loginWithApple';
   static const resetPassword = 'resetPassword';
   static const forgetDesc = 'forgetDesc';
   static const otpDesc = 'otpDesc';

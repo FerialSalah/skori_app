@@ -46,6 +46,9 @@ class AuthIcons {
   static const String name = "$_iconPath/name.png";
   static const String fan = "$_iconPath/fan.png";
   static const String phone = "$_iconPath/phone.png";
+  static const String apple = "$_iconPath/apple-logo.png";
+
+
 
 }
 

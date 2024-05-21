@@ -15,6 +15,8 @@
   "orLoginThrough": "Or Login Through",
   "doNotHaveAcc": "Don't Have An Account?",
   "createNow": "Create Now",
+  "loginWithApple": "Login With Apple",
+
   "resetPassword": "Reset Password",
   "forgetDesc": "We will need to email you a code.",
   "otpDesc": "Enter your reset password code which send to",

@@ -234,10 +234,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 10,),
               Platform.isAndroid?SizedBox():AppButton(
-                title: "Apple",
+                title: LocaleKeys.loginWithApple.tr(),
                   height: 50.h,
                 color: ColorApp.black,
                 width:150.w,
+               horText: 15.h,
+               icon: AuthIcons.apple,
                 onPressed: (){
                   _loginWithApple();
                 },

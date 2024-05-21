@@ -264,7 +264,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                     height: 7,
                                   ),
                                   MainText(
-                                    text: playerInfo.teamEntity.name,
+                                    text: playerInfo.teamEntity.name.isNotEmpty ?playerInfo.teamEntity.name: "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),
@@ -300,7 +300,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                     height: 7,
                                   ),
                                   MainText(
-                                    text: playerInfo.countryName,
+                                    text: playerInfo.countryName.isNotEmpty ?playerInfo.countryName: "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),
@@ -339,7 +339,9 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   MainText(
-                                    text: playerInfo.position,
+                                    text: playerInfo.position.isNotEmpty
+                                        ? playerInfo.position
+                                        : "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),
@@ -356,14 +358,15 @@ class _PlayerInfoState extends State<PlayerInfo> {
                               ),
                             ),
                           ),
-                          
                           Expanded(
                             child: Container(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   MainText(
-                                    text: playerInfo.age.toString(),
+                                    text: playerInfo.age.toString().isNotEmpty
+                                        ? playerInfo.age.toString()
+                                        : "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),
@@ -395,7 +398,9 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   MainText(
-                                    text: playerInfo.gender,
+                                    text: playerInfo.gender.isNotEmpty
+                                        ? playerInfo.gender
+                                        : "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),
@@ -412,12 +417,15 @@ class _PlayerInfoState extends State<PlayerInfo> {
                               ),
                             ),
                           ),
-                          Expanded(child: Container(
+                          Expanded(
+                              child: Container(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 MainText(
-                                  text: playerInfo.height ?? "" + " " + "CM",
+                                  text: playerInfo.height.isNotEmpty
+                                      ? playerInfo.height + "" + " " + "CM"
+                                      : "-",
                                   font: 15,
                                   family: TextFontApp.boldFont,
                                 ),
@@ -448,7 +456,9 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   MainText(
-                                    text: playerInfo.weight ?? "" + " " + "KG",
+                                    text: playerInfo.weight.isNotEmpty
+                                        ? playerInfo.weight + "" + " " + "KG"
+                                        : "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),
@@ -465,12 +475,15 @@ class _PlayerInfoState extends State<PlayerInfo> {
                               ),
                             ),
                           ),
-                          Expanded(child: Container(
+                          Expanded(
+                              child: Container(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 MainText(
-                                  text: playerInfo.clubShirtNumber,
+                                  text: playerInfo.clubShirtNumber.isNotEmpty
+                                      ? playerInfo.clubShirtNumber
+                                      : "-",
                                   font: 15,
                                   family: TextFontApp.boldFont,
                                 ),
@@ -500,7 +513,9 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   MainText(
-                                    text: playerInfo.countryName ?? "",
+                                    text: playerInfo.countryName.isNotEmpty
+                                        ? playerInfo.countryName
+                                        : "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),
@@ -523,7 +538,10 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   MainText(
-                                    text: playerInfo.nationalShirtNumber ?? "",
+                                    text: playerInfo
+                                            .nationalShirtNumber.isNotEmpty
+                                        ? playerInfo.nationalShirtNumber
+                                        : "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),
