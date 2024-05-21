@@ -5,50 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b91bc2ce-7caf-48d5-87de-6f6ab1526b3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lib/core/cubit/player_league/player_league_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lib/core/cubit/player_league/player_leagues_cubit.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lib/core/cubit/season/player_season_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/../.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/../.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/android.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assets/lang/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/lang/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../assets/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/lang/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/core/injection/injection_app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/injection/injection_app.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/core/network/urls_app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/network/urls_app.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/core/provider_list/provider_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/provider_list/provider_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/generated/codegen_loader.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/generated/codegen_loader.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/generated/locale_keys.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/generated/locale_keys.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/matches/presentation/widgets/match_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/matches/presentation/widgets/match_app_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/nav_bar/domain/entity/match_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/nav_bar/domain/entity/match_entity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/nav_bar/presentation/widgets/matches_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/nav_bar/presentation/widgets/matches_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/news/data/datasource/news_datasource.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/data/datasource/news_datasource.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/screens/news_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/screens/news_details.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/all_news_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/all_news_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/exclusive_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/exclusive_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/highlight_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/highlight_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/interview_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/interview_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/new_news_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/new_news_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/news_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/news/presentation/widgets/news_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/screens/player_profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/screens/player_profile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_Info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_Info.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_filter_statistics_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_filter_statistics_sheet.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_new_statistic_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_new_statistic_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_new_statistics.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_new_statistics.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_news.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_news.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_performance_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_performance_item.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/modules/teams/presentation/widgets/team_news.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/teams/presentation/widgets/team_news.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
