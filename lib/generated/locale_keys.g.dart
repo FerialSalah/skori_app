@@ -163,5 +163,6 @@ abstract class  LocaleKeys {
   static const packageWhatsUp = 'packageWhatsUp';
   static const messageUs = 'messageUs';
   static const matchDetails = 'matchDetails';
+  static const beta = 'beta';
 
 }

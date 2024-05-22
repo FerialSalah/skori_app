@@ -58,10 +58,27 @@ class MyAccountScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Image.asset(
-                            AppImages.logo,
-                            height: 34.h,
-                            width: 79.w,
+
+                          Stack(
+                            // alignment: AlignmentDirectional.center,
+                            children: [
+                              Image.asset(
+                                AppImages.logo,
+                                height: 32.h,
+                                width: 105.w,
+                              ),
+                              Positioned(
+                                left: 0.0,
+                                right: 0.0,
+                                bottom: 20.0.h,
+                                child: MainText(
+                                  text: LocaleKeys.beta.tr(),
+                                  font: 14,
+                                  family: TextFontApp.mediumFont,
+                                  color: ColorApp.yellow,
+                                ), //CircularAvatar
+                              ),
+                            ],
                           ),
                           GestureDetector(
                             onTap: () {

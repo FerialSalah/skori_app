@@ -176,7 +176,8 @@ class CodegenLoader extends AssetLoader{
   "alreadySubscribe": "You are already subscribed ",
   "packageWhatsUp": "For more information about our packages, please contact us on WhatsApp",
   "messageUs": "Message us",
-  "matchDetails": "Match Details"
+  "matchDetails": "Match Details",
+  "beta": "Beta"
 };
 static const Map<String,dynamic> ar = {
   "guest": "الدخول كزائر",
@@ -340,7 +341,8 @@ static const Map<String,dynamic> ar = {
   "alreadySubscribe": "انت مشترك بالفعل ",
   "packageWhatsUp": "لمزيد من المعلومات حول باقاتنا يرجى التواصل على الواتساب",
   "messageUs": "راسلنا",
-  "matchDetails": "تفاصيل المباراة"
+  "matchDetails": "تفاصيل المباراة",
+  "beta": "تجريبي"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "ar": ar};
 }

@@ -2,8 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skori/core/theme/textFont_app.dart';
 import 'package:skori/core/widgets/customTextFeild.dart';
 import 'package:skori/core/widgets/loader.dart';
+import 'package:skori/core/widgets/main_text.dart';
 import 'package:skori/generated/locale_keys.g.dart';
 import 'package:skori/modules/nav_bar/presentation/bloc/home_bloc.dart';
 import '../../../../core/constant/app_assets.dart';
@@ -29,39 +31,64 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: ColorApp.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height:50.h),
+            SizedBox(height: 50.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset(AppImages.logo,height:34.h,width: 79.w,),
+                  Stack(
+                    // alignment: AlignmentDirectional.center,
+                    children: [
+                      Image.asset(
+                        AppImages.logo,
+                        height: 32.h,
+                        width: 105.w,
+                      ),
+                      Positioned(
+                        left: 0.0,
+                        right: 0.0,
+                        bottom: 20.0.h,
+                        child: MainText(
+                          text: LocaleKeys.beta.tr(),
+                          font: 14,
+                          family: TextFontApp.mediumFont,
+                          color: ColorApp.yellow,
+                        ), //CircularAvatar
+                      ),
+                    ],
+                  ),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       RouteManager.navigateTo(NotificationsScreen());
                     },
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 9.5.w,vertical: 9.h),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 9.5.w, vertical: 9.h),
                       color: ColorApp.red,
-                      child: Image.asset(AppIcons.notifications,height: 21.h,width: 20.w,),
+                      child: Image.asset(
+                        AppIcons.notifications,
+                        height: 21.h,
+                        width: 20.w,
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height:  10.h,),
+            SizedBox(
+              height: 10.h,
+            ),
             CustomTextField(
               hor: 16.w,
-              onTap: (){
+              onTap: () {
                 RouteManager.navigateTo(SearchScreen());
               },
               height: 40.h,
@@ -76,33 +103,44 @@ class _HomeScreenState extends State<HomeScreen> {
                 final result = BlocProvider.of<HomeBloc>(context);
                 if (state is LoadingState) {
                   return ColorLoader();
-                } else if (state is SuccessState ) {
+                } else if (state is SuccessState) {
                   print("matches: ${state.data.liveMatches}");
-                    return  Column(
-                      children: [
-                      LiveMatchesSlider(matches: state.data.liveMatches,),
-                       SizedBox(height:  5.h,),
-                       LatestNews(news:state.data.latestNews ,),
-                         LiveMatchesList(matches: state.data.liveMatches),
-                       TrendingNews(news:state.data.trendingNews),
-                       FollowTeams(teams: state.data.teams,),
-                       PopularLeagues(leagues: state.data.tournaments,),
-                       FollowPlayers(players: state.data.players,),
-
-                      ],
-                    );
-
+                  return Column(
+                    children: [
+                      LiveMatchesSlider(
+                        matches: state.data.liveMatches,
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      LatestNews(
+                        news: state.data.latestNews,
+                      ),
+                      LiveMatchesList(matches: state.data.liveMatches),
+                      TrendingNews(news: state.data.trendingNews),
+                      FollowTeams(
+                        teams: state.data.teams,
+                      ),
+                      PopularLeagues(
+                        leagues: state.data.tournaments,
+                      ),
+                      FollowPlayers(
+                        players: state.data.players,
+                      ),
+                    ],
+                  );
                 } else if (state is OfflineState) {
                   return Padding(
-                    padding: EdgeInsets.only(top: 200.h),
+                      padding: EdgeInsets.only(top: 200.h),
                       child: OfflinePage());
                 } else {
                   return Text("Server error");
                 }
               },
             ),
-
-            SizedBox(height:  100,),
+            SizedBox(
+              height: 100,
+            ),
           ],
         ),
       ),
