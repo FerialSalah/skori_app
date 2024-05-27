@@ -5,6 +5,7 @@ import 'package:skori/modules/news/domain/entity/news_entity.dart';
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
+import '../../../../core/widgets/button/favorite_button.dart';
 import '../../../../core/widgets/images/cached_network_image.dart';
 import '../../../../core/widgets/main_text.dart';
 import '../screens/news_details.dart';
@@ -36,13 +37,26 @@ class NewsCart extends StatelessWidget {
         color: Colors.white,
         child: Column(
           children: [
-            SizedBox(
-              height: 171.h,
-              //width: 314.w,
-              child: CachedImageNetwork(
-                image: newsEntity.cover,
-                fit: BoxFit.cover,
-              ),
+            Stack(
+              children: [
+                SizedBox(
+                  height: 171.h,
+                  //width: 314.w,
+                  child: CachedImageNetwork(
+                    image: newsEntity.cover,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+
+                Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Container(
+                        padding: EdgeInsets.all(5),
+                        height: 30.h,
+                        width: 30.w,
+                        color: ColorApp.white.withOpacity(.15),
+                        child: FavoriteButton(isFavorite: false,id: newsEntity.id,type: "article",)))
+              ],
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15.h),

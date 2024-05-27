@@ -168,7 +168,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                     children: [
                                       MainText(
                                         text: playerInfo
-                                            .fifaCardEntity.playingTime
+                                            .fifaCardEntity.goalsNo
                                             .toString(),
                                         font: 15,
                                         family: TextFontApp.boldFont,
@@ -177,7 +177,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         width: 8,
                                       ),
                                       MainText(
-                                        text: 'Min',
+                                        text: 'Sub',
                                         font: 12,
                                         color: ColorApp.hintGray,
                                       ),
@@ -188,7 +188,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       MainText(
-                                        text: playerInfo.fifaCardEntity.goalsNo
+                                        text: playerInfo.fifaCardEntity.playingTime
                                             .toString(),
                                         font: 15,
                                         family: TextFontApp.boldFont,
@@ -197,7 +197,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         width: 8,
                                       ),
                                       MainText(
-                                        text: LocaleKeys.goals.tr(),
+                                        text: "Min",
                                         font: 12,
                                         color: ColorApp.hintGray,
                                       ),
@@ -225,7 +225,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         width: 8,
                                       ),
                                       MainText(
-                                        text: 'AGN',
+                                        text: 'Lin',
                                         font: 12,
                                         color: ColorApp.hintGray,
                                       ),

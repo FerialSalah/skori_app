@@ -74,7 +74,7 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
                               unselectedBackgroundColor: ColorApp.white,
                               borderWidth: 0,
                               contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 10),
+                                  horizontal: 40.w, vertical: 10.h),
                               borderColor: ColorApp.borderGray,
                               labelSpacing: 0,
                               radius: 0,

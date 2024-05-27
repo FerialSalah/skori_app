@@ -29,6 +29,7 @@ class NewsBloc extends Bloc<NewsEvent, BaseState> {
       }
     }, (response) {
       news=response;
+      print("neeeeews:$response");
       emit(SuccessState(data: response));
     });
   }

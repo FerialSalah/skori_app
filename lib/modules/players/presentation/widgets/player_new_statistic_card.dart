@@ -40,26 +40,35 @@ class PlayerNewStatisticCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    MainText(
-                        text: LocaleKeys.parameter.tr(),
-                        font: 18,
-                        family: TextFontApp.boldFont),
+                    Row(
+                      children: [
+                        MainText(
+                            text: LocaleKeys.parameter.tr(),
+                            font: 16,
+                            family: TextFontApp.boldFont),
+                      ],
+                    ),
                     Spacer(),
-                    MainText(
-                      text: LocaleKeys.absolute.tr(),
-                      font: 18,
-                      family: TextFontApp.boldFont,
-                    ),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.start,
+                     children: [
+                       MainText(
+                         text: LocaleKeys.absolute.tr(),
+                         font: 13,
+                         family: TextFontApp.boldFont,
+                       ),
 
-                    SizedBox(
-                      width: 8,
-                    ),
-                    MainText(
-                        text: LocaleKeys.per90.tr(),
+                       SizedBox(
+                         width: 5,
+                       ),
+                       MainText(
+                         text: LocaleKeys.per90.tr(),
 
-                      font: 18,
-                      family: TextFontApp.boldFont,
-                    ),
+                         font: 13,
+                         family: TextFontApp.boldFont,
+                       ),
+                     ],
+                   )
                   ],
                 ),
                 Container(
@@ -77,11 +86,12 @@ class PlayerNewStatisticCard extends StatelessWidget {
                            Row(
                              children: [
                                SizedBox(
-                                 width: 200,
+                                 width: 155.w,
                                  child: MainText(
                                    text: "${statistics[index].name}",
-                                   font: 14,
+                                   font: 13,
                                    family: TextFontApp.semiBoldFont,
+                                   overflow: TextOverflow.clip,
                                  ),
                                ),
                              ],
@@ -92,26 +102,25 @@ class PlayerNewStatisticCard extends StatelessWidget {
                              crossAxisAlignment: CrossAxisAlignment.start,
                              children: [
                                statistics[index].absoluteValue=="premium"?SizedBox(
-                                 width:40,
+                                 width:70.w,
                                    child: Image.asset(AppIcons.premium,height: 30,width: 30,)):
                                SizedBox(
-                                 width:40,
+                                 width:70.w,
                                  child: MainText(
                                      text: "${statistics[index].absoluteValue.toString()}",
                                      font: 16,
                                      family: TextFontApp.mediumFont,
                                      hor: 20,
                                      color: Colors.black,
+
                                      center:true),
                                ),
-                               //       SizedBox(
-                               //   width:  statistics[index].absoluteValue=="premium"? 45:5,
-                               // ),
+
                                statistics[index].absoluteValue=="premium"?SizedBox(
-                                 width:40,
+                                 width:70.w,
                                    child: Image.asset(AppIcons.premium,height: 30,width: 30,)):
                                SizedBox(
-                                 width:70,
+                                 width:70.w,
                                  child: MainText(
 
                                      text: "${statistics[index].per90Value}",

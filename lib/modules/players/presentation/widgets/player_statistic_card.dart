@@ -60,7 +60,7 @@ class PlayerStatisticCard extends StatelessWidget {
                             Spacer(),
                             MainText(text:"${statistics[index].value}",font: 16,family:TextFontApp.boldFont,hor: 5,color:
                                 statistics[index].value.toString().contains('%')?
-                                int.parse(statistics[index].value.toString().substring(0,2))>=50
+                                int.parse(statistics[index].value.toString().substring(0,(statistics[index].value.toString().indexOf("."))))>=50
                                     ?
                             Colors.green:Colors.red:Colors.black),
                             statistics[index].value=="premium"?Image.asset(AppIcons.premium,height: 24,width: 24,):SizedBox(),
