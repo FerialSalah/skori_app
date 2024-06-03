@@ -23,7 +23,6 @@ void main() async {
   await DioHelper.init();
   await AppStorage.init();
   await EasyLocalization.ensureInitialized();
-
   runApp(
 
     EasyLocalization(
