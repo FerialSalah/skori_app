@@ -14,11 +14,13 @@ class NewsCart extends StatelessWidget {
   final NewsEntity newsEntity;
   final bool? isPlayer;
   final bool? isTeam;
+
   const NewsCart(
       {Key? key,
       required this.newsEntity,
       required this.isPlayer,
-      required this.isTeam})
+      required this.isTeam
+      })
       : super(key: key);
 
   @override
@@ -47,7 +49,6 @@ class NewsCart extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-
                 Padding(
                     padding: EdgeInsets.all(10),
                     child: Container(
@@ -55,7 +56,11 @@ class NewsCart extends StatelessWidget {
                         height: 30.h,
                         width: 30.w,
                         color: ColorApp.white.withOpacity(.15),
-                        child: FavoriteButton(isFavorite: false,id: newsEntity.id,type: "article",)))
+                        child: FavoriteButton(
+                          isFavorite: newsEntity!.isFavorite!,
+                          id: newsEntity.id,
+                          type: "article",
+                        )))
               ],
             ),
             Padding(
@@ -140,19 +145,20 @@ class NewsCart extends StatelessWidget {
                   SizedBox(
                     height: 10.h,
                   ),
-                  newsEntity.leagueName!.isNotEmpty?        Row(
-                    children: [
-                     SizedBox(
-                              height: 17,
-                              width: 17,
-                              child: CachedImageNetwork(
-                                image: newsEntity.leagueLogo,
-                                fit: BoxFit.cover,
-                              )),
-                      SizedBox(
-                        width: 5.w,
-                      ),
-                     SizedBox(
+                  newsEntity.leagueName!.isNotEmpty
+                      ? Row(
+                          children: [
+                            SizedBox(
+                                height: 17,
+                                width: 17,
+                                child: CachedImageNetwork(
+                                  image: newsEntity.leagueLogo,
+                                  fit: BoxFit.cover,
+                                )),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            SizedBox(
                               // width: 80.w,
                               child: MainText(
                                 text: newsEntity.leagueName,
@@ -162,8 +168,9 @@ class NewsCart extends StatelessWidget {
                                 family: TextFontApp.mediumFont,
                               ),
                             ),
-                    ],
-                  ):Container(),
+                          ],
+                        )
+                      : Container(),
                   SizedBox(
                     height: 10.h,
                   ),

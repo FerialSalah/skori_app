@@ -4,9 +4,7 @@
 
 // ignore_for_file: public_member_api_docs
 
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:skori/core/dio_helper/dio_helper.dart';
 import 'package:skori/core/routes/navigator_push.dart';
 import 'package:skori/core/widgets/snack_bar.dart';
 import 'package:skori/modules/profile/presentation/screens/packages.dart';
@@ -16,7 +14,6 @@ import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
 import 'core/theme/color_app.dart';
-import 'modules/profile/presentation/bloc/packages/subscribe_bloc.dart';
 
 class WebViewExample extends StatefulWidget {
   final String url;

@@ -1,6 +1,5 @@
 
 import 'package:skori/modules/profile/domain/entity/notification_entity.dart';
-import 'package:skori/modules/teams/domain/entity/team_entity.dart';
 
 class NotificationsModel {
   NotificationsModel({

@@ -3,10 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/routes/navigator_push.dart';
 
 import '../../../../core/app_storage/app_storage.dart';
-import '../../../../core/constant/app_assets.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
-import '../../../../core/widgets/button/button_app.dart';
 import '../../../../core/widgets/button/favorite_button.dart';
 import '../../../../core/widgets/button/follow_button.dart';
 import '../../../../core/widgets/main_text.dart';

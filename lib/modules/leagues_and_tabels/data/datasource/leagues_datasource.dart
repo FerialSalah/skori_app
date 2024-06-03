@@ -24,7 +24,7 @@ class LeaguesDataSource implements BaseLeaguesDataSource{
       print(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
        print(runtimeType);
        print(e.response);
       throw handleResponseError(e);
@@ -39,7 +39,7 @@ class LeaguesDataSource implements BaseLeaguesDataSource{
       print(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);

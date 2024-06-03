@@ -2,15 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:skori/core/constant/app_assets.dart';
-import 'package:skori/core/widgets/main_text.dart';
-import 'package:skori/modules/teams/presentation/bloc/team_event.dart';
 import 'package:skori/modules/teams/presentation/bloc/team_player_bloc.dart';
 import '../../../../core/state/base_state.dart';
-import '../../../../core/theme/color_app.dart';
-import '../../../../core/theme/textFont_app.dart';
-import '../../../../core/widgets/button/button_app.dart';
-import '../../../../core/widgets/empty.dart';
 import '../../../../core/widgets/loader.dart';
 import '../../../../core/widgets/offline_widget.dart';
 import '../../../players/presentation/Widgets/player_card.dart';
@@ -73,8 +66,8 @@ class _TeamPlayersState extends State<TeamPlayers> {
                       id: teamPlayers[index].id,
                       isFavorite: teamPlayers[index].isFavourite,
                       number: teamPlayers[index].clubShirtNumber,
-                      clubLogo: teamPlayers[index].teamEntity.logo,
-                      clubName: teamPlayers[index].teamEntity.name,
+                      clubLogo: teamPlayers[index].teamEntity!.logo,
+                      clubName: teamPlayers[index].teamEntity!.name,
                     ),
                     separatorBuilder: (context,_)=>SizedBox(height:10.h,),
                     itemCount:teamPlayers.length),

@@ -67,6 +67,7 @@ abstract class Validations {
       // return LocaleKeys.phoneIsInvalid.tr();
     // if (mobileNo.length != 11) return 'Mobile No must have 11 digits.';
     return null;
+    return null;
   }
 
 

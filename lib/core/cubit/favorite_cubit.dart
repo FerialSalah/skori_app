@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skori/modules/profile/presentation/bloc/favorites_list/news_favorite_bloc.dart';
 import 'package:skori/modules/profile/presentation/bloc/favorites_list/team_favorites_bloc.dart';
 import '../../../core/dio_helper/dio_helper.dart';
 import '../../../core/network/urls_app.dart';
@@ -29,6 +30,8 @@ class FavoriteCubit extends Cubit<BaseState> {
           BlocProvider.of<FavoritesTeamsBloc>(RouteManager.currentContext)..add(GetFavoritesTeamsData());
           BlocProvider.of<FavoritesPlayersBloc>(RouteManager.currentContext)..add(GetFavoritesPlayersData());
           BlocProvider.of<FavoritesLeaguesBloc>(RouteManager.currentContext)..add(GetFavoritesLeaguesData());
+          BlocProvider.of<FavoritesNewsBloc>(RouteManager.currentContext)..add(GetFavoritesNewsData());
+
         } else {
           emit(ErrorState(msg: ""));
         }

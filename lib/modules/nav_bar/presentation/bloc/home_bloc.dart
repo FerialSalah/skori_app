@@ -1,10 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:skori/modules/nav_bar/domain/entity/match_entity.dart';
 import 'package:skori/modules/nav_bar/domain/usecase/nav_bar_usecase.dart';
 import 'package:skori/modules/nav_bar/presentation/bloc/home_event.dart';
 import '../../../../../core/errors/faliure.dart';
 import '../../../../core/state/base_state.dart';
-import 'matches_event.dart';
+import '../../domain/entity/home_entity.dart';
 
 
 class HomeBloc extends Bloc<HomeEvent, BaseState> {
@@ -27,6 +26,7 @@ class HomeBloc extends Bloc<HomeEvent, BaseState> {
         emit(ErrorState(msg: failure.msg));
       }
     }, (response) {
+
       emit(SuccessState(data: response));
     });
   }

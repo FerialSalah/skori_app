@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/routes/navigator_push.dart';
 import 'package:skori/modules/nav_bar/presentation/widgets/home/title_and_all.dart';
+import 'package:skori/modules/news/domain/entity/news_entity.dart';
 import '../../../../../core/theme/color_app.dart';
 import '../../../../../core/theme/textFont_app.dart';
 import '../../../../../core/widgets/main_text.dart';
@@ -12,7 +12,7 @@ import '../../../../news/data/model/news_model.dart';
 import '../../../../news/presentation/screens/news_details.dart';
 
 class TrendingNews extends StatelessWidget {
-  final List<NewsModel> news;
+  final List<NewsEntity> news;
 
   const TrendingNews({Key? key, required this.news}) : super(key: key);
   int countWords(String text) {

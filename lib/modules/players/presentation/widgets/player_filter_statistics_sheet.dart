@@ -6,18 +6,15 @@ import 'package:skori/core/cubit/player_league/player_leagues_cubit.dart';
 import 'package:skori/core/cubit/season/player_season_cubit.dart';
 import 'package:skori/core/state/base_state.dart';
 import 'package:skori/core/theme/color_app.dart';
-import 'package:skori/modules/players/domain/entity/player_new_statistics_entity.dart';
 import 'package:skori/modules/players/presentation/bloc/player_statistics_bloc.dart';
 
 import '../../../../core/constant/app_assets.dart';
-import '../../../../core/cubit/season/season_cubit.dart';
 import '../../../../core/routes/navigator_push.dart';
 import '../../../../core/theme/textFont_app.dart';
 import '../../../../core/widgets/button/button_app.dart';
 import '../../../../core/widgets/drop_down_text_field.dart';
 import '../../../../core/widgets/main_text.dart';
 import '../../../../generated/locale_keys.g.dart';
-import '../../../leagues_and_tabels/presentation/bloc/leagues_bloc.dart';
 import '../bloc/players_event.dart';
 class PlayerFilterStatisticsSheet extends StatefulWidget {
   final int playerId;

@@ -1,5 +1,4 @@
 import 'package:skori/modules/matches/domain/entity/planties_missed_no_entity.dart';
-import 'package:skori/modules/matches/domain/entity/planties_no_entity.dart';
 
 class PenaltiesMissedNoModel extends PenaltiesMissedNoEntity{
 

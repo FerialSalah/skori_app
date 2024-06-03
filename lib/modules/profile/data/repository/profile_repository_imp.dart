@@ -136,7 +136,19 @@ class ProfileRepositoryImp implements ProfileRepository {
     }
   }
 
-
+  @override
+  Future<Either<Failure, List<NewsEntity>>> getFavoritesNews(int page) async {
+    if (await networkChecker.isDeviceConnected) {
+      try {
+        final result = await baseProfileDataSource.getFavoritesNews(page: page,);
+        return Right(result.data);
+      } on ExceptionServiceCallBack catch (e) {
+        return Left(FailureServiceWithResponse(msg: e.massage));
+      }
+    } else {
+      return Left(FailureOffline());
+    }
+  }
 
   @override
   Future<Either<Failure, List<NotificationEntity>>> getNotifications() async {

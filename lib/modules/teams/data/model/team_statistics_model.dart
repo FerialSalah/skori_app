@@ -1,9 +1,4 @@
 
-import 'package:skori/modules/news/domain/entity/news_entity.dart';
-import 'package:skori/modules/players/domain/entity/player_entity.dart';
-import 'package:skori/modules/players/domain/entity/player_statistics_entity.dart';
-import 'package:skori/modules/teams/data/model/team_model.dart';
-import 'package:skori/modules/teams/domain/entity/team_entity.dart';
 
 import '../../../players/data/model/player_statistics_model.dart';
 import '../../domain/entity/team_statistics_entity.dart';

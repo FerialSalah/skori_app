@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:skori/core/cubit/gallery/team_gallery_cubit.dart';
 import 'package:skori/core/cubit/gender_cubit.dart';
 import 'package:skori/core/cubit/player_league/player_leagues_cubit.dart';
 import 'package:skori/core/cubit/season/season_cubit.dart';
@@ -78,6 +79,7 @@ import '../../modules/profile/presentation/bloc/contact_us/bloc.dart';
 import '../../modules/profile/presentation/bloc/delete_account/delete_account_cubit.dart';
 import '../../modules/profile/presentation/bloc/edit_profile/edit_profile_bloc.dart';
 import '../../modules/profile/presentation/bloc/favorites_list/leagues_favourits_bloc.dart';
+import '../../modules/profile/presentation/bloc/favorites_list/news_favorite_bloc.dart';
 import '../../modules/profile/presentation/bloc/following_list/leagues_following_bloc.dart';
 import '../../modules/profile/presentation/bloc/following_list/team_following_bloc.dart';
 import '../../modules/profile/presentation/bloc/packages/my_packages_cubit.dart';
@@ -116,6 +118,7 @@ Future<void> init() async {
   getIt.registerFactory(() => SeasonsCubit());
   getIt.registerFactory(() => PlayerSeasonsCubit(getIt()));
   getIt.registerFactory(() => PlayerLeaguesCubit());
+  getIt.registerFactory(() => TeamGalleryCubit());
   getIt.registerFactory(() => AddCommentCubit(getIt()));
   getIt.registerFactory(() => CommentCubit(getIt()));
   getIt.registerFactory(() => PackagesCubit(getIt()));
@@ -153,6 +156,7 @@ Future<void> init() async {
   getIt.registerFactory(() => FavoritesPlayersBloc(getIt()));
   getIt.registerFactory(() => FavoritesTeamsBloc(getIt()));
   getIt.registerFactory(() => FavoritesLeaguesBloc(getIt()));
+  getIt.registerFactory(() => FavoritesNewsBloc(getIt()));
   getIt.registerFactory(() => NotificationsBloc(getIt()));
   getIt.registerFactory(() => EditProfileBloc(getIt()));
   getIt.registerFactory(() => ChangePasswordBloc(getIt()));

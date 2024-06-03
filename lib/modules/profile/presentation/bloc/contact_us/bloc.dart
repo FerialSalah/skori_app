@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:skori/core/state/base_state.dart';
 import 'package:skori/modules/profile/domain/usecase/profile_usecase.dart';
-import 'package:skori/modules/profile/presentation/bloc/change_password/state.dart';
 import '../../../../../core/errors/faliure.dart';
 import 'event.dart';
 

@@ -1,4 +1,3 @@
-import 'package:skori/modules/matches/domain/entity/assists_no_entity.dart';
 
 import '../../domain/entity/passes_no_entity.dart';
 

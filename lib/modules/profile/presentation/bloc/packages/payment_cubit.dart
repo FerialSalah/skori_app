@@ -1,11 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skori/core/routes/navigator_push.dart';
 import '../../../../../core/dio_helper/dio_helper.dart';
 import '../../../../../core/network/network_checker.dart';
 import '../../../../../core/network/urls_app.dart';
 import '../../../../../core/state/base_state.dart';
 import '../../../../../core/widgets/snack_bar.dart';
-import '../../../../../webview_test.dart';
 import '../../../data/model/payment_model.dart';
 
 
@@ -37,7 +35,7 @@ class PaymentCubit extends Cubit<BaseState> {
         }else{
           emit(ErrorState(msg: ""));
         }
-      } catch (e, s) {
+      } catch (e) {
 
         showSnackBar(e.toString());
         emit(ErrorState(msg: ''));

@@ -3,9 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/routes/navigator_push.dart';
+import 'package:skori/core/widgets/button/favorite_button.dart';
 import 'package:skori/modules/nav_bar/presentation/bloc/nav_bar_cubit.dart';
-import 'package:skori/modules/nav_bar/presentation/screens/home.dart';
 import 'package:skori/modules/nav_bar/presentation/widgets/home/title_and_all.dart';
+import 'package:skori/modules/news/domain/entity/news_entity.dart';
 
 import '../../../../../core/constant/app_assets.dart';
 import '../../../../../core/theme/color_app.dart';
@@ -17,7 +18,7 @@ import '../../../../news/data/model/news_model.dart';
 import '../../../../news/presentation/screens/news_details.dart';
 
 class LatestNews extends StatelessWidget {
-  final List<NewsModel> news;
+  final List<NewsEntity> news;
   const LatestNews({Key? key, required this.news}) : super(key: key);
 
   int countWords(String text) {
@@ -69,10 +70,27 @@ class LatestNews extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
 
-                        Container(
-                          height: 160.h,
-                          // color: Colors.red,
-                          child:CachedImageNetwork(image: news[index].cover,fit: BoxFit.cover,) ,
+                        Stack(
+                          children: [
+
+                            Container(
+                              height: 160.h,
+                              // color: Colors.red,
+                              child:CachedImageNetwork(image: news[index].cover,fit: BoxFit.cover,) ,
+                            ),
+                            Padding(
+                                padding: EdgeInsets.all(10),
+                                child: Container(
+                                    padding: EdgeInsets.all(5),
+                                    height: 30.h,
+                                    width: 30.w,
+                                    color: ColorApp.white.withOpacity(.15),
+                                    child: FavoriteButton(
+                                      isFavorite:news[index].isFavorite!,
+                                      id: news[index].id,
+                                      type: "article",
+                                    ))),
+                          ],
                         ),
                         SizedBox(height: 15.h,),
                         Padding(

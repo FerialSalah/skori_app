@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/routes/navigator_push.dart';
+import 'package:skori/modules/leagues_and_tabels/domain/entity/leagues_entity.dart';
 import 'package:skori/modules/leagues_and_tabels/presentation/screens/all_leagues.dart';
 import 'package:skori/modules/nav_bar/presentation/widgets/home/title_and_all.dart';
 import '../../../../../core/theme/color_app.dart';
@@ -17,7 +18,7 @@ import '../../../../leagues_and_tabels/presentation/screens/league_table.dart';
 
 
 class PopularLeagues extends StatelessWidget {
-  final List<LeagueModel> leagues;
+  final List<LeagueEntity> leagues;
   const PopularLeagues({Key? key, required this.leagues}) : super(key: key);
 
   @override

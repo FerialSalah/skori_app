@@ -1,12 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:skori/modules/nav_bar/domain/entity/match_entity.dart';
 import 'package:skori/modules/nav_bar/domain/usecase/nav_bar_usecase.dart';
-import 'package:skori/modules/news/domain/entity/news_entity.dart';
-import 'package:skori/modules/news/domain/usecase/news_usecase.dart';
-import 'package:skori/modules/players/domain/entity/player_entity.dart';
-import 'package:skori/modules/players/domain/usecase/player_usecase.dart';
-import 'package:skori/modules/teams/domain/entity/team_entity.dart';
-import 'package:skori/modules/teams/domain/usecase/team_usecase.dart';
 import '../../../../../core/errors/faliure.dart';
 import '../../../../core/state/base_state.dart';
 import 'matches_event.dart';

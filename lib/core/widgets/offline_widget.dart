@@ -18,7 +18,7 @@ class OfflinePage extends StatelessWidget {
               height: 100,width: 100,fit: BoxFit.cover),
           SizedBox(height: 20,),
           MainText(
-            text: "Please Check your EnterNet",
+            text: "Please Check your Internet",
             fontWeight: FontWeight.w500,
             font: 16,
             color: ColorApp.black,

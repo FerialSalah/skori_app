@@ -4,7 +4,46 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b91bc2ce-7caf-48d5-87de-6f6ab1526b3f" name="Changes" comment="" />
+    <list default="true" id="ca48b040-1399-4100-a3af-b2ae2f44d221" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../lib/core/cubit/gallery/gallery_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/core/cubit/gallery/team_gallery_cubit.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/modules/teams/presentation/widgets/team_gallery.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/../.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/../.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app-release.aab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/lang/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/lang/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../assets/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/../assets/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/constant/app_assets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/constant/app_assets.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/cubit/player_league/player_league_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/cubit/player_league/player_league_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/cubit/season/player_season_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/cubit/season/player_season_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/injection/injection_app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/injection/injection_app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/network/urls_app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/network/urls_app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/provider_list/provider_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/provider_list/provider_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/theme/theme_app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/theme/theme_app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/generated/codegen_loader.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/generated/codegen_loader.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/generated/locale_keys.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/generated/locale_keys.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/screens/player_profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/screens/player_profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/custom_sliver_tabs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/custom_sliver_tabs.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/teams/presentation/screens/team_profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/teams/presentation/screens/team_profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../skori.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../skori.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../windows/flutter/generated_plugins.cmake" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,15 +55,13 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="GenerateSignedApkSettings">
-    <option name="EXPORT_PRIVATE_KEY" value="false" />
-    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/app/skori.jks" />
-    <option name="KEY_ALIAS" value="upload" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="2ghdRkeTMmuYwZZETnGymArDnNx" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2h8S4zlmbYRysCrDdmeDRJGS2Gk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,20 +69,13 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;BundleExportedModule&quot;: &quot;android.app&quot;,
-    &quot;ExportBundle.BundlePathForandroid.app&quot;: &quot;/Users/ferialsalah/Documents/flutterprojects/skori_project/android/app&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;ExportApk.BuildVariants&quot;: [
-      &quot;release&quot;
-    ]
   }
 }</component>
   <component name="RunManager">
@@ -111,23 +141,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b91bc2ce-7caf-48d5-87de-6f6ab1526b3f" name="Changes" comment="" />
-      <created>1716153736688</created>
+      <changelist id="ca48b040-1399-4100-a3af-b2ae2f44d221" name="Changes" comment="" />
+      <created>1716974023666</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1716153736688</updated>
+      <updated>1716974023666</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

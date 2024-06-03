@@ -35,14 +35,19 @@ class _FavoriteButtonState extends State<FavoriteButton> {
     return  AppStorage.isLogged==false?SizedBox():BlocConsumer<FavoriteCubit, BaseState>(
       listener: (context, state) {
         if (state is SuccessState) {
-          setState(() {
-            isFav = !isFav!;
-          });
+          // setState(() {
+          //   isFav = !isFav!;
+          // });
         }
       },
       builder: (context, state) {
         return GestureDetector(
           onTap: () {
+            print("fav new ${widget.id}");
+            print("widget.isFavorite: ${widget.isFavorite}");
+            setState(() {
+              isFav = !isFav!;
+            });
             cubit.toggleFavorite(id: widget.id, type: widget.type);
           },
           child: Align(

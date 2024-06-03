@@ -4,7 +4,7 @@ import 'package:skori/modules/players/domain/entity/player_statistics_entity.dar
 
 class StatisticAbsoluteValue extends Equatable{
  final String? name;
-final  String? absoluteValue;
+final  dynamic absoluteValue;
  final dynamic per90Value;
 
   StatisticAbsoluteValue({this.name, this.absoluteValue, this.per90Value});

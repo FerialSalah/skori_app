@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 
 abstract class SignUpEvent  {
   const SignUpEvent();

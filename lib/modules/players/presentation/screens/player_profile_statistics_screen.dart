@@ -15,10 +15,8 @@ import 'package:skori/modules/players/presentation/widgets/player_statistics_inf
 import '../../../../core/state/base_state.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
-import '../../../../core/widgets/empty.dart';
 import '../../../../core/widgets/loader.dart';
 import '../../../../generated/locale_keys.g.dart';
-import '../widgets/custom_sliver_tabs.dart';
 import '../widgets/player_performance_card.dart';
 
 class PlayerProfileStatisticsScreen extends StatefulWidget {

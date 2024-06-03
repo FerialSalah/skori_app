@@ -1,17 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:skori/core/theme/textFont_app.dart';
+import 'package:skori/core/cubit/gallery/team_gallery_cubit.dart';
 import 'package:skori/generated/locale_keys.g.dart';
 import 'package:skori/modules/teams/presentation/bloc/team_event.dart';
 import 'package:skori/modules/teams/presentation/bloc/team_news_bloc.dart';
 import 'package:skori/modules/teams/presentation/widgets/team_news.dart';
 import 'package:skori/modules/teams/presentation/widgets/team_statistics.dart';
-import '../../../../core/app_storage/app_storage.dart';
-import '../../../../core/theme/color_app.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/widgets/should_sign_up.dart';
-import '../../../leagues_and_tabels/presentation/widgets/league_app_bar.dart';
 import '../../../../core/injection/injection_app.dart' as di;
 import '../../../players/presentation/widgets/custom_sliver_app_bar.dart';
 import '../../../players/presentation/widgets/custom_sliver_tabs.dart';
@@ -71,6 +67,9 @@ class _TeamProfileState extends State<TeamProfile>
         BlocProvider(
             create: (context) => di.getIt<TeamPlayersBloc>()
               ..add(GetTeamPlayers(id: widget.id))),
+        BlocProvider(
+            create: (context) =>
+                di.getIt<TeamGalleryCubit>()..getTeamGallery(widget.id)),
       ],
       child: DefaultTabController(
         length: 4,
@@ -99,7 +98,8 @@ class _TeamProfileState extends State<TeamProfile>
                 LocaleKeys.teamMatches.tr(),
                 LocaleKeys.statistics.tr(),
                 LocaleKeys.latestNews.tr(),
-                LocaleKeys.teamPlayers.tr()
+                LocaleKeys.teamPlayers.tr(),
+            //    LocaleKeys.gallery.tr()
               ],
             ),
           ],
@@ -108,10 +108,11 @@ class _TeamProfileState extends State<TeamProfile>
             children: [
               TeamMatches(),
               TeamStatistics(),
-              TeamNews(),
+              TeamNews(teamId: widget.id,),
               TeamPlayers(
                 teamId: widget.id,
               ),
+             // TeamGallery(),
             ],
           ),
         )),

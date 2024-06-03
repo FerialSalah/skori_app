@@ -1,12 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skori/core/routes/navigator_push.dart';
-import 'package:skori/modules/profile/presentation/bloc/following_list/team_following_bloc.dart';
 
 import '../../../../core/dio_helper/dio_helper.dart';
 import '../../../../core/network/network_checker.dart';
 import '../../../../core/network/urls_app.dart';
 import '../../../../core/state/base_state.dart';
-import '../../../../core/widgets/snack_bar.dart';
 
 
 class AddCommentCubit extends Cubit<BaseState> {
@@ -30,7 +27,7 @@ class AddCommentCubit extends Cubit<BaseState> {
         } else {
           emit(ErrorState(msg: "Error"));
         }
-      } catch (e, s) {
+      } catch (e) {
         emit(ErrorState(msg: 'Error'));
       }
     } else {

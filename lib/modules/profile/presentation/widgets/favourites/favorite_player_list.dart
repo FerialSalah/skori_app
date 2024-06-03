@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:skori/core/constant/app_assets.dart';
-import 'package:skori/core/theme/textFont_app.dart';
-import 'package:skori/core/widgets/button/button_app.dart';
-import 'package:skori/core/widgets/main_text.dart';
 import 'package:skori/modules/profile/presentation/bloc/favorites_list/player_favorites_bloc.dart';
-import 'package:skori/modules/profile/presentation/bloc/following_list/following_event.dart';
-import 'package:skori/modules/profile/presentation/bloc/following_list/player_follwing_bloc.dart';
 import '../../../../../core/state/base_state.dart';
-import '../../../../../core/theme/color_app.dart';
 import '../../../../../core/widgets/empty.dart';
-import '../../../../../core/widgets/images/cached_network_image.dart';
 import '../../../../../core/widgets/loader.dart';
 import '../../../../../core/widgets/offline_widget.dart';
 import '../../../../../core/widgets/shimmer_widget.dart';

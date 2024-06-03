@@ -1,16 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/modules/players/domain/entity/player_statistics_entity.dart';
-import 'package:skori/modules/players/presentation/bloc/player_statistics_bloc.dart';
 import 'package:skori/modules/players/presentation/widgets/player_statistics_info_card.dart';
 
-import '../../../../core/state/base_state.dart';
-import '../../../../core/widgets/loader.dart';
-import '../../../../core/widgets/main_text.dart';
-import '../../../../core/widgets/offline_widget.dart';
-import '../../../../generated/locale_keys.g.dart';
 
 class PlayerStatisticsInfo extends StatelessWidget {
   final List<StatisticValue>  mainStats;

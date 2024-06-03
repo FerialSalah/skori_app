@@ -1,5 +1,4 @@
 import 'package:skori/modules/news/domain/entity/news_entity.dart';
-import 'package:skori/modules/teams/domain/entity/team_entity.dart';
 
 class AllNewsModel {
   AllNewsModel({

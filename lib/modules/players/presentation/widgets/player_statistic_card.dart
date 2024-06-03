@@ -36,7 +36,10 @@ class PlayerStatisticCard extends StatelessWidget {
                       physics: ScrollPhysics(),
                       padding: EdgeInsets.zero,
                       itemBuilder: (context,index){
-                        print("value is : ${statistics[index].value}");
+                        print("value is : ${statistics[index].value.toString()}");
+                        if(statistics[index].value.toString().contains("%")){
+                        print("prescent:${(double.parse(statistics[index].value.toString().substring(0,(statistics[index].value.toString().lastIndexOf("%")))))}"
+                        );}
                         return  Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -59,10 +62,14 @@ class PlayerStatisticCard extends StatelessWidget {
                             ),
                             Spacer(),
                             MainText(text:"${statistics[index].value}",font: 16,family:TextFontApp.boldFont,hor: 5,color:
-                                statistics[index].value.toString().contains('%')?
-                                int.parse(statistics[index].value.toString().substring(0,(statistics[index].value.toString().indexOf("."))))>=50
+                                statistics[index].value.toString().contains("%")?
+
+                                double.parse(statistics[index].value.toString().substring(0,(statistics[index].value.toString().lastIndexOf("%"))))>=50
                                     ?
-                            Colors.green:Colors.red:Colors.black),
+                            Colors.green:Colors.red
+                                    :Colors.black
+                              ),
+
                             statistics[index].value=="premium"?Image.asset(AppIcons.premium,height: 24,width: 24,):SizedBox(),
                           ],
                         );

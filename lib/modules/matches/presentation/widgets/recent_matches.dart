@@ -7,7 +7,6 @@ import 'package:skori/core/theme/textFont_app.dart';
 import 'package:skori/core/widgets/empty.dart';
 import 'package:skori/core/widgets/offline_widget.dart';
 import 'package:skori/generated/locale_keys.g.dart';
-import 'package:skori/modules/matches/presentation/bloc/previous_matches_bloc.dart';
 import 'package:skori/modules/matches/presentation/bloc/recent_home_matches_bloc.dart';
 import 'package:skori/modules/nav_bar/presentation/widgets/matches_card.dart';
 

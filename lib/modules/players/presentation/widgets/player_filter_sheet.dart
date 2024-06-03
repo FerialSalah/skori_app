@@ -9,14 +9,12 @@ import 'package:skori/modules/players/presentation/bloc/players_bloc.dart';
 import 'package:skori/modules/players/presentation/bloc/players_event.dart';
 import 'package:skori/modules/teams/presentation/bloc/team_bloc.dart';
 import '../../../../core/constant/app_assets.dart';
-import '../../../../core/cubit/country/country_cubit.dart';
 import '../../../../core/state/base_state.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
 import '../../../../core/widgets/drop_down_text_field.dart';
 import '../../../../core/widgets/main_text.dart';
 import '../../../../generated/locale_keys.g.dart';
-import '../../../leagues_and_tabels/presentation/bloc/leagues_bloc.dart';
 
 
 

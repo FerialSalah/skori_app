@@ -1,4 +1,5 @@
 import 'package:skori/modules/matches/data/model/assists_no_model.dart';
+import 'package:skori/modules/matches/data/model/attempt_accurcy_model.dart';
 import 'package:skori/modules/matches/data/model/awarded_fouls_no_model.dart';
 import 'package:skori/modules/matches/data/model/clean_sheets_no_model.dart';
 import 'package:skori/modules/matches/data/model/committed_fouls_no_model.dart';
@@ -9,6 +10,7 @@ import 'package:skori/modules/matches/data/model/expected_goals_against_no_model
 import 'package:skori/modules/matches/data/model/goals_no_model.dart';
 import 'package:skori/modules/matches/data/model/long_passes_no_model.dart';
 import 'package:skori/modules/matches/data/model/offside_no_model.dart';
+import 'package:skori/modules/matches/data/model/passes_accuracy_model.dart';
 import 'package:skori/modules/matches/data/model/passes_no_model.dart';
 import 'package:skori/modules/matches/data/model/penalites_no_model.dart';
 import 'package:skori/modules/matches/data/model/planties_missed_no_model.dart';
@@ -42,7 +44,10 @@ class StatisticsModel extends StatisticsEntity{
     required super.expectedGoalsAgainstNo,
     required super.penaltiesMissedNo,
     required super.offsideNo,
-    required super.passesNo
+    required super.passesNo,
+    required super.passesAccuracy,
+    required super.attemptsAccuracy
+
   });
 
   factory StatisticsModel.fromJson(Map<String, dynamic> json) => StatisticsModel(
@@ -86,9 +91,11 @@ class StatisticsModel extends StatisticsEntity{
         : (json['expected_goals_aginst_no'] as List).map((e) => ExpectedGoalsAgainstNoModel.fromJson(e)).toList(),
     passesNo: json['passes_no'] == null ? []
         : (json['passes_no'] as List).map((e) => PassesNoModel.fromJson(e)).toList(),
+    passesAccuracy: json['passes_accuracy'] == null ? []
+        : (json['passes_accuracy'] as List).map((e) => PassesAccuracyModel.fromJson(e)).toList(),
 
-
-
+    attemptsAccuracy: json['attempts_accuracy'] == null ? []
+        : (json['attempts_accuracy'] as List).map((e) => AttemptsAccuracyModel.fromJson(e)).toList(),
   );
 
 }

@@ -1,7 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:skori/modules/players/domain/entity/player_entity.dart';
 import 'package:skori/modules/profile/domain/entity/notification_entity.dart';
-import 'package:skori/modules/profile/presentation/bloc/following_list/following_event.dart';
 import 'package:skori/modules/profile/presentation/bloc/notifications/notifications_event.dart';
 import '../../../../../core/errors/faliure.dart';
 import '../../../../../core/state/base_state.dart';

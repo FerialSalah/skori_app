@@ -1,5 +1,3 @@
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,21 +5,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/routes/navigator_push.dart';
 import 'package:skori/generated/locale_keys.g.dart';
-import 'package:skori/modules/matches/presentation/screens/statistics_screen.dart';
+import 'package:skori/modules/nav_bar/domain/entity/match_entity.dart';
 import 'package:skori/modules/nav_bar/presentation/bloc/matches_bloc.dart';
 import 'package:skori/modules/nav_bar/presentation/bloc/matches_event.dart';
-import 'package:skori/modules/nav_bar/presentation/screens/home.dart';
 import 'package:skori/modules/matches/presentation/screens/matches.dart';
 import 'package:skori/modules/nav_bar/presentation/widgets/home/title_and_all.dart';
-import '../../../../../core/constant/app_assets.dart';
-import '../../../../../core/theme/color_app.dart';
-import '../../../../../core/theme/textFont_app.dart';
-import '../../../../../core/widgets/main_text.dart';
 import '../../../data/model/matches_model.dart';
 import '../matches_card.dart';
 
 class LiveMatchesList extends StatelessWidget {
-  final List<MatchModel> matches;
+  final List<MatchEntity> matches;
 
   const LiveMatchesList({Key? key, required this.matches}) : super(key: key);
 

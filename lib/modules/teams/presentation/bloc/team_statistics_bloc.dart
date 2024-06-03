@@ -24,10 +24,12 @@ class TeamStatisticsBloc extends Bloc<TeamEvent, BaseState> {
         emit(OfflineState(
             msg:"connection network unstable , please try agin after check connection"));
       } else if (failure is FailureServiceWithResponse) {
+         print("failure:${failure.msg}");
         emit(ErrorState(msg: failure.msg));
       }
     }, (response) {
       teamStatistics=response;
+      print("team stat:$teamStatistics");
       emit(SuccessState(data: response));
     });
   }

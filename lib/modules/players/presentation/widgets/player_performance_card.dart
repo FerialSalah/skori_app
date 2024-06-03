@@ -1,7 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:skori/core/constant/app_assets.dart';
 import 'package:skori/modules/players/domain/entity/player_new_statistics_entity.dart';
 import 'package:skori/modules/players/presentation/widgets/player_performance_item.dart';
 
@@ -9,7 +7,6 @@ import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
 import '../../../../core/widgets/main_text.dart';
 import '../../../../generated/locale_keys.g.dart';
-import '../../domain/entity/player_statistics_entity.dart';
 
 class PlayerPerformanceCard extends StatelessWidget {
   final PlayerPerformanceEntity  playerPerformance;

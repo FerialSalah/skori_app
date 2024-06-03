@@ -27,10 +27,10 @@ class Data {
   String? countryName;
   String? continentName;
   String? season;
-  Null? description;
+  String? description;
   String? startDate;
   String? endDate;
-  Null? organizer;
+  Null organizer;
   AgeGroup? ageGroup;
   String? logo;
   bool? isFavorite;
@@ -97,7 +97,7 @@ class Data {
 class AgeGroup {
   int? id;
   String? title;
-  Null? description;
+  Null description;
   String? isActive;
   String? minAge;
   String? maxAge;

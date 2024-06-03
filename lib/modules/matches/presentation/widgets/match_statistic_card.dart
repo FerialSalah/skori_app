@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:skori/core/state/base_state.dart';
 import 'package:skori/core/theme/textFont_app.dart';
@@ -2480,30 +2479,30 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                             padding: EdgeInsets.zero,
                             itemBuilder: (context, index) {
                               print(
-                                  "value is : ${matchStatistics.offsideNo![index].value}");
+                                  "value is : ${matchStatistics.offsideNo[index].value}");
                               double maxPercentage = 0.0;
-                              if (matchStatistics.offsideNo![index].value !=
+                              if (matchStatistics.offsideNo[index].value !=
                                       null &&
-                                  matchStatistics.offsideNo![index].value
+                                  matchStatistics.offsideNo[index].value
                                           .toString() !=
                                       "premium") {
                                 double total = double.parse(matchStatistics
-                                        .offsideNo![index]
+                                        .offsideNo[index]
                                         .value
                                         .homeOffsideNo) +
                                     double.parse(matchStatistics
-                                        .offsideNo![index].value.awayOffsideNo);
+                                        .offsideNo[index].value.awayOffsideNo);
                                 double percentageHomeTeam = total == 0
                                     ? 0.0
                                     : (double.parse(matchStatistics
-                                            .offsideNo![index]
+                                            .offsideNo[index]
                                             .value
                                             .homeOffsideNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
                                     ? 0
                                     : (double.parse(matchStatistics
-                                            .offsideNo![index]
+                                            .offsideNo[index]
                                             .value
                                             .awayOffsideNo) /
                                         total);
@@ -2529,21 +2528,21 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 children: [
                                   MainText(
                                     text:
-                                        matchStatistics.offsideNo![index].name,
+                                        matchStatistics.offsideNo[index].name,
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),
                                   Row(
                                     children: [
-                                      matchStatistics.offsideNo![index].value !=
+                                      matchStatistics.offsideNo[index].value !=
                                               null
                                           ? matchStatistics
-                                                      .offsideNo![index].value
+                                                      .offsideNo[index].value
                                                       .toString() !=
                                                   "premium"
                                               ? MainText(
                                                   text: matchStatistics
-                                                          .offsideNo![index]
+                                                          .offsideNo[index]
                                                           .value
                                                           .homeOffsideNo ??
                                                       "",
@@ -2562,15 +2561,15 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                               width: 24,
                                             ),
                                       Spacer(),
-                                      matchStatistics.offsideNo![index].value !=
+                                      matchStatistics.offsideNo[index].value !=
                                               null
                                           ? matchStatistics
-                                                      .offsideNo![index].value
+                                                      .offsideNo[index].value
                                                       .toString() !=
                                                   "premium"
                                               ? MainText(
                                                   text: matchStatistics
-                                                      .offsideNo![index]
+                                                      .offsideNo[index]
                                                       .value
                                                       .awayOffsideNo,
                                                   color: ColorApp.red,
@@ -2596,10 +2595,10 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                     width: 310.w,
                                     lineHeight: 10.0,
                                     percent: matchStatistics
-                                                .offsideNo![index].value !=
+                                                .offsideNo[index].value !=
                                             null
                                         ? matchStatistics
-                                                    .offsideNo![index].value
+                                                    .offsideNo[index].value
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
@@ -2615,7 +2614,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                   padding: EdgeInsets.symmetric(vertical: 10),
                                   child: Divider(),
                                 ),
-                            itemCount: matchStatistics.offsideNo!.length),
+                            itemCount: matchStatistics.offsideNo.length),
                       ),
                       SizedBox(
                         height: 10.h,
@@ -2628,30 +2627,30 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                             padding: EdgeInsets.zero,
                             itemBuilder: (context, index) {
                               print(
-                                  "value is : ${matchStatistics.crossesNo![index].value}");
+                                  "value is : ${matchStatistics.crossesNo[index].value}");
                               double maxPercentage = 0.0;
-                              if (matchStatistics.crossesNo![index].value !=
+                              if (matchStatistics.crossesNo[index].value !=
                                       null &&
-                                  matchStatistics.crossesNo![index].value
+                                  matchStatistics.crossesNo[index].value
                                           .toString() !=
                                       "premium") {
                                 double total = double.parse(matchStatistics
-                                        .crossesNo![index]
+                                        .crossesNo[index]
                                         .value
                                         .homeCrossesNo) +
                                     double.parse(matchStatistics
-                                        .crossesNo![index].value.awayCrossesNo);
+                                        .crossesNo[index].value.awayCrossesNo);
                                 double percentageHomeTeam = total == 0
                                     ? 0
                                     : (double.parse(matchStatistics
-                                            .crossesNo![index]
+                                            .crossesNo[index]
                                             .value
                                             .homeCrossesNo) /
                                         total);
                                 double percentageAwayTeam = total == 0
                                     ? 0.0
                                     : (double.parse(matchStatistics
-                                            .crossesNo![index]
+                                            .crossesNo[index]
                                             .value
                                             .awayCrossesNo) /
                                         total);
@@ -2677,21 +2676,21 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                 children: [
                                   MainText(
                                     text:
-                                        matchStatistics.crossesNo![index].name,
+                                        matchStatistics.crossesNo[index].name,
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),
                                   Row(
                                     children: [
-                                      matchStatistics.crossesNo![index].value !=
+                                      matchStatistics.crossesNo[index].value !=
                                               null
                                           ? matchStatistics
-                                                      .crossesNo![index].value
+                                                      .crossesNo[index].value
                                                       .toString() !=
                                                   "premium"
                                               ? MainText(
                                                   text: matchStatistics
-                                                          .crossesNo![index]
+                                                          .crossesNo[index]
                                                           .value
                                                           .homeCrossesNo ??
                                                       "",
@@ -2710,15 +2709,15 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                               width: 24,
                                             ),
                                       Spacer(),
-                                      matchStatistics.crossesNo![index].value !=
+                                      matchStatistics.crossesNo[index].value !=
                                               null
                                           ? matchStatistics
-                                                      .crossesNo![index].value
+                                                      .crossesNo[index].value
                                                       .toString() !=
                                                   "premium"
                                               ? MainText(
                                                   text: matchStatistics
-                                                      .crossesNo![index]
+                                                      .crossesNo[index]
                                                       .value
                                                       .awayCrossesNo,
                                                   color: ColorApp.red,
@@ -2744,10 +2743,10 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                     width: 310.w,
                                     lineHeight: 10.0,
                                     percent: matchStatistics
-                                                .crossesNo![index].value !=
+                                                .crossesNo[index].value !=
                                             null
                                         ? matchStatistics
-                                                    .crossesNo![index].value
+                                                    .crossesNo[index].value
                                                     .toString() !=
                                                 "premium"
                                             ? maxPercentage
@@ -3095,6 +3094,346 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                             itemCount:
                                 matchStatistics.expectedGoalsAgainstNo!.length),
                       ),
+                      if (matchStatistics.passesAccuracy!.isNotEmpty)
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                      SizedBox(
+                        height: 60.h,
+                        child: ListView.separated(
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            padding: EdgeInsets.zero,
+                            itemBuilder: (context, index) {
+
+
+                              double maxPercentage = 0.0;
+                              if (matchStatistics.passesAccuracy![index]
+                                  .value !=
+                                  null &&
+                                  matchStatistics
+                                      .passesAccuracy![index].value
+                                      .toString() !=
+                                      "premium") {
+                                double total = double.parse(matchStatistics
+                                    .passesAccuracy![index]
+                                    .value
+                                    .homePassesAccuracy) +
+                                    double.parse(matchStatistics
+                                        .passesAccuracy![index]
+                                        .value
+                                        .awayPassesAccuracy);
+                                double percentageHomeTeam = total == 0
+                                    ? 0
+                                    : (double.parse(matchStatistics
+                                    .passesAccuracy![index]
+                                    .value
+                                    .homePassesAccuracy) /
+                                    total);
+                                double percentageAwayTeam = total == 0
+                                    ? 0.0
+                                    : (double.parse(matchStatistics
+                                    .passesAccuracy![index]
+                                    .value
+                                    .awayPassesAccuracy) /
+                                    total);
+                                print(
+                                    "percentageAwayTeam: $percentageAwayTeam");
+                                print(
+                                    "percentageHomeTeam : $percentageHomeTeam");
+
+                                maxPercentage =
+                                percentageHomeTeam > percentageAwayTeam
+                                    ? percentageHomeTeam
+                                    :
+                                percentageHomeTeam == percentageAwayTeam?
+                                0.5
+                                    : 1 - percentageAwayTeam;
+                                print("maxPercentage : $maxPercentage");
+                                maxPercentage = maxPercentage > 1.0
+                                    ? maxPercentage / 100
+                                    : maxPercentage;
+                                print("maxPercentage : $maxPercentage");
+                              }
+                              return Column(
+                                children: [
+                                  MainText(
+                                    text: matchStatistics
+                                        .passesAccuracy![index].name,
+                                    font: 15,
+                                    family: TextFontApp.boldFont,
+                                  ),
+                                  Row(
+                                    children: [
+                                      matchStatistics
+                                          .passesAccuracy![
+                                      index]
+                                          .value !=
+                                          null
+                                          ? matchStatistics
+                                          .passesAccuracy![
+                                      index]
+                                          .value
+                                          .toString() !=
+                                          "premium"
+                                          ? MainText(
+                                        text: matchStatistics
+                                            .passesAccuracy![
+                                        index]
+                                            .value
+                                            .homePassesAccuracy ??
+                                            "",
+                                        color: ColorApp.darkBlue,
+                                        family: TextFontApp.boldFont,
+                                        font: 15,
+                                      )
+                                          : Image.asset(
+                                        AppIcons.premium,
+                                        height: 24,
+                                        width: 24,
+                                      )
+                                          : Image.asset(
+                                        AppIcons.premium,
+                                        height: 24,
+                                        width: 24,
+                                      ),
+                                      Spacer(),
+                                      matchStatistics
+                                          .passesAccuracy![
+                                      index]
+                                          .value !=
+                                          null
+                                          ? matchStatistics
+                                          .passesAccuracy![
+                                      index]
+                                          .value
+                                          .toString() !=
+                                          "premium"
+                                          ? MainText(
+                                        text: matchStatistics
+                                            .passesAccuracy![
+                                        index]
+                                            .value
+                                            .awayPassesAccuracy,
+                                        color: ColorApp.red,
+                                        family: TextFontApp.boldFont,
+                                        font: 15,
+                                      )
+                                          : Image.asset(
+                                        AppIcons.premium,
+                                        height: 24,
+                                        width: 24,
+                                      )
+                                          : Image.asset(
+                                        AppIcons.premium,
+                                        height: 24,
+                                        width: 24,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 3.h,
+                                  ),
+                                  new LinearPercentIndicator(
+                                    width: 310.w,
+                                    lineHeight: 10.0,
+                                    percent: matchStatistics
+                                        .passesAccuracy![index]
+                                        .value !=
+                                        null
+                                        ? matchStatistics
+                                        .passesAccuracy![
+                                    index]
+                                        .value
+                                        .toString() !=
+                                        "premium"
+                                        ? maxPercentage
+                                        : 0.5
+                                        : 0.0,
+                                    progressColor: ColorApp.darkBlue,
+                                    backgroundColor: ColorApp.red,
+                                  ),
+                                ],
+                              );
+                            },
+                            separatorBuilder: (_, c) => Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10),
+                              child: Divider(),
+                            ),
+                            itemCount:
+                            matchStatistics.passesAccuracy!.length),
+                      ),
+                      if (matchStatistics.attemptsAccuracy!.isNotEmpty)
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                      SizedBox(
+                        height: 60.h,
+                        child: ListView.separated(
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            padding: EdgeInsets.zero,
+                            itemBuilder: (context, index) {
+
+
+                              double maxPercentage = 0.0;
+                              if (matchStatistics.attemptsAccuracy![index]
+                                  .value !=
+                                  null &&
+                                  matchStatistics
+                                      .attemptsAccuracy![index].value
+                                      .toString() !=
+                                      "premium") {
+                                double total = double.parse(matchStatistics
+                                    .attemptsAccuracy![index]
+                                    .value
+                                    .homeAttemptsAccuracy) +
+                                    double.parse(matchStatistics
+                                        .attemptsAccuracy![index]
+                                        .value
+                                        .awayAttemptsAccuracy);
+                                double percentageHomeTeam = total == 0
+                                    ? 0
+                                    : (double.parse(matchStatistics
+                                    .attemptsAccuracy![index]
+                                    .value
+                                    .homeAttemptsAccuracy) /
+                                    total);
+                                double percentageAwayTeam = total == 0
+                                    ? 0.0
+                                    : (double.parse(matchStatistics
+                                    .attemptsAccuracy![index]
+                                    .value
+                                    .awayAttemptsAccuracy) /
+                                    total);
+                                print(
+                                    "percentageAwayTeam: $percentageAwayTeam");
+                                print(
+                                    "percentageHomeTeam : $percentageHomeTeam");
+
+                                maxPercentage =
+                                percentageHomeTeam > percentageAwayTeam
+                                    ? percentageHomeTeam
+                                    :
+                                percentageHomeTeam == percentageAwayTeam?
+                                0.5
+                                    : 1 - percentageAwayTeam;
+                                print("maxPercentage : $maxPercentage");
+                                maxPercentage = maxPercentage > 1.0
+                                    ? maxPercentage / 100
+                                    : maxPercentage;
+                                print("maxPercentage : $maxPercentage");
+                              }
+                              return Column(
+                                children: [
+                                  MainText(
+                                    text: matchStatistics
+                                        .attemptsAccuracy![index].name,
+                                    font: 15,
+                                    family: TextFontApp.boldFont,
+                                  ),
+                                  Row(
+                                    children: [
+                                      matchStatistics
+                                          .attemptsAccuracy![
+                                      index]
+                                          .value !=
+                                          null
+                                          ? matchStatistics
+                                          .attemptsAccuracy![
+                                      index]
+                                          .value
+                                          .toString() !=
+                                          "premium"
+                                          ? MainText(
+                                        text: matchStatistics
+                                            .attemptsAccuracy![
+                                        index]
+                                            .value
+                                            .homeAttemptsAccuracy ??
+                                            "",
+                                        color: ColorApp.darkBlue,
+                                        family: TextFontApp.boldFont,
+                                        font: 15,
+                                      )
+                                          : Image.asset(
+                                        AppIcons.premium,
+                                        height: 24,
+                                        width: 24,
+                                      )
+                                          : Image.asset(
+                                        AppIcons.premium,
+                                        height: 24,
+                                        width: 24,
+                                      ),
+                                      Spacer(),
+                                      matchStatistics
+                                          .attemptsAccuracy![
+                                      index]
+                                          .value !=
+                                          null
+                                          ? matchStatistics
+                                          .attemptsAccuracy![
+                                      index]
+                                          .value
+                                          .toString() !=
+                                          "premium"
+                                          ? MainText(
+                                        text: matchStatistics
+                                            .attemptsAccuracy![
+                                        index]
+                                            .value
+                                            .awayAttemptsAccuracy,
+                                        color: ColorApp.red,
+                                        family: TextFontApp.boldFont,
+                                        font: 15,
+                                      )
+                                          : Image.asset(
+                                        AppIcons.premium,
+                                        height: 24,
+                                        width: 24,
+                                      )
+                                          : Image.asset(
+                                        AppIcons.premium,
+                                        height: 24,
+                                        width: 24,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 3.h,
+                                  ),
+                                  new LinearPercentIndicator(
+                                    width: 310.w,
+                                    lineHeight: 10.0,
+                                    percent: matchStatistics
+                                        .attemptsAccuracy![index]
+                                        .value !=
+                                        null
+                                        ? matchStatistics
+                                        .attemptsAccuracy![
+                                    index]
+                                        .value
+                                        .toString() !=
+                                        "premium"
+                                        ? maxPercentage
+                                        : 0.5
+                                        : 0.0,
+                                    progressColor: ColorApp.darkBlue,
+                                    backgroundColor: ColorApp.red,
+                                  ),
+                                ],
+                              );
+                            },
+                            separatorBuilder: (_, c) => Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10),
+                              child: Divider(),
+                            ),
+                            itemCount:
+                            matchStatistics.attemptsAccuracy!.length),
+                      ),
+
+
                     ],
                   ),
                 ),

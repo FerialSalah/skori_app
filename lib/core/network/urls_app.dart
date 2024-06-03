@@ -27,6 +27,7 @@ const FOLLOWING_LEAGUES_URL = "/follows/get-follows-tournaments";
 const FAVORITES_PLAYERS_URL = "/favorites/get-favorites-players";
 const FAVORITES_TEAMS_URL = "/favorites/get-favorites-teams";
 const FAVORITES_LEAGUES_URL = "/favorites/get-favorites-tournaments";
+const FAVORITES_NEWS_URL="/favorites/get-favorites-articles";
 const NOTIFICATIONS_URL = "/notifications";
 const TOGGLE_FOLLOW = "/follows/toggle-follow";
 const TOGGLE_FAVORITE = "/favorites/toggle-favorite";
@@ -50,6 +51,7 @@ const PAYMENT_URL="/payment";
 const AVAILABILITY_URL="/packages/availability";
 const MATCH_STATISTIC_URL="/matches/";
 const RECENT_MATCHES_URL="/matches/";
+
 
 
 

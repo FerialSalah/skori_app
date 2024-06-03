@@ -6,8 +6,6 @@ import 'package:skori/core/cubit/follow_cubit.dart';
 import 'package:skori/core/state/base_state.dart';
 import 'package:skori/core/widgets/loader.dart';
 import 'package:skori/generated/locale_keys.g.dart';
-import 'package:skori/modules/leagues_and_tabels/presentation/bloc/leagues_bloc.dart';
-import 'package:skori/modules/leagues_and_tabels/presentation/bloc/leagues_event.dart';
 
 import '../../app_storage/app_storage.dart';
 import '../../constant/app_assets.dart';

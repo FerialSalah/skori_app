@@ -1,5 +1,6 @@
 import 'dart:core';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skori/core/cubit/gallery/team_gallery_cubit.dart';
 import 'package:skori/core/cubit/player_league/player_leagues_cubit.dart';
 import 'package:skori/core/cubit/season/season_cubit.dart';
 import 'package:skori/modules/matches/presentation/bloc/match_statistics_bloc.dart';
@@ -8,8 +9,7 @@ import 'package:skori/modules/matches/presentation/bloc/recent_home_matches_bloc
 import 'package:skori/modules/players/presentation/bloc/history_bloc.dart';
 import 'package:skori/modules/players/presentation/bloc/player_info_bloc.dart';
 import 'package:skori/modules/players/presentation/bloc/player_statistics_bloc.dart';
-import 'package:skori/modules/players/presentation/widgets/player_statistics.dart';
-import 'package:skori/modules/teams/presentation/bloc/team_player_bloc.dart';
+import 'package:skori/modules/profile/presentation/bloc/favorites_list/news_favorite_bloc.dart';
 import '../../modules/authentication/presentation/bloc/forget_password/forget_password_bloc.dart';
 import '../../modules/authentication/presentation/bloc/login/login_bloc.dart';
 import '../../modules/authentication/presentation/bloc/reset_password/reset_password_bloc.dart';
@@ -17,7 +17,6 @@ import '../../modules/authentication/presentation/bloc/sign_up/bloc.dart';
 import '../../modules/authentication/presentation/bloc/social_cubit.dart';
 import '../../modules/leagues_and_tabels/presentation/bloc/leagues_bloc.dart';
 import '../../modules/leagues_and_tabels/presentation/bloc/leagues_event.dart';
-import '../../modules/matches/presentation/bloc/match_statistics_event.dart';
 import '../../modules/matches/presentation/bloc/previous_matches_bloc.dart';
 import '../../modules/nav_bar/presentation/bloc/home_bloc.dart';
 import '../../modules/nav_bar/presentation/bloc/home_event.dart';
@@ -85,7 +84,7 @@ class BlocProvidersList {
     BlocProvider<SeasonsCubit>(create: (_) => di.getIt<SeasonsCubit>()..getSeasons(),lazy: false,),
     BlocProvider<PlayerSeasonsCubit>(create: (_) => di.getIt<PlayerSeasonsCubit>()),
     BlocProvider<PlayerLeaguesCubit>(create: (_) => di.getIt<PlayerLeaguesCubit>()),
-
+    BlocProvider<TeamGalleryCubit>(create: (_) => di.getIt<TeamGalleryCubit>()),
     BlocProvider<TeamsBloc>(create: (_) => di.getIt<TeamsBloc>()..add(GetTeamsData())),
     BlocProvider<TeamsBloc>(create: (_) => di.getIt<TeamsBloc>()..add(GetFilterTeamsData())),
 
@@ -105,6 +104,7 @@ class BlocProvidersList {
     BlocProvider<FavoritesPlayersBloc>(create: (_) => di.getIt<FavoritesPlayersBloc>()..add(GetFavoritesPlayersData())),
     BlocProvider<FavoritesTeamsBloc>(create: (_) => di.getIt<FavoritesTeamsBloc>()..add(GetFavoritesTeamsData())),
     BlocProvider<FavoritesLeaguesBloc>(create: (_) => di.getIt<FavoritesLeaguesBloc>()..add(GetFavoritesLeaguesData())),
+    BlocProvider<FavoritesNewsBloc>(create: (_) => di.getIt<FavoritesNewsBloc>()..add(GetFavoritesNewsData())),
     BlocProvider<NotificationsBloc>(create: (_) => di.getIt<NotificationsBloc>()..add(GetNotificationsData())),
     BlocProvider<EditProfileBloc>(create: (_) => di.getIt<EditProfileBloc>()),
     BlocProvider<ChangePasswordBloc>(create: (_) => di.getIt<ChangePasswordBloc>()),

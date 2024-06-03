@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
@@ -68,7 +67,7 @@ class AuthDataSource extends BaseDataSourceAuth {
        }else{
          throw ExceptionServiceCallBack(massage: response.data['message']);
        }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print("e.message");
       print(e.message);
       print(e.response!.statusCode);
@@ -97,7 +96,7 @@ class AuthDataSource extends BaseDataSourceAuth {
       AppStorage.cacheToken(response.data['data']['user']['token']);
       // print(AppStorage.getUserModel.phone);
       return userModel;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw handleResponseError(e);
     }
 
@@ -121,7 +120,7 @@ class AuthDataSource extends BaseDataSourceAuth {
       }else {
         throw ExceptionServiceCallBack( massage: response.data['message'],);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw handleResponseError(e);
     }
 
@@ -149,7 +148,7 @@ class AuthDataSource extends BaseDataSourceAuth {
       }else{
         throw ExceptionServiceCallBack(massage: response.data['message']);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw handleResponseError(e);
     }
 

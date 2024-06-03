@@ -3,15 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/modules/leagues_and_tabels/presentation/widgets/league_card.dart';
 import 'package:skori/modules/profile/presentation/bloc/following_list/following_event.dart';
-import 'package:skori/modules/profile/presentation/bloc/following_list/player_follwing_bloc.dart';
 import '../../../../../core/state/base_state.dart';
 import '../../../../../core/widgets/empty.dart';
 import '../../../../../core/widgets/loader.dart';
 import '../../../../../core/widgets/offline_widget.dart';
 import '../../../../../core/widgets/shimmer_widget.dart';
 import '../../bloc/following_list/leagues_following_bloc.dart';
-import '../favourites/fav_leagues.dart';
-import '../favourites/fav_player_card.dart';
 
 class FollowingLeaguesList extends StatefulWidget {
   FollowingLeaguesList({Key? key,}) : super(key: key);

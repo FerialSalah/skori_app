@@ -1,13 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skori/core/network/urls_app.dart';
-import 'package:skori/modules/profile/data/model/my_packages_model.dart';
-import 'package:skori/modules/profile/data/model/package_model.dart';
 import '../../../../../core/app_storage/app_storage.dart';
-import '../../../../../core/dio_helper/dio_helper.dart';
 import '../../../../../core/network/network_checker.dart';
 import '../../../../../core/state/base_state.dart';
-import '../../../../../core/widgets/snack_bar.dart';
 
 
 class DeleteAccountCubit extends Cubit<BaseState>{

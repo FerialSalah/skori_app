@@ -1,5 +1,4 @@
 
-import 'package:skori/modules/leagues_and_tabels/domain/entity/leagues_entity.dart';
 import 'package:skori/modules/leagues_and_tabels/domain/entity/table_entity.dart';
 
 

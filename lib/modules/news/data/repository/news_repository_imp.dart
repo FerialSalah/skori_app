@@ -1,7 +1,6 @@
 
 import 'package:dartz/dartz.dart';
 import 'package:skori/modules/news/domain/entity/news_entity.dart';
-import 'package:skori/modules/teams/domain/entity/team_entity.dart';
 import '../../../../core/errors/exception.dart';
 import '../../../../core/errors/faliure.dart';
 import '../../../../core/network/network_checker.dart';

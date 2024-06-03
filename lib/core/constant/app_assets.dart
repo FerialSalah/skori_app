@@ -18,6 +18,8 @@ class AppIcons {
   static const String collapseClose = '$_iconPath/collapse_close.png';
   static const String confirm = '$_iconPath/confirm.png';
   static const String location = '$_iconPath/location.png';
+  static const String transfer = '$_iconPath/transfer.png';
+
 
 
 

@@ -5,7 +5,6 @@ import '../../constant/app_assets.dart';
 import '../../routes/navigator_push.dart';
 import '../../theme/color_app.dart';
 import '../../theme/textFont_app.dart';
-import '../icon/cart_badge.dart';
 import '../main_text.dart';
 
 class AppBars {

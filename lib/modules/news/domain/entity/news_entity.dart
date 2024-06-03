@@ -15,7 +15,7 @@ class NewsEntity extends Equatable {
   final String? leagueName;
   final int leagueId;
   final String leagueLogo;
-  final int? commentsCount;
+  final dynamic commentsCount;
   final bool? isFeatured;
   final bool? isProminent;
   final String? type;

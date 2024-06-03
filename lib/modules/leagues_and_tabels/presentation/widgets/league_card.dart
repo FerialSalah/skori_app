@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:skori/core/widgets/button/follow_button.dart';
 import '../../../../core/cubit/follow_cubit.dart';
-import '../../../../core/network/network_checker.dart';
 import '../../../../core/routes/navigator_push.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';

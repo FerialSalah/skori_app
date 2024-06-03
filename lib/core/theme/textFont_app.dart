@@ -1,5 +1,4 @@
 
-import '../constant/constants.dart';
 
 class TextFontApp {
   static String extraBoldFont = "LsExtraBold";

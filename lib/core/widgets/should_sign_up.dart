@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:skori/core/routes/navigator_push.dart';
 import 'package:skori/core/theme/textFont_app.dart';
-import 'package:skori/core/widgets/app_bar/app_bar_title.dart';
 import 'package:skori/core/widgets/button/button_app.dart';
 import 'package:skori/core/widgets/main_text.dart';
 import 'package:skori/generated/locale_keys.g.dart';

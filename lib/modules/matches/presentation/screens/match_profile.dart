@@ -1,19 +1,13 @@
 import 'dart:developer';
-import 'dart:io';
 
 import 'package:chewie/chewie.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/theme/textFont_app.dart';
 import 'package:skori/core/widgets/main_text.dart';
-import 'package:skori/modules/matches/presentation/widgets/match_app_bar.dart';
 import 'package:video_player/video_player.dart';
-import 'dart:async';
 
-import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../../../core/theme/color_app.dart';

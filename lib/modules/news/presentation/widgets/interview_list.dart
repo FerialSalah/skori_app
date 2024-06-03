@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/modules/news/presentation/bloc/interview_news_bloc.dart';
-import 'package:skori/modules/news/presentation/bloc/new_news_bloc.dart';
 
 import '../../../../core/state/base_state.dart';
 import '../../../../core/widgets/empty.dart';
 import '../../../../core/widgets/loader.dart';
 import '../../../../core/widgets/offline_widget.dart';
 import '../../../../core/widgets/shimmer_widget.dart';
-import '../bloc/news_bloc.dart';
 import '../bloc/news_event.dart';
 import 'news_card.dart';
 

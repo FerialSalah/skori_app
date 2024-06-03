@@ -4,14 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/modules/players/presentation/bloc/players_event.dart';
-import 'package:skori/modules/players/presentation/widgets/player_filter_statistics_sheet.dart';
 import 'package:skori/modules/players/presentation/widgets/player_new_statistic_card.dart';
 import 'package:skori/modules/players/presentation/widgets/player_performance_card.dart';
 import 'package:skori/modules/players/presentation/widgets/player_statistic_card.dart';
 import 'package:skori/modules/players/presentation/widgets/player_statistics_info.dart';
-import 'package:sliding_sheet/sliding_sheet.dart';
 
-import '../../../../core/constant/app_assets.dart';
 import '../../../../core/state/base_state.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
@@ -43,6 +40,7 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
       builder: (context, state) {
         final playerNewStatistics = BlocProvider.of<PlayerStatisticsBloc>(context)
             .playerNewStatisticsEntity;
+        //print("player new statistics: ${playerNewStatistics!.playerPerformance}");
         if (state is LoadingState) {
           return ColorLoader();
         } else if (state is SuccessState) {

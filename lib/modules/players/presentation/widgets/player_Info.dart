@@ -95,7 +95,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                             height: 10.h,
                                           ),
                                           Image.network(
-                                            playerInfo.teamEntity.logo,
+                                            playerInfo.teamEntity!=null? playerInfo.teamEntity!.logo:'',
                                             height: 25.h,
                                             width: 25.w,
                                           ),
@@ -124,7 +124,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Image.network(
-                                            playerInfo.teamEntity.countryFlag,
+                                            playerInfo.teamEntity!=null?     playerInfo.teamEntity!.countryFlag:"",
                                             height: 25.h,
                                             width: 25.w,
                                           ),
@@ -257,14 +257,14 @@ class _PlayerInfoState extends State<PlayerInfo> {
                               child: Column(
                                 children: [
                                   Image.network(
-                                    playerInfo!.teamEntity.logo,
+                                    playerInfo.teamEntity!=null?    playerInfo.teamEntity!.logo:"",
                                     width: 30,
                                   ),
                                   SizedBox(
                                     height: 7,
                                   ),
                                   MainText(
-                                    text: playerInfo.teamEntity.name.isNotEmpty ?playerInfo.teamEntity.name: "-",
+                                    text: playerInfo.teamEntity!=null ?playerInfo.teamEntity!.name: "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),

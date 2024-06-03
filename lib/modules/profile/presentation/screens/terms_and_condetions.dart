@@ -6,9 +6,7 @@ import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:skori/core/constant/app_assets.dart';
 import 'package:skori/core/cubit/setting/setting_cubit.dart';
 import 'package:skori/core/state/base_state.dart';
-import 'package:skori/core/theme/textFont_app.dart';
 import 'package:skori/core/widgets/loader.dart';
-import 'package:skori/core/widgets/main_text.dart';
 
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/widgets/app_bar/app_bar_title.dart';

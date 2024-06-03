@@ -1,6 +1,4 @@
-import 'package:skori/modules/matches/domain/entity/clean_sheets_no_entity.dart';
 import 'package:skori/modules/matches/domain/entity/corner_no_entity.dart';
-import 'package:skori/modules/matches/domain/entity/yellow_card_no_entity.dart';
 
 class CornerNoModel extends CornerNoEntity{
 

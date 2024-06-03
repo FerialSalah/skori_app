@@ -7,7 +7,6 @@ import 'package:skori/core/widgets/button/button_app.dart';
 import '../../../../core/constant/constants.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/widgets/main_text.dart';
-import '../../../../generated/locale_keys.g.dart';
 import '../bloc/delete_account/delete_account_cubit.dart';
 
 

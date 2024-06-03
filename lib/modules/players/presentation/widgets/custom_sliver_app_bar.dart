@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:skori/modules/nav_bar/presentation/widgets/filter_sheet.dart';
 import 'package:skori/modules/players/presentation/widgets/player_filter_statistics_sheet.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 import '../../../../core/app_storage/app_storage.dart';
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/routes/navigator_push.dart';
 import '../../../../core/theme/color_app.dart';
-import '../../../../core/widgets/button/button_app.dart';
 import '../../../../core/widgets/button/favorite_button.dart';
 import '../../../../core/widgets/button/follow_button.dart';
 

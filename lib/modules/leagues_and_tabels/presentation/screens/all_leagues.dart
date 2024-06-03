@@ -1,22 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/generated/locale_keys.g.dart';
 import 'package:skori/modules/leagues_and_tabels/presentation/bloc/leagues_bloc.dart';
 import 'package:skori/modules/leagues_and_tabels/presentation/bloc/leagues_event.dart';
-import '../../../../core/routes/navigator_push.dart';
 import '../../../../core/state/base_state.dart';
-import '../../../../core/theme/color_app.dart';
-import '../../../../core/theme/textFont_app.dart';
 import '../../../../core/widgets/app_bar/app_bar_title.dart';
 import '../../../../core/widgets/empty.dart';
 import '../../../../core/widgets/loader.dart';
-import '../../../../core/widgets/main_text.dart';
 import '../../../../core/widgets/offline_widget.dart';
 import '../../../../core/widgets/shimmer_widget.dart';
 import '../widgets/league_card.dart';
-import 'league_table.dart';
 
 
 class AllLeaguesScreen extends StatefulWidget {

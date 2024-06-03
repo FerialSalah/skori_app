@@ -32,7 +32,7 @@ class PlayersDataSource implements BasePlayersDataSource{
       print(teamId);
       print(result.data);
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -49,7 +49,7 @@ class PlayersDataSource implements BasePlayersDataSource{
       print(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -68,7 +68,7 @@ class PlayersDataSource implements BasePlayersDataSource{
       }else{
         throw ExceptionServiceCallBack(massage: result.data['message']);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -92,7 +92,7 @@ class PlayersDataSource implements BasePlayersDataSource{
       }else{
         throw ExceptionServiceCallBack(massage: result.data['message']);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -109,7 +109,7 @@ class PlayersDataSource implements BasePlayersDataSource{
       print(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -124,7 +124,7 @@ class PlayersDataSource implements BasePlayersDataSource{
       AllNewsModel response = AllNewsModel.fromJson(result.data);
 
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
 
       throw handleResponseError(e);
     }

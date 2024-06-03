@@ -1,27 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:skori/core/constant/app_assets.dart';
-import 'package:skori/core/cubit/setting/setting_cubit.dart';
-import 'package:skori/core/routes/navigator_push.dart';
-import 'package:skori/core/widgets/button/button_app.dart';
-import 'package:skori/core/widgets/dialog_app/change_package_dialog.dart';
-import 'package:skori/core/widgets/dialog_app/custom_dialog.dart';
-import 'package:skori/modules/profile/presentation/screens/packages.dart';
 import 'package:skori/modules/profile/presentation/widgets/manage_package_whatsup_widget.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../../../../core/state/base_state.dart';
-import '../../../../core/theme/color_app.dart';
-import '../../../../core/theme/textFont_app.dart';
 import '../../../../core/widgets/app_bar/app_bar_title.dart';
-import '../../../../core/widgets/dialog_app/dialog_app.dart';
-import '../../../../core/widgets/main_text.dart';
-import '../../../../core/widgets/offline_widget.dart';
-import '../../../../core/widgets/shimmer_widget.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../bloc/packages/my_packages_cubit.dart';
-import '../bloc/packages/subscribe_bloc.dart';
 
 class ManageYourPackageScreen extends StatefulWidget {
   const ManageYourPackageScreen({Key? key}) : super(key: key);

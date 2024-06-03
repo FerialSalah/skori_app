@@ -8,6 +8,7 @@ import 'package:skori/core/widgets/loader.dart';
 import 'package:skori/core/widgets/main_text.dart';
 import 'package:skori/generated/locale_keys.g.dart';
 import 'package:skori/modules/nav_bar/presentation/bloc/home_bloc.dart';
+import 'package:skori/modules/nav_bar/presentation/bloc/home_event.dart';
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/routes/navigator_push.dart';
 import '../../../../core/state/base_state.dart';
@@ -30,7 +31,16 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+
+    BlocProvider.of<HomeBloc>(context)..add(GetHomeData());
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

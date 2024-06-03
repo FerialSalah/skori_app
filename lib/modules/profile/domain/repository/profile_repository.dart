@@ -1,6 +1,6 @@
 
 import 'package:dartz/dartz.dart';
-import 'package:skori/modules/authentication/domain/entity/user_entity.dart';
+import 'package:skori/modules/news/domain/entity/news_entity.dart';
 import 'package:skori/modules/profile/domain/entity/notification_entity.dart';
 import 'package:skori/modules/teams/domain/entity/team_entity.dart';
 import '../../../../core/errors/faliure.dart';
@@ -21,6 +21,8 @@ abstract class ProfileRepository{
   Future<Either<Failure,List<TeamEntity>>> getFavoritesTeams(int page);
   Future<Either<Failure,List<PlayerEntity>>> getFavoritesPlayers(int page);
   Future<Either<Failure,List<LeagueEntity>>> getFavoritesLeagues(int page);
+  Future<Either<Failure,List<NewsEntity>>> getFavoritesNews(int page);
+
   Future<Either<Failure,List<NotificationEntity>>> getNotifications();
   Future<Either<Failure,Unit>> contactUs({required String name,required String email,required String message});
 

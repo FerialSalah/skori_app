@@ -32,7 +32,7 @@ class TeamsDataSource implements BaseTeamsDataSource{
       TeamsModel response = TeamsModel.fromJson(result.data);
 
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
 
       throw handleResponseError(e);
     }
@@ -45,7 +45,7 @@ class TeamsDataSource implements BaseTeamsDataSource{
       TeamsModel response = TeamsModel.fromJson(result.data);
 
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
 
       throw handleResponseError(e);
     }
@@ -58,7 +58,7 @@ class TeamsDataSource implements BaseTeamsDataSource{
       MatchesModel response = MatchesModel.fromJson(result.data);
        print(result.data);
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
 
       throw handleResponseError(e);
     }
@@ -66,18 +66,21 @@ class TeamsDataSource implements BaseTeamsDataSource{
   @override
   Future<TeamStatisticsModel> getTeamStatistics({required int id}) async{
     try {
+      print("team statistics url :${TEAMS_URL}/$id${STATISTICS_URL}");
       final result = await DioHelper.get("${TEAMS_URL}/$id${STATISTICS_URL}");
+      print(result.statusCode);
       if(result.statusCode==200||result.statusCode==201){
         TeamStatisticsModel response = TeamStatisticsModel.fromJson(result.data);
         return response;
       }else if(result.statusCode==401){
         throw ExceptionServiceCallBack(massage: LocaleKeys.shouldSignUp.tr());
-      }else{
+      }
+      else{
         throw ExceptionServiceCallBack(massage: result.data['message']);
       }
 
 
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       throw handleResponseError(e);
     }
   }
@@ -87,7 +90,7 @@ class TeamsDataSource implements BaseTeamsDataSource{
       final result = await DioHelper.get("${NEWS_URL}/$id${TEAM_NEWS_URL}");
       AllNewsModel response = AllNewsModel.fromJson(result.data);
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
 
       throw handleResponseError(e);
     }
@@ -101,7 +104,7 @@ class TeamsDataSource implements BaseTeamsDataSource{
       print(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);

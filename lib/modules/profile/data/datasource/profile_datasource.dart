@@ -4,6 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:skori/core/network/urls_app.dart';
 import 'package:skori/modules/leagues_and_tabels/data/model/leagues_model.dart';
+import 'package:skori/modules/news/data/model/news_model.dart';
 import 'package:skori/modules/profile/data/model/notification_model.dart';
 import '../../../../core/app_storage/app_storage.dart';
 import '../../../../core/dio_helper/dio_helper.dart';
@@ -26,6 +27,8 @@ abstract class BaseProfileDataSource{
    Future<PlayersModel> getFavoritesPlayers({required int page,});
    Future<TeamsModel> getFavoritesTeams({required int page,});
   Future<LeaguesModel> getFavoritesLeagues({required int page,});
+  Future<AllNewsModel> getFavoritesNews({required int page,});
+
   Future<NotificationsModel> getNotifications();
    Future<Unit> contactUs({required String name, required String email,required String message});
 
@@ -57,7 +60,7 @@ class ProfileDataSource implements BaseProfileDataSource{
       }else{
         throw ExceptionServiceCallBack(massage: response.data['message']);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print("e.message");
       print(e.message);
       print(e.response!.statusCode);
@@ -84,7 +87,7 @@ class ProfileDataSource implements BaseProfileDataSource{
       }else{
         throw ExceptionServiceCallBack(massage: response.data['message']);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print("e.message");
       print(e.message);
       print(e.response!.statusCode);
@@ -100,7 +103,7 @@ class ProfileDataSource implements BaseProfileDataSource{
       print(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
        print(runtimeType);
        print(e.response);
       throw handleResponseError(e);
@@ -115,7 +118,7 @@ class ProfileDataSource implements BaseProfileDataSource{
       print(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -130,7 +133,7 @@ class ProfileDataSource implements BaseProfileDataSource{
       print(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -145,7 +148,7 @@ class ProfileDataSource implements BaseProfileDataSource{
       print(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -160,7 +163,7 @@ class ProfileDataSource implements BaseProfileDataSource{
       print(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -174,7 +177,22 @@ class ProfileDataSource implements BaseProfileDataSource{
       LeaguesModel response = LeaguesModel.fromJson(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
+      print(runtimeType);
+      print(e.response);
+      throw handleResponseError(e);
+    }
+  }
+
+  @override
+  Future<AllNewsModel> getFavoritesNews({required int page}) async{
+    try {
+      final result = await DioHelper.get("${FAVORITES_NEWS_URL}?page=$page");
+      AllNewsModel response = AllNewsModel.fromJson(result.data);
+      print("stutaas========${result.statusCode}");
+      print("favorite news : ${response}");
+      return response;
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -189,7 +207,7 @@ class ProfileDataSource implements BaseProfileDataSource{
       print(result.data);
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -211,7 +229,7 @@ class ProfileDataSource implements BaseProfileDataSource{
       }else{
         throw ExceptionServiceCallBack(massage: response.data['message']);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
 
       throw handleResponseError(e);
     }

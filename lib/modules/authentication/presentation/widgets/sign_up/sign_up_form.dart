@@ -1,4 +1,6 @@
+
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -44,14 +46,17 @@ class _SignUpFormState extends State<SignUpForm> {
     showDatePicker(
         context: context,
         initialDate: DateTime.now(),
-        firstDate: DateTime(2000),
-        lastDate: DateTime(2030)
+        firstDate: DateTime(1900),
+        lastDate: DateTime(2030),
+      initialEntryMode: DatePickerEntryMode.calendarOnly,
+
     )
         .then((pickedDate) {
       if (pickedDate == null) return;
       setState(() {
         // AbsenceRequestCubit.get(context).dateController.text = reformatDate(pickedDate);
         print("Picked Date: "+pickedDate.toString());
+        widget.birthDateController.text=pickedDate.toString().substring(0,10);
       });
     });
   }

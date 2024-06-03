@@ -2,9 +2,7 @@
 import 'package:dio/dio.dart';
 import 'package:skori/core/network/urls_app.dart';
 import 'package:skori/modules/matches/data/model/statistics_model.dart';
-import 'package:skori/modules/nav_bar/data/model/home_model.dart';
 import 'package:skori/modules/nav_bar/data/model/matches_model.dart';
-import '../../../../../core/app_storage/app_storage.dart';
 import '../../../../../core/dio_helper/dio_helper.dart';
 import '../../../../../core/errors/exception.dart';
 
@@ -31,7 +29,7 @@ class MatchStatisticsDataSource implements BaseMatchStatisticsDataSource{
       print(response.possession![0].value);
 
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -49,7 +47,7 @@ class MatchStatisticsDataSource implements BaseMatchStatisticsDataSource{
       print(response);
 
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);
@@ -67,7 +65,7 @@ class MatchStatisticsDataSource implements BaseMatchStatisticsDataSource{
       print("matchs recents :$response");
 
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       print("eeeeeeeerrroooooor");

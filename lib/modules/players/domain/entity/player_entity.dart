@@ -19,7 +19,7 @@ class PlayerEntity extends Equatable {
   final String clubShirtNumber;
   final String countryName;
   final String countryLogo;
-  final TeamEntity teamEntity;
+  final TeamEntity? teamEntity;
   final String position;
   final bool isFollow;
   final bool isFavourite;

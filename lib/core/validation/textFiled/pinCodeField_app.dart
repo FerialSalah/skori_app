@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../theme/color_app.dart';

@@ -51,8 +51,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     DioHelper.lang=context.locale.languageCode;
     return ScreenUtilInit(
-      designSize: Size(375, 812),
-      //Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height),
+      designSize:
+      //Size(375, 812),
+      Size(MediaQuery.of(context).size.width, MediaQuery.of(context).size.height),
       builder: (context,child)=>MultiBlocProvider(
         providers: BlocProvidersList.providersList,
         child: MaterialApp(

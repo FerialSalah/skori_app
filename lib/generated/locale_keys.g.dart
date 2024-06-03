@@ -164,5 +164,7 @@ abstract class  LocaleKeys {
   static const messageUs = 'messageUs';
   static const matchDetails = 'matchDetails';
   static const beta = 'beta';
+  static const gallery = 'gallery';
+  static const packageUnavailable = 'packageUnavailable';
 
 }

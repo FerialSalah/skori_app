@@ -4,7 +4,6 @@ import '../../../../../core/routes/navigator_push.dart';
 import '../../../../../core/theme/color_app.dart';
 import '../../../../../core/theme/textFont_app.dart';
 import '../../../../../core/widgets/button/favorite_button.dart';
-import '../../../../../core/widgets/button/follow_button.dart';
 import '../../../../../core/widgets/main_text.dart';
 import '../../../../leagues_and_tabels/presentation/screens/league_table.dart';
 

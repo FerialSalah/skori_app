@@ -3,12 +3,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:skori/modules/nav_bar/presentation/bloc/matches_bloc.dart';
 
 import '../../../../../core/theme/color_app.dart';
 import '../../generated/locale_keys.g.dart';
-import '../../modules/teams/data/model/team_model.dart';
 import '../../modules/teams/domain/entity/team_entity.dart';
 import '../theme/textFont_app.dart';
 import 'main_text.dart';

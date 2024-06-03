@@ -27,7 +27,7 @@ class MyPackagesCubit extends Cubit<BaseState>{
           print("====================ccccccccc");
           emit(ErrorState(msg: ''));
         }
-      } catch (e, s) {
+      } catch (e) {
         print("====================jjjjjj");
         emit(ErrorState(msg: ''));
       }

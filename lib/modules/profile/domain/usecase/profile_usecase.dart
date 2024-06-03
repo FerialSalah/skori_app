@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:skori/modules/leagues_and_tabels/domain/entity/leagues_entity.dart';
+import 'package:skori/modules/news/domain/entity/news_entity.dart';
 import 'package:skori/modules/profile/domain/entity/notification_entity.dart';
 import 'package:skori/modules/teams/domain/entity/team_entity.dart';
 import '../../../../core/errors/faliure.dart';
@@ -48,7 +49,9 @@ class ProfileUseCase{
   Future<Either<Failure,List<LeagueEntity>>> getFavoritesLeagues(int page)async{
     return await profileRepository.getFavoritesLeagues(page);
   }
-
+  Future<Either<Failure,List<NewsEntity>>> getFavoritesNews(int page)async{
+    return await profileRepository.getFavoritesNews(page);
+  }
   Future<Either<Failure,List<NotificationEntity>>> getNotifications()async{
     return await profileRepository.getNotifications();
   }

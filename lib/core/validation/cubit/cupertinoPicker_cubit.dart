@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CupertinoPickerCubit extends Cubit<dynamic?> {
+class CupertinoPickerCubit extends Cubit<dynamic> {
   String? selectedPicker;
   int indexSelector = 0;
   int? rangSelected;

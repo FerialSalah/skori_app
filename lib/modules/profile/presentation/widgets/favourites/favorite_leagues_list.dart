@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:skori/modules/leagues_and_tabels/presentation/widgets/league_card.dart';
 import 'package:skori/modules/profile/presentation/bloc/favorites_list/favorites_event.dart';
 import 'package:skori/modules/profile/presentation/bloc/favorites_list/leagues_favourits_bloc.dart';
 import '../../../../../core/state/base_state.dart';

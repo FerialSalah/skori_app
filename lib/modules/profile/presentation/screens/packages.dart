@@ -1,24 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:skori/core/state/base_state.dart';
-import 'package:skori/core/theme/textFont_app.dart';
-import 'package:skori/core/widgets/button/button_app.dart';
-import 'package:skori/core/widgets/loader.dart';
-import 'package:skori/core/widgets/main_text.dart';
-import 'package:skori/core/widgets/offline_widget.dart';
-import 'package:skori/core/widgets/shimmer_widget.dart';
-import 'package:skori/modules/profile/presentation/bloc/packages/payment_cubit.dart';
-import 'package:skori/modules/profile/presentation/bloc/packages/subscribe_bloc.dart';
 import 'package:skori/modules/profile/presentation/widgets/manage_package_whatsup_widget.dart';
 
-import '../../../../core/routes/navigator_push.dart';
-import '../../../../core/theme/color_app.dart';
 import '../../../../core/widgets/app_bar/app_bar_title.dart';
 import '../../../../generated/locale_keys.g.dart';
-import '../../../../webview_test.dart';
-import '../bloc/packages/packages_bloc.dart';
 
 class PackagesScreen extends StatelessWidget {
   const PackagesScreen({Key? key}) : super(key: key);

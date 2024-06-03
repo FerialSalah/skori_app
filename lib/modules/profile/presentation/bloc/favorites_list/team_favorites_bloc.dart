@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:skori/modules/players/domain/entity/player_entity.dart';
 import 'package:skori/modules/teams/domain/entity/team_entity.dart';
 import '../../../../../core/errors/faliure.dart';
 import '../../../../../core/state/base_state.dart';

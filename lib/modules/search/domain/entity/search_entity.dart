@@ -4,7 +4,6 @@ import 'package:skori/modules/leagues_and_tabels/domain/entity/leagues_entity.da
 import 'package:skori/modules/news/domain/entity/news_entity.dart';
 import 'package:skori/modules/players/domain/entity/player_entity.dart';
 import 'package:skori/modules/teams/domain/entity/team_entity.dart';
-import 'package:skori/modules/teams/presentation/bloc/team_event.dart';
 
 
 class SearchEntity extends Equatable {

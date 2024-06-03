@@ -4,7 +4,6 @@ import 'package:skori/modules/profile/data/model/package_model.dart';
 import '../../../../../core/dio_helper/dio_helper.dart';
 import '../../../../../core/network/network_checker.dart';
 import '../../../../../core/state/base_state.dart';
-import '../../../../../core/widgets/snack_bar.dart';
 
 
 class PackagesCubit extends Cubit<BaseState>{
@@ -29,7 +28,7 @@ class PackagesCubit extends Cubit<BaseState>{
           print("====================ccccccccc");
           emit(ErrorState(msg: ''));
         }
-      } catch (e, s) {
+      } catch (e) {
         print("====================jjjjjj");
         emit(ErrorState(msg: ''));
       }

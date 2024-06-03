@@ -24,7 +24,7 @@ class ExceptionOffline implements Exception {}
 class ExceptionEmptyCache implements Exception {}
 
 
-Exception handleResponseError(DioError e) {
+Exception handleResponseError(DioException e) {
   if (e.response != null) {
     if (e.response!.statusCode == 404) {
       return ExceptionServiceCallBack(massage: "404 : Service Not found");

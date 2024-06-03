@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/modules/players/domain/entity/player_new_statistics_entity.dart';
-import 'package:skori/modules/players/domain/entity/player_statistics_entity.dart';
 
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/theme/color_app.dart';

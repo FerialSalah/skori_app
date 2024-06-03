@@ -1,7 +1,6 @@
 
 import 'package:dio/dio.dart';
 import 'package:skori/core/network/urls_app.dart';
-import '../../../../core/app_storage/app_storage.dart';
 import '../../../../core/dio_helper/dio_helper.dart';
 import '../../../../core/errors/exception.dart';
 import '../model/news_model.dart';
@@ -28,7 +27,7 @@ class NewsDataSource implements BaseNewsDataSource{
 
       print("news data :${result.data}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
        print(runtimeType);
        print(e.response);
       throw handleResponseError(e);
@@ -60,11 +59,16 @@ class NewsDataSource implements BaseNewsDataSource{
      }else if(result.statusCode==403){
        throw ExceptionServiceCallBack(massage: result.data["data"]);
      }else if(result.statusCode==401){
+       print("its 401");
        throw ExceptionServiceCallBack(massage: result.data["message"]);
+     } else if(result.statusCode==422) {
+       print("its 422");
+       throw ExceptionServiceCallBack(massage: result.data["message"]);
+
      }else{
        throw ExceptionServiceCallBack(massage: "404 : Service Not found");
      }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e);
       throw handleResponseError(e);

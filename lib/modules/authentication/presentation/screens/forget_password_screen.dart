@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/state/base_state.dart';
 import 'package:skori/core/widgets/hud_loader.dart';
 import 'package:skori/modules/authentication/presentation/bloc/forget_password/forget_password_bloc.dart';
-import 'package:skori/modules/authentication/presentation/screens/otp_screen.dart';
 import 'package:skori/modules/authentication/presentation/screens/reset_password_screen.dart';
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/routes/navigator_push.dart';

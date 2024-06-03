@@ -23,6 +23,7 @@ class _AllNewsListState extends State<AllNewsList> {
 
   @override
   void initState() {
+    BlocProvider.of<NewsBloc>(context);
     scrollController.addListener(() async {
       if (scrollController.position.pixels ==
           scrollController.position.maxScrollExtent) {
@@ -62,6 +63,8 @@ class _AllNewsListState extends State<AllNewsList> {
                         isTeam: false,
                         newsEntity: result[index],
                         isPlayer: false,
+                        //isFavorite: result[index].isFavorite,
+
                       ),
                       separatorBuilder: (context,_)=>SizedBox(height: 10.h,),
                       itemCount: result.length),

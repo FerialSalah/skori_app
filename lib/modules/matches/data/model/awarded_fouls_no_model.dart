@@ -1,5 +1,4 @@
 import 'package:skori/modules/matches/domain/entity/awarded_fouls_no_entity.dart';
-import 'package:skori/modules/matches/domain/entity/crosses_open_play_no_entity.dart';
 
 class AwardFoulsNoModel extends AwardFoulsNoEntity{
   AwardFoulsNoModel({

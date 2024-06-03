@@ -7,16 +7,11 @@ import 'color_app.dart';
 ThemeData getApplicationTheme() {
   return ThemeData(
     //Main app colors
-    primaryColor: ColorApp.primary, //Primary color for app
-    errorColor: ColorApp.error, //Error color for app
+    primaryColor: ColorApp.primary, //Error color for app
     disabledColor: ColorApp.hintGray, //Disabled color for widgets
     fontFamily: "Cairo",
-    splashColor: ColorApp.primary, //Splash color for widgets
-    backgroundColor: ColorApp.white, //Background color for widgets
-    scaffoldBackgroundColor: ColorApp.background, //Background color for scaffold
-    colorScheme: ThemeData().colorScheme.copyWith(
-          primary: ColorApp.primary,
-        ),
+    splashColor: ColorApp.primary, //Background color for widgets
+    scaffoldBackgroundColor: ColorApp.background,
     canvasColor: Colors.transparent,
     progressIndicatorTheme: ProgressIndicatorThemeData(
       color: ColorApp.primary,
@@ -57,7 +52,9 @@ ThemeData getApplicationTheme() {
       ),
       contentPadding: const EdgeInsets.all(
           AppPadding.contentPadding), //Content padding for input fields
-    ),
+    ), colorScheme: ThemeData().colorScheme.copyWith(
+          primary: ColorApp.primary,
+        ).copyWith(surface: ColorApp.white).copyWith(error: ColorApp.error),
 
     //Text theme
     // textTheme: TextTheme(

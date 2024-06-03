@@ -1,5 +1,4 @@
 // part of 'update_profile_bloc.dart';
-import 'package:equatable/equatable.dart';
 
 abstract class ChangePasswordState  {}
 

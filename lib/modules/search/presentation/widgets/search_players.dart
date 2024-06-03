@@ -36,7 +36,8 @@ class SearchPlayers extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   RouteManager.navigateTo(PlayerProfile(id:players[index].id, name: players[index].name,
-                    avatar: players[index].avatar, clubLogo: players[index].teamEntity.logo, clubName:players[index].teamEntity.name ,
+                    avatar: players[index].avatar, clubLogo: players[index].teamEntity!.logo,
+                    clubName:players[index].teamEntity!.name ,
                     isFollow: players[index].isFollow, isFav: players[index].isFavourite,
                   ));
                 },
@@ -100,7 +101,7 @@ class SearchPlayers extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Image.network(
-                            players[index].teamEntity.logo,
+                            players[index].teamEntity!=null?players[index].teamEntity!.logo:"",
                             width: 20,
                             height: 25,
                           ),
@@ -110,7 +111,7 @@ class SearchPlayers extends StatelessWidget {
                           SizedBox(
                             width: 100,
                             child: MainText(
-                              text: players[index].teamEntity.name,
+                              text:  players[index].teamEntity!=null? players[index].teamEntity!.name:"",
                               font: 12,
                               overflow: TextOverflow.ellipsis,
                               family: TextFontApp.extraBoldFont,

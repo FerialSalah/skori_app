@@ -1,5 +1,4 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +17,6 @@ import 'package:skori/modules/news/presentation/bloc/add_comment_cubit.dart';
 import 'package:skori/modules/news/presentation/bloc/comment_cubit.dart';
 import 'package:skori/modules/news/presentation/bloc/news_event.dart';
 import '../../../../core/app_storage/app_storage.dart';
-import '../../../../core/injection/injection_app.dart' as di;
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/widgets/images/cached_network_image.dart';
@@ -376,7 +374,24 @@ class _NewsDetailsScreenState extends State<NewsDetailsScreen> {
                 } else if (state is OfflineState) {
                   return OfflinePage();
                 }else if(state is ErrorState){
-                  return ShouldSignUp();
+                  if(AppStorage.isLogged) return Center(child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.not_interested_outlined,color: ColorApp.error,size: 40,),
+                     SizedBox(
+                       height: 10.h,
+                     ),
+                      MainText(
+                        text: LocaleKeys.packageUnavailable.tr(),
+                        font: 15,
+                        family: TextFontApp.boldFont,
+                        center: true,
+                      ),
+                    ],
+                  ));
+                    return ShouldSignUp();
+
+
                 }else {
                   return Text("Server error");
                 }

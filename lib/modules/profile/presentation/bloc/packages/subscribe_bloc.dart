@@ -2,7 +2,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skori/generated/locale_keys.g.dart';
-import 'package:skori/modules/profile/presentation/bloc/packages/payment_cubit.dart';
 import 'package:skori/webview_test.dart';
 import '../../../../../core/dio_helper/dio_helper.dart';
 import '../../../../../core/network/network_checker.dart';
@@ -10,7 +9,6 @@ import '../../../../../core/network/urls_app.dart';
 import '../../../../../core/routes/navigator_push.dart';
 import '../../../../../core/state/base_state.dart';
 import '../../../../../core/widgets/snack_bar.dart';
-import '../../screens/packages.dart';
 
 
 class SubscribeCubit extends Cubit<BaseState> {
@@ -44,7 +42,7 @@ class SubscribeCubit extends Cubit<BaseState> {
         }else{
           emit(ErrorState(msg: ""));
         }
-      } catch (e, s) {
+      } catch (e) {
        print(e.toString());
        showSnackBar(e.toString());
         emit(ErrorState(msg: ''));

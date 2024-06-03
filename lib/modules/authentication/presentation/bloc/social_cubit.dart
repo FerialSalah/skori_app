@@ -1,8 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skori/core/network/urls_app.dart';
 import 'package:skori/core/routes/navigator_push.dart';
 import 'package:skori/modules/nav_bar/presentation/screens/nav_bar.dart';
-import 'package:skori/modules/profile/data/model/my_packages_model.dart';
 import '../../../../../core/dio_helper/dio_helper.dart';
 import '../../../../../core/network/network_checker.dart';
 import '../../../../../core/state/base_state.dart';
@@ -36,7 +34,7 @@ class SocialLoginCubit extends Cubit<BaseState>{
           print("====================ccccccccc");
           emit(ErrorState(msg: ''));
         }
-      } catch (e, s) {
+      } catch (e) {
         print("====================jjjjjj");
         emit(ErrorState(msg: ''));
       }
@@ -63,7 +61,7 @@ class SocialLoginCubit extends Cubit<BaseState>{
           print("====================ccccccccc");
           emit(ErrorState(msg: ''));
         }
-      } catch (e, s) {
+      } catch (e) {
         print("====================jjjjjj");
         emit(ErrorState(msg: ''));
       }

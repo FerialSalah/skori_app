@@ -15,6 +15,7 @@ class CustomSliverLogo extends StatelessWidget {
   final String? clubLogo;
   final String? clubName;
   final List<String> tabsTitle;
+
   const CustomSliverLogo(
       {super.key,
       required this.logo,
@@ -25,7 +26,8 @@ class CustomSliverLogo extends StatelessWidget {
       this.tabController,
       required this.expandedHeight,
       required this.tabsTitle,
-      required this.season});
+      required this.season,
+      });
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
@@ -130,6 +132,9 @@ class CustomSliverLogo extends StatelessWidget {
             Tab(
               text: tabsTitle[3],
             ),
+            // Tab(
+            //   text: tabsTitle[4],
+            // ),
           ],
         ),
       ),

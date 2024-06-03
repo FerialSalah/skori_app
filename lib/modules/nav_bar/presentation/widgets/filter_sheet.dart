@@ -11,7 +11,6 @@ import 'package:skori/core/theme/textFont_app.dart';
 import 'package:skori/core/widgets/main_text.dart';
 import 'package:skori/modules/leagues_and_tabels/presentation/bloc/leagues_bloc.dart';
 import 'package:skori/modules/nav_bar/presentation/bloc/matches_bloc.dart';
-import 'package:skori/modules/teams/data/model/team_model.dart';
 import 'package:skori/modules/teams/presentation/bloc/team_bloc.dart';
 import 'package:skori/modules/teams/presentation/bloc/team_event.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -21,7 +20,6 @@ import '../../../../core/widgets/button/button_app.dart';
 import '../../../../core/widgets/drop_down_text_field.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../bloc/matches_event.dart';
-import '../../../../core/injection/injection_app.dart' as di;
 
 class FilterSheet extends StatefulWidget {
   FilterSheet({

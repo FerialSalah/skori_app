@@ -1,10 +1,7 @@
 
-import 'package:skori/modules/news/domain/entity/news_entity.dart';
 import 'package:skori/modules/players/data/model/fifa_card_model.dart';
-import 'package:skori/modules/players/domain/entity/fifa_card_entity.dart';
 import 'package:skori/modules/players/domain/entity/player_entity.dart';
 import 'package:skori/modules/teams/data/model/team_model.dart';
-import 'package:skori/modules/teams/domain/entity/team_entity.dart';
 
 class PlayersModel {
   PlayersModel({
@@ -59,7 +56,7 @@ class PlayerModel extends PlayerEntity {
     position: json["position"],
     isFollow: json["is_follow"],
     isFavourite: json["is_favorite"],
-    teamEntity: TeamModel.fromJson(json['team']),
+    teamEntity: json['team'] != null ?TeamModel.fromJson(json['team']):null,
     fifaCardEntity: FifaCardModel.fromJson(json['fifa_card'])
 
   );

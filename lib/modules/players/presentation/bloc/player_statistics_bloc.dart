@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:skori/modules/players/domain/entity/player_entity.dart';
 import 'package:skori/modules/players/domain/usecase/player_usecase.dart';
 import 'package:skori/modules/players/presentation/bloc/players_event.dart';
 import '../../../../../core/errors/faliure.dart';

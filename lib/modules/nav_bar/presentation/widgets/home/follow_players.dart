@@ -58,8 +58,8 @@ class FollowPlayers extends StatelessWidget {
                         id: players[index].id,
                         name: players[index].name,
                         avatar: players[index].avatar,
-                        clubName: players[index].teamEntity.name,
-                        clubLogo: players[index].teamEntity.logo,
+                        clubName: players[index].teamEntity!.name,
+                        clubLogo: players[index].teamEntity!.logo,
                         isFollow: players[index].isFollow,
                         isFav: players[index].isFavourite,
                       ));
@@ -130,7 +130,7 @@ class FollowPlayers extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Image.network(
-                                  players[index].teamEntity.logo,
+                                  players[index].teamEntity!.logo,
                                   width: 20,
                                 ),
                                 SizedBox(
@@ -139,7 +139,7 @@ class FollowPlayers extends StatelessWidget {
                                 SizedBox(
                                   width: 100.w,
                                   child: MainText(
-                                    text: players[index].teamEntity.name,
+                                    text: players[index].teamEntity!.name,
                                     font: 12,
                                     overflow: TextOverflow.clip,
                                     center: true,

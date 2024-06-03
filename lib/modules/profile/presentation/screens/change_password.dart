@@ -10,8 +10,6 @@ import 'package:skori/modules/profile/presentation/bloc/change_password/event.da
 import 'package:skori/modules/profile/presentation/bloc/change_password/state.dart';
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/routes/navigator_push.dart';
-import '../../../../core/state/base_state.dart';
-import '../../../../core/theme/color_app.dart';
 import '../../../../core/validation/validations.dart';
 import '../../../../core/widgets/app_bar/app_bar_title.dart';
 import '../../../../core/widgets/customTextFeild.dart';

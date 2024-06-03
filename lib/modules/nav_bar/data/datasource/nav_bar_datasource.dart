@@ -2,7 +2,6 @@
 import 'package:dio/dio.dart';
 import 'package:skori/core/network/urls_app.dart';
 import 'package:skori/modules/nav_bar/data/model/home_model.dart';
-import '../../../../core/app_storage/app_storage.dart';
 import '../../../../core/dio_helper/dio_helper.dart';
 import '../../../../core/errors/exception.dart';
 import '../model/matches_model.dart';
@@ -28,7 +27,7 @@ class NavBarDataSource implements BaseNavBarDataSource{
       MatchesModel response = MatchesModel.fromJson(result.data);
 
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
        print(runtimeType);
        print(e.response);
       throw handleResponseError(e);
@@ -45,7 +44,7 @@ class NavBarDataSource implements BaseNavBarDataSource{
       print("home matches:${response.liveMatches.length}");
       print("stutaas========${result.statusCode}");
       return response;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
       throw handleResponseError(e);

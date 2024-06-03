@@ -2,8 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skori/core/routes/navigator_push.dart';
-import '';
-import 'package:skori/core/injection/injection_app.dart' as di;
 
 import '../../modules/leagues_and_tabels/presentation/bloc/leagues_bloc.dart';
 import '../../modules/leagues_and_tabels/presentation/bloc/leagues_event.dart';

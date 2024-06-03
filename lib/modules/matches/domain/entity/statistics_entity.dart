@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:skori/modules/matches/domain/entity/PassessionEntity.dart';
 import 'package:skori/modules/matches/domain/entity/assists_no_entity.dart';
+import 'package:skori/modules/matches/domain/entity/attempts_accuracy_entity.dart';
 import 'package:skori/modules/matches/domain/entity/awarded_fouls_no_entity.dart';
 import 'package:skori/modules/matches/domain/entity/clean_sheets_no_entity.dart';
 import 'package:skori/modules/matches/domain/entity/committed_fouls_no_entity.dart';
@@ -10,6 +11,7 @@ import 'package:skori/modules/matches/domain/entity/goals_no_entity.dart';
 import 'package:skori/modules/matches/domain/entity/long_pass_no_entity.dart';
 import 'package:skori/modules/matches/domain/entity/offside_no_entity.dart';
 import 'package:skori/modules/matches/domain/entity/own_goals_no_entity.dart';
+import 'package:skori/modules/matches/domain/entity/passes_accuracy_entity.dart';
 import 'package:skori/modules/matches/domain/entity/passes_no_entity.dart';
 import 'package:skori/modules/matches/domain/entity/planties_missed_no_entity.dart';
 import 'package:skori/modules/matches/domain/entity/planties_no_entity.dart';
@@ -42,6 +44,8 @@ class StatisticsEntity extends Equatable{
  List<CrossesNoEntity> crossesNo;
   List<CrossSetPiecesNoEntity>? crossSetPiecesNo;
   List<ExpectedGoalsAgainstNoEntity>? expectedGoalsAgainstNo;
+  List<PassesAccuracyEntity>? passesAccuracy;
+  List<AttemptsAccuracyEntity>? attemptsAccuracy;
 
   StatisticsEntity( {
     required this.possession,
@@ -63,7 +67,10 @@ class StatisticsEntity extends Equatable{
     required this.offsideNo,
     required this.crossesNo,
     required this.crossSetPiecesNo,
-    required this.expectedGoalsAgainstNo
+    required this.expectedGoalsAgainstNo,
+    required this.passesAccuracy,
+    required this.attemptsAccuracy,
+
 
 
   });

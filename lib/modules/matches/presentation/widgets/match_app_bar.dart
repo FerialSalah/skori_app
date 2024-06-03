@@ -52,11 +52,11 @@ class MatchAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      expandedHeight: 250.h,
+      expandedHeight: 275.h,
       pinned: true,
       backgroundColor: ColorApp.primary,
       leadingWidth: 60,
-      toolbarHeight: 50,
+      toolbarHeight: 60,
       elevation: 0,
       leading: GestureDetector(
           onTap: () {

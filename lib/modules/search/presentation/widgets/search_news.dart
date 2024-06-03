@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/routes/navigator_push.dart';
-import 'package:skori/core/widgets/empty.dart';
-import '../../../../../core/constant/app_assets.dart';
 import '../../../../../core/theme/color_app.dart';
 import '../../../../../core/theme/textFont_app.dart';
 import '../../../../../core/widgets/images/cached_network_image.dart';

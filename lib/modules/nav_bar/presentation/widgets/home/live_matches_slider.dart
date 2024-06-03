@@ -1,24 +1,22 @@
-import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/app_storage/app_storage.dart';
-import 'package:skori/core/widgets/empty.dart';
 import 'package:skori/modules/authentication/presentation/screens/login_screen.dart';
 import 'package:skori/modules/nav_bar/data/model/matches_model.dart';
+import 'package:skori/modules/nav_bar/domain/entity/match_entity.dart';
 import '../../../../../core/constant/app_assets.dart';
 import '../../../../../core/routes/navigator_push.dart';
 import '../../../../../core/theme/color_app.dart';
 import '../../../../../core/theme/textFont_app.dart';
 import '../../../../../core/widgets/main_text.dart';
-import '../../../../../core/widgets/should_sign_up.dart';
 import '../../../../../generated/locale_keys.g.dart';
 import '../../../../matches/presentation/screens/statistics_screen.dart';
 
 class LiveMatchesSlider extends StatelessWidget {
-   final List<MatchModel> matches;
+   final List<MatchEntity> matches;
   const LiveMatchesSlider({Key? key, required this.matches}) : super(key: key);
 
   @override

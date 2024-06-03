@@ -4,12 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/constant/constants.dart';
 import 'package:skori/core/routes/navigator_push.dart';
 import 'package:skori/core/widgets/button/favorite_button.dart';
-import 'package:skori/modules/players/presentation/bloc/history_bloc.dart';
-import 'package:skori/modules/players/presentation/bloc/player_news_bloc.dart';
-import 'package:skori/modules/players/presentation/bloc/players_event.dart';
 import 'package:skori/modules/players/presentation/screens/player_profile.dart';
-import 'package:skori/modules/players/presentation/screens/player_profile_statistics_screen.dart';
-import 'package:skori/modules/players/presentation/widgets/player_new_statistics.dart';
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/cubit/favorite_cubit.dart';
 import '../../../../core/cubit/follow_cubit.dart';
@@ -19,7 +14,6 @@ import '../../../../core/widgets/button/follow_button.dart';
 import '../../../../core/widgets/images/cached_network_image.dart';
 import '../../../../core/widgets/main_text.dart';
 import '../../../../core/injection/injection_app.dart' as di;
-import '../bloc/player_info_bloc.dart';
 import '../bloc/player_statistics_bloc.dart';
 
 class PlayerCard extends StatelessWidget {
