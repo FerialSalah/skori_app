@@ -1,10 +1,10 @@
 class GalleryModel {
-  List<String>? data;
+  List? data;
 
-  GalleryModel({this.data});
+  GalleryModel({required this.data});
 
   GalleryModel.fromJson(Map<String, dynamic> json) {
-    data = json['data'].cast<String>();
+    data =  json['data'].cast<String>();
   }
 
   Map<String, dynamic> toJson() {

@@ -1,5 +1,8 @@
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:skori/core/cubit/gallery/league_gallery_cubit.dart';
+import 'package:skori/core/cubit/gallery/match_gallery_cubit.dart';
+import 'package:skori/core/cubit/gallery/player_gallery_cubit.dart';
 import 'package:skori/core/cubit/gallery/team_gallery_cubit.dart';
 import 'package:skori/core/cubit/gender_cubit.dart';
 import 'package:skori/core/cubit/player_league/player_leagues_cubit.dart';
@@ -10,6 +13,10 @@ import 'package:skori/modules/leagues_and_tabels/data/datasource/leagues_datasou
 import 'package:skori/modules/leagues_and_tabels/data/repository/leagues_repository_imp.dart';
 import 'package:skori/modules/leagues_and_tabels/domain/repository/leagues_repository.dart';
 import 'package:skori/modules/leagues_and_tabels/domain/usecase/leagues_usecase.dart';
+import 'package:skori/modules/leagues_and_tabels/presentation/bloc/league_discipline_bloc.dart';
+import 'package:skori/modules/leagues_and_tabels/presentation/bloc/league_performance_bloc.dart';
+import 'package:skori/modules/leagues_and_tabels/presentation/bloc/league_top_assists_bloc.dart';
+import 'package:skori/modules/leagues_and_tabels/presentation/bloc/league_top_scores_bloc.dart';
 import 'package:skori/modules/leagues_and_tabels/presentation/bloc/leagues_bloc.dart';
 import 'package:skori/modules/matches/data/datasource/matc_statistic_data_source.dart';
 import 'package:skori/modules/matches/data/repository/match_statistics_repository_imp.dart';
@@ -41,6 +48,7 @@ import 'package:skori/modules/profile/data/datasource/profile_datasource.dart';
 import 'package:skori/modules/profile/data/repository/profile_repository_imp.dart';
 import 'package:skori/modules/profile/domain/repository/profile_repository.dart';
 import 'package:skori/modules/profile/domain/usecase/profile_usecase.dart';
+import 'package:skori/modules/profile/presentation/bloc/delete_notification/delete_notification_bloc.dart';
 import 'package:skori/modules/profile/presentation/bloc/favorites_list/player_favorites_bloc.dart';
 import 'package:skori/modules/profile/presentation/bloc/favorites_list/team_favorites_bloc.dart';
 import 'package:skori/modules/profile/presentation/bloc/following_list/player_follwing_bloc.dart';
@@ -55,6 +63,10 @@ import 'package:skori/modules/teams/domain/repository/team_repository.dart';
 import 'package:skori/modules/teams/domain/usecase/team_usecase.dart';
 import 'package:skori/modules/teams/presentation/bloc/team_bloc.dart';
 import 'package:skori/modules/teams/presentation/bloc/team_news_bloc.dart';
+import 'package:skori/modules/transfers/data/datasource/transfer_datasource.dart';
+import 'package:skori/modules/transfers/data/repository/transfer_repository_imp.dart';
+import 'package:skori/modules/transfers/domain/usecase/transfer_usecase.dart';
+import 'package:skori/modules/transfers/presentaion/bloc/transfers_bloc.dart';
 import '../../modules/authentication/data/datasource/auth_dataSource.dart';
 import '../../modules/authentication/data/datasource/base_dataSoruce_auth.dart';
 import '../../modules/authentication/data/repository/imp_repo_auth.dart';
@@ -63,6 +75,7 @@ import '../../modules/authentication/domain/usecase/auth_usecase.dart';
 import '../../modules/authentication/presentation/bloc/forget_password/forget_password_bloc.dart';
 import '../../modules/authentication/presentation/bloc/sign_up/bloc.dart';
 import '../../modules/authentication/presentation/bloc/social_cubit.dart';
+import '../../modules/leagues_and_tabels/presentation/bloc/league_news_bloc.dart';
 import '../../modules/leagues_and_tabels/presentation/bloc/table_bloc.dart';
 import '../../modules/matches/presentation/bloc/recent_home_matches_bloc.dart';
 import '../../modules/nav_bar/presentation/bloc/nav_bar_cubit.dart';
@@ -90,6 +103,7 @@ import '../../modules/search/presentation/bloc/search_bloc.dart';
 import '../../modules/teams/presentation/bloc/team_matches_bloc.dart';
 import '../../modules/teams/presentation/bloc/team_player_bloc.dart';
 import '../../modules/teams/presentation/bloc/team_statistics_bloc.dart';
+import '../../modules/transfers/domain/repository/transfer_repository.dart';
 import '../cubit/availability_cubit.dart';
 import '../cubit/country/country_cubit.dart';
 import '../cubit/favorite_cubit.dart';
@@ -119,6 +133,9 @@ Future<void> init() async {
   getIt.registerFactory(() => PlayerSeasonsCubit(getIt()));
   getIt.registerFactory(() => PlayerLeaguesCubit());
   getIt.registerFactory(() => TeamGalleryCubit());
+  getIt.registerFactory(() => LeagueGalleryCubit());
+  getIt.registerFactory(() => PlayerGalleryCubit());
+  getIt.registerFactory(() => MatchGalleryCubit());
   getIt.registerFactory(() => AddCommentCubit(getIt()));
   getIt.registerFactory(() => CommentCubit(getIt()));
   getIt.registerFactory(() => PackagesCubit(getIt()));
@@ -161,6 +178,7 @@ Future<void> init() async {
   getIt.registerFactory(() => EditProfileBloc(getIt()));
   getIt.registerFactory(() => ChangePasswordBloc(getIt()));
   getIt.registerFactory(() => ContactUsBloc(getIt()));
+  getIt.registerFactory(() => DeleteNotificationBloc(getIt()));
   getIt.registerFactory(() => PlayerInfoBloc(getIt()));
   getIt.registerFactory(() => PlayerStatisticsBloc(getIt()));
   getIt.registerFactory(() => PlayerHistoryBloc(getIt()));
@@ -174,6 +192,12 @@ Future<void> init() async {
   getIt.registerFactory(() => RecentHomeMatchesBloc(getIt()));
   getIt.registerFactory(() => RecentAwayMatchesBloc(getIt()));
   getIt.registerFactory(() => PreviousMatchesBloc(getIt()));
+  getIt.registerFactory(() => TransfersBloc(getIt()));
+  getIt.registerFactory(() => LeagueNewsBloc(getIt()));
+  getIt.registerFactory(() => LeagueTopScoresBloc(getIt()));
+  getIt.registerFactory(() => LeagueTopAssistsBloc(getIt()));
+  getIt.registerFactory(() => LeagueDisciplineBloc(getIt()));
+  getIt.registerFactory(() => LeaguePerformanceBloc(getIt()));
 
 
 
@@ -205,6 +229,8 @@ Future<void> init() async {
           () => SearchRepositoryImp(getIt(), getIt()));
   getIt.registerLazySingleton<MatchStatisticsRepository>(
           () => MatchStatisticsRepositoryImp(getIt(), getIt()));
+  getIt.registerLazySingleton<TransferRepository>(
+          () => TransfersRepositoryImp(getIt(), getIt()));
 
 //============================================================================//
 ///UseCases
@@ -218,6 +244,7 @@ Future<void> init() async {
   getIt.registerLazySingleton<ProfileUseCase>(() => ProfileUseCase(getIt()));
   getIt.registerLazySingleton<SearchUseCase>(() => SearchUseCase(getIt()));
   getIt.registerLazySingleton<MatchStatisticsUseCase>(() => MatchStatisticsUseCase(getIt()));
+  getIt.registerLazySingleton<TransfersUseCase>(() => TransfersUseCase(getIt()));
 
 
 
@@ -249,6 +276,8 @@ Future<void> init() async {
           () => SearchDataSource());
   getIt.registerLazySingleton<BaseMatchStatisticsDataSource>(
           () => MatchStatisticsDataSource());
+  getIt.registerLazySingleton<BaseTransfersDataSource>(
+          () => TransfersDatasource());
 
 //============================================================================//
 //Core

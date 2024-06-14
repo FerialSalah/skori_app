@@ -15,6 +15,7 @@ const SEASONS_URL="/select/seasons";
 const PLAYER_LEAGUES_URL="/select/tournaments/";
 const HOME_URL = "/select/home";
 const TEAMS_URL = "/teams";
+const STAGES_URL="/stages";
 const FILTER_TEAMS_URL="/select/teams";
 const NEWS_URL = "/articles";
 const PLAYERS_URL = "/players";
@@ -23,7 +24,6 @@ const LEAGUES_URL = "/tournaments";
 const FOLLOWING_PLAYERS_URL = "/follows/get-follows-players";
 const FOLLOWING_TEAMS_URL = "/follows/get-follows-teams";
 const FOLLOWING_LEAGUES_URL = "/follows/get-follows-tournaments";
-
 const FAVORITES_PLAYERS_URL = "/favorites/get-favorites-players";
 const FAVORITES_TEAMS_URL = "/favorites/get-favorites-teams";
 const FAVORITES_LEAGUES_URL = "/favorites/get-favorites-tournaments";
@@ -39,10 +39,10 @@ const SETTING_URL="/settings";
 const COMMENT_URL="/comments";
 const STATISTICS_URL="/statistics";
 const NEW_STATISTICS_URL="/new-statistics";
-
 const TEAM_STATISTICS_URL="/mobile-statistics";
 const PLAYER_NEWS_URL="/playerArticles";
 const TEAM_NEWS_URL="/teamArticles";
+const LEAGUE_NEWS_URL="/tournamentArticles";
 const PACKAGES_URL="/packages";
 const SUBSCRIPTION_PACKAGES_URL="/subscription-package";
 const SUBSCRIBE_URL="/subscription";
@@ -51,6 +51,11 @@ const PAYMENT_URL="/payment";
 const AVAILABILITY_URL="/packages/availability";
 const MATCH_STATISTIC_URL="/matches/";
 const RECENT_MATCHES_URL="/matches/";
+const TRANSFERS_URL="/players/transfers";
+const LEAGUE_TOP_SCORE_URL="/top-scorers";
+const LEAGUE_TOP_ASSIST_URL_="/top-assists";
+const LEAGUE_DISCIPLINE_URL="/discipline";
+const LEAGUE_PERFORMANCE_URL="/performance";
 
 
 

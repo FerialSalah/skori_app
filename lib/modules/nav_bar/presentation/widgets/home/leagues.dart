@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/routes/navigator_push.dart';
 import 'package:skori/modules/leagues_and_tabels/domain/entity/leagues_entity.dart';
 import 'package:skori/modules/leagues_and_tabels/presentation/screens/all_leagues.dart';
+import 'package:skori/modules/leagues_and_tabels/presentation/screens/league_profile.dart';
 import 'package:skori/modules/nav_bar/presentation/widgets/home/title_and_all.dart';
 import '../../../../../core/theme/color_app.dart';
 import '../../../../../core/theme/textFont_app.dart';
@@ -45,13 +46,14 @@ class PopularLeagues extends StatelessWidget {
               itemBuilder: (context,index){
                 return GestureDetector(
                   onTap: (){
-                    RouteManager.navigateTo(LeagueTableScreen(
+                    RouteManager.navigateTo(LeagueProfileScreen(
                       id: leagues[index].id,
                       name: leagues[index].title,
                       isFollowing: leagues[index].isFollow,
                       isFav: leagues[index].isFavorite,
                       logo: leagues[index].logo,
                       continent: leagues[index].continent,
+                      season:leagues[index].season ,
                     ));
                   },
                   child: Container(

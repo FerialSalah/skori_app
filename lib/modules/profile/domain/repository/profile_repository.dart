@@ -25,6 +25,7 @@ abstract class ProfileRepository{
 
   Future<Either<Failure,List<NotificationEntity>>> getNotifications();
   Future<Either<Failure,Unit>> contactUs({required String name,required String email,required String message});
+  Future<Either<Failure,Unit>> deleteNotification({required String id});
 
 
 }

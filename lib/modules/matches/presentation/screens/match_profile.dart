@@ -150,7 +150,11 @@ class _VideoMatchPageMp4State extends State<VideoMatchPageMp4> {
         videoPlayerController: controller,
         autoPlay: true,
         looping: false,
-        autoInitialize: true);
+        autoInitialize: true,
+      aspectRatio: controller.value.aspectRatio,
+      fullScreenByDefault: true,
+
+    );
 
     setState(() {});
   }
@@ -183,23 +187,29 @@ class _VideoMatchPageMp4State extends State<VideoMatchPageMp4> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Container(
+        child: Column(
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).orientation == Orientation.landscape?
+              270.h:500.h,
+              child: _chewieController != null
+                  // _chewieController.videoPlayerController.initialize()
+                  ? Chewie(
+                      controller: _chewieController!,
 
-          width: MediaQuery.of(context).size.width,
-          height: 400.h,
-          child: _chewieController != null
-              // _chewieController.videoPlayerController.initialize()
-              ? Chewie(
-                  controller: _chewieController!,
-                )
-              : Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    CircularProgressIndicator(),
-                    SizedBox(height: 20),
-                    Text('Loading'),
-                  ],
-                ),
+                    )
+                  : Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        CircularProgressIndicator(),
+                        SizedBox(height: 20),
+                        Text('Loading'),
+                      ],
+                    ),
+            ),
+
+          ],
         ),
       ),
     );

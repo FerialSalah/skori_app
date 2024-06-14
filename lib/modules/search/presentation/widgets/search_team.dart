@@ -36,7 +36,7 @@ class SearchTeams extends StatelessWidget {
                 onTap: () {
                    RouteManager.navigateTo(TeamProfile(id: teams[index].id, name: teams[index].name,
                      logo: teams[index].logo, countryFlag: teams[index].countryFlag, countryName: teams[index].country,
-                     isFollowing: teams[index].isFollow, isFav: teams[index].isFavorites, season: teams[index].season,));
+                     isFollowing: teams[index].isFollow, isFav: teams[index].isFavorites, season: teams[index].season??"",));
                 },
                 child: Container(
                   height: 157.h,

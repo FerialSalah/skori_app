@@ -7,12 +7,28 @@ class TablesModel {
     required this.data,
   });
 
-  List<TableModel> data;
+  List<LeagueStageModel> data;
 
   factory TablesModel.fromJson(Map<String, dynamic> json) => TablesModel(
-    data: json["data"] == null ? [] : List<TableModel>.from(json["data"]!.map((x) => TableModel.fromJson(x))),
+    data: json["data"] == null ? [] : List<LeagueStageModel>.from(json["data"]!.map((x) => LeagueStageModel.fromJson(x))),
   );
 
+}
+
+class LeagueStageModel extends LeagueStageEntity{
+  LeagueStageModel({
+    super.id,
+    super.title,
+    super.ranks
+});
+
+  factory LeagueStageModel.fromJson(Map<String, dynamic> json) => LeagueStageModel(
+    id: json["id"],
+    title: json['title'],
+    ranks: json['ranks']==null? null :List<TableModel>.from(json["ranks"]!.map((x) => TableModel.fromJson(x)))
+
+
+  );
 }
 
 
@@ -22,18 +38,16 @@ class TableModel extends TableEntity {
     required super.id,
     required super.name,
     required super.logo,
-    required super.matchesNum,
-    required super.points,
-    required super.win,
-    required super.draw,
-    required super.lose,
-    required super.scoreGoal,
-    required super.reverseGoal,
-    required super.differentGoal,
-    required super.countryFlag,
-    required super.countryName,
-    required super.isFavorite,
-    required super.isFollow,
+    required super.description,
+    required super.differentGoalsNo,
+    required super.drawMatchesNo,
+    required super.loseMatchesNo,
+    required super.matchesNo,
+    required super.pointsNo,
+    required super.reverseGoalsNo,
+    required super.scoreGoalsNo,
+    required super.teamCover,
+    required super.winMatchesNo
   });
 
 
@@ -41,18 +55,17 @@ class TableModel extends TableEntity {
     id: json["id"],
     name: json["name"],
     logo: json["logo"],
-    matchesNum: json["matches_no"],
-    points: json["points_no"],
-    win: json["win_matches_no"],
-    lose: json["lose_matches_no"],
-    draw: json["draw_matches_no"],
-    scoreGoal: json['score_goals_no'],
-    reverseGoal: json['reverse_goals_no'],
-    differentGoal: json['different_goals_no'],
-    isFavorite: json['is_favorite'],
-    isFollow: json['is_follow'],
-    countryName: json['country_name'],
-    countryFlag: json['country_flag']
+    matchesNo: json["matches_no"],
+    pointsNo: json["points_no"],
+    winMatchesNo: json["win_matches_no"],
+    loseMatchesNo: json["lose_matches_no"],
+    drawMatchesNo: json["draw_matches_no"],
+    scoreGoalsNo: json['score_goals_no'],
+    reverseGoalsNo: json['reverse_goals_no'],
+    differentGoalsNo: json['different_goals_no'],
+    description: json['description'],
+    teamCover: json['team_cover'],
+
 
   );
 

@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/modules/leagues_and_tabels/domain/entity/leagues_entity.dart';
+import 'package:skori/modules/leagues_and_tabels/presentation/screens/league_profile.dart';
+import 'package:skori/modules/profile/presentation/screens/profile.dart';
 import '../../../../../core/theme/color_app.dart';
 import '../../../../../core/theme/textFont_app.dart';
 import '../../../../../core/widgets/main_text.dart';
@@ -34,13 +36,14 @@ class SearchLeagues extends StatelessWidget {
                   itemBuilder: (context,index){
                     return GestureDetector(
                       onTap: (){
-                        RouteManager.navigateTo(LeagueTableScreen(
+                        RouteManager.navigateTo(LeagueProfileScreen(
                           id: leagues[index].id,
                           name: leagues[index].title,
                           isFollowing: leagues[index].isFollow,
                           isFav: leagues[index].isFavorite,
                           logo: leagues[index].logo,
                           continent: leagues[index].continent,
+                          season: leagues[index].season,
                         ));
                       },
                       child: Container(

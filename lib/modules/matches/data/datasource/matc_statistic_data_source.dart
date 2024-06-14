@@ -24,11 +24,21 @@ class MatchStatisticsDataSource implements BaseMatchStatisticsDataSource{
     try {
       print("match statistic url :${"${MATCH_STATISTIC_URL}$matchId/statistics"}");
       final result = await DioHelper.get("${MATCH_STATISTIC_URL}$matchId/statistics");
-      print("match Statistics: ${result.data}");
-      StatisticsModel response = StatisticsModel.fromJson(result.data['data']);
-      print(response.possession![0].value);
 
-      return response;
+
+      if(result.statusCode==200||result.statusCode==201) {
+        print("match Statistics: ${result.data}");
+        StatisticsModel response = StatisticsModel.fromJson(result.data['data']);
+        print(response.possession![0].value);
+        return response;
+      }
+      else if(result.statusCode==401){
+
+        throw ExceptionServiceCallBack(massage: result.data['message']);
+
+      }else{
+        throw ExceptionServiceCallBack(massage: result.data['message']);
+      }
     } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
@@ -46,7 +56,16 @@ class MatchStatisticsDataSource implements BaseMatchStatisticsDataSource{
       MatchesModel response = MatchesModel.fromJson(result.data);
       print(response);
 
-      return response;
+      if(result.statusCode==200||result.statusCode==201) {
+        return response;
+      }
+      else if(result.statusCode==401){
+
+        throw ExceptionServiceCallBack(massage: result.data['message']);
+
+      }else{
+        throw ExceptionServiceCallBack(massage: result.data['message']);
+      }
     } on DioException catch (e) {
       print(runtimeType);
       print(e.response);
@@ -63,8 +82,16 @@ class MatchStatisticsDataSource implements BaseMatchStatisticsDataSource{
       print("matches recent: ${result}");
       MatchesModel response = MatchesModel.fromJson(result.data);
       print("matchs recents :$response");
+      if(result.statusCode==200||result.statusCode==201) {
+        return response;
+      }
+      else if(result.statusCode==401){
 
-      return response;
+    throw ExceptionServiceCallBack(massage: result.data['message']);
+
+    }else{
+    throw ExceptionServiceCallBack(massage: result.data['message']);
+    }
     } on DioException catch (e) {
       print(runtimeType);
       print(e.response);

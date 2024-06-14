@@ -32,6 +32,7 @@ class ColorApp {
   static final Color face = HexColor.fromHex('#2B5EB7');
   static final Color green = HexColor.fromHex('#1DBE69');
   static final Color darkBlue = HexColor.fromHex('#19204E');
+  static final Color darkGray=HexColor.fromHex('#F7F7F7');
 
 
 

@@ -62,7 +62,8 @@ class _FavoritesLeaguesListState extends State<FavoritesLeaguesList> {
                         isFollow: result[index].isFollow,
                         isFav: result[index].isFavorite,
                         logo: result[index].logo,
-                        continent: result[index].continent),
+                        continent: result[index].continent,
+                    season: result[index].season,),
                     separatorBuilder: (context,_)=>SizedBox(height:10.h,),
                     itemCount: result.length)),
                 if(state is PaginateState)

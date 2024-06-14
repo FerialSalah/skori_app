@@ -11,10 +11,13 @@ import 'package:skori/core/widgets/button/button_app.dart';
 import 'package:skori/core/widgets/main_text.dart';
 import 'package:skori/generated/locale_keys.g.dart';
 import 'package:skori/modules/authentication/presentation/screens/login_screen.dart';
+import 'package:skori/modules/leagues_and_tabels/presentation/screens/all_leagues.dart';
 import 'package:skori/modules/profile/presentation/screens/favorites.dart';
 import 'package:skori/modules/profile/presentation/screens/manage_your_package.dart';
 import 'package:skori/modules/profile/presentation/screens/notifications.dart';
 import 'package:skori/modules/profile/presentation/screens/profile.dart';
+import 'package:skori/modules/transfers/presentaion/bloc/transfers_bloc.dart';
+import 'package:skori/modules/transfers/presentaion/screens/transfers_screen.dart';
 
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/theme/color_app.dart';
@@ -135,6 +138,19 @@ class MyAccountScreen extends StatelessWidget {
                   child: Column(
                     children: [
                        AppStorage.isLogged?SizedBox():SizedBox(height: 100,),
+                      !AppStorage.isLogged?SizedBox():ProfileListTile(
+                        title: LocaleKeys.leagues.tr(),
+                        icon: AppIcons.leagues,
+                        route: AllLeaguesScreen(),
+                      ),
+                      !AppStorage.isLogged?SizedBox(): Divider(),
+                      !AppStorage.isLogged?SizedBox():ProfileListTile(
+                        title: LocaleKeys.transfers.tr(),
+                        icon: AppIcons.transfers,
+                        route: TransfersScreen(),
+                      ),
+
+                      !AppStorage.isLogged?SizedBox(): Divider(),
                       !AppStorage.isLogged?SizedBox():ProfileListTile(
                         title: LocaleKeys.editProfile.tr(),
                         icon: ProfileIcons.edit,

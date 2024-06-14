@@ -5,6 +5,7 @@ import 'package:skori/core/cubit/gallery/team_gallery_cubit.dart';
 import 'package:skori/generated/locale_keys.g.dart';
 import 'package:skori/modules/teams/presentation/bloc/team_event.dart';
 import 'package:skori/modules/teams/presentation/bloc/team_news_bloc.dart';
+import 'package:skori/modules/teams/presentation/widgets/team_gallery.dart';
 import 'package:skori/modules/teams/presentation/widgets/team_news.dart';
 import 'package:skori/modules/teams/presentation/widgets/team_statistics.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,6 +49,8 @@ class _TeamProfileState extends State<TeamProfile>
   TabController? tabController;
   @override
   void initState() {
+    BlocProvider.of<TeamGalleryCubit>(context)..getTeamGallery(widget.id);
+
     super.initState();
   }
 
@@ -67,12 +70,12 @@ class _TeamProfileState extends State<TeamProfile>
         BlocProvider(
             create: (context) => di.getIt<TeamPlayersBloc>()
               ..add(GetTeamPlayers(id: widget.id))),
-        BlocProvider(
-            create: (context) =>
-                di.getIt<TeamGalleryCubit>()..getTeamGallery(widget.id)),
+        // BlocProvider(
+        //     create: (context) =>
+        //         di.getIt<TeamGalleryCubit>()..getTeamGallery(widget.id)),
       ],
       child: DefaultTabController(
-        length: 4,
+        length: 5,
         child: Scaffold(
             body: NestedScrollView(
           physics: ClampingScrollPhysics(),
@@ -99,7 +102,7 @@ class _TeamProfileState extends State<TeamProfile>
                 LocaleKeys.statistics.tr(),
                 LocaleKeys.latestNews.tr(),
                 LocaleKeys.teamPlayers.tr(),
-            //    LocaleKeys.gallery.tr()
+                 LocaleKeys.gallery.tr()
               ],
             ),
           ],
@@ -112,7 +115,7 @@ class _TeamProfileState extends State<TeamProfile>
               TeamPlayers(
                 teamId: widget.id,
               ),
-             // TeamGallery(),
+              TeamGallery(),
             ],
           ),
         )),

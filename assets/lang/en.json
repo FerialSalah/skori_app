@@ -15,6 +15,7 @@
   "orLoginThrough": "Or Login Through",
   "doNotHaveAcc": "Don't Have An Account?",
   "createNow": "Create Now",
+  "accountCreated": "The account has been created and an e-mail has been sent to activate the account",
   "loginWithApple": "Login With Apple",
 
   "resetPassword": "Reset Password",
@@ -87,6 +88,7 @@
   "previousComments": "Previous Comments",
   "subscribe": "Subscribe",
   "leagues": "Leagues",
+  "tournaments": "Leagues",
   "teams": "Teams",
   "players": "Players",
   "teamMatches": "Team Matches",
@@ -168,7 +170,41 @@
   "matchDetails": "Match Details",
   "beta": "Beta",
   "gallery": "Gallery",
-  "packageUnavailable": "You are not authorized to view this article"
+  "packageUnavailable": "You are not authorized to view this Content",
+  "transfers": "Transfers",
+  "date": "Date :",
+  "fee": "Fee :",
+  "rink": "Ranking",
+  "scoring": "Scoring",
+  "discipline": "Discipline",
+  "performance": "Performance",
+  "team": "Team",
+  "points": "Points",
+  "performanceDate": "Date",
+  "scores": "Scores",
+  "topScorers": "Top Scorers",
+  "topAssists": "Top Assists",
+  "assists": "Assists",
+  "A": "A",
+  "Rk": "RK",
+  "P": "P",
+  "G": "G",
+  "pts": "PTS",
+  "fa": "F:A",
+  "lose": "L",
+  "D": "D",
+  "w":"W",
+  "yc": "YC",
+  "rc": "Rc",
+  "undisclosed": "Undisclosed",
+  "unknown": "Unknown",
+  "deleteNotificationMsg": "The notifications have been deleted successfully"
+
+
+
+
+
+
 
 
 

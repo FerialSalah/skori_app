@@ -47,11 +47,13 @@ class TeamsBloc extends Bloc<TeamEvent, BaseState> {
       emit(PaginateState());
       currentPage++;
       final result = await teamsUsaCase.getTeams(page: currentPage,countryId: countryId,teamName: name,tournamentId: tournamentId);
+      print("teams pag: $result");
       result.fold((failure) {
         currentPage--;
       }, (response) {
         if (response.reversed.isEmpty) currentPage--;
         teams.addAll(response.reversed);
+
         emit(SuccessState(data: response));
       });
     } catch (e) {

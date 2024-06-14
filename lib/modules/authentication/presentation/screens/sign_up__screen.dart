@@ -20,6 +20,7 @@ import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
 import '../../../../core/widgets/app_bar/app_bar_title.dart';
 import '../../../../core/widgets/dialog_app/custom_dialog.dart';
+import '../../../../core/widgets/dialog_app/dialog_app.dart';
 import '../../../../core/widgets/dialog_app/error_dialog.dart';
 import '../../../../core/widgets/donot_have.dart';
 import '../../../../core/widgets/main_text.dart';
@@ -111,7 +112,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
           if (state is SignUpOffline) {
             showSnackBar(state.msg);
           } else if (state is SignUpSuccess) {
-            RouteManager.navigateAndPopAll(NavBarScreen());
+            CustomDialog(theDialog: SuccessDialog(msg:LocaleKeys.accountCreated.tr() ),dismiss: false,);
+
+            // RouteManager.navigateAndPopAll(NavBarScreen());
           } else if (state is SignUpField) {
             CustomDialog(theDialog: ErrorDialog(msg:state.msg ,),dismiss: true);
             // showSnackBar(state.msg);

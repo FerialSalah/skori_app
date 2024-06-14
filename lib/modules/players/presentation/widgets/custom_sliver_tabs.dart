@@ -132,9 +132,9 @@ class CustomSliverLogo extends StatelessWidget {
             Tab(
               text: tabsTitle[3],
             ),
-            // Tab(
-            //   text: tabsTitle[4],
-            // ),
+            Tab(
+              text: tabsTitle[4],
+            ),
           ],
         ),
       ),

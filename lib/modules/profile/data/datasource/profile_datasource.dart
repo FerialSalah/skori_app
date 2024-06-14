@@ -31,8 +31,7 @@ abstract class BaseProfileDataSource{
 
   Future<NotificationsModel> getNotifications();
    Future<Unit> contactUs({required String name, required String email,required String message});
-
-
+  Future<Unit> deleteNotification({required String id});
 }
 
 class ProfileDataSource implements BaseProfileDataSource{
@@ -231,6 +230,27 @@ class ProfileDataSource implements BaseProfileDataSource{
       }
     } on DioException catch (e) {
 
+      throw handleResponseError(e);
+    }
+  }
+
+  @override
+  Future<Unit> deleteNotification({required String id}) async {
+    print("${NOTIFICATIONS_URL}/${id}");
+    try {
+      final result = await DioHelper.delete("${NOTIFICATIONS_URL}/${id}");
+      print(result.statusCode);
+      if(result.statusCode==200){
+        print(result.data);
+        return unit;
+      }else{
+        throw ExceptionServiceCallBack(massage: result.data['message']);
+      }
+
+
+    } on DioException catch (e) {
+      print(runtimeType);
+      print(e.response);
       throw handleResponseError(e);
     }
   }

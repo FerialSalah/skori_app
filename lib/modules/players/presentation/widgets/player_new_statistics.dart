@@ -9,12 +9,14 @@ import 'package:skori/modules/players/presentation/widgets/player_performance_ca
 import 'package:skori/modules/players/presentation/widgets/player_statistic_card.dart';
 import 'package:skori/modules/players/presentation/widgets/player_statistics_info.dart';
 
+import '../../../../core/app_storage/app_storage.dart';
 import '../../../../core/state/base_state.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
 import '../../../../core/widgets/loader.dart';
 import '../../../../core/widgets/main_text.dart';
 import '../../../../core/widgets/offline_widget.dart';
+import '../../../../core/widgets/should_sign_up.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../bloc/player_statistics_bloc.dart';
 class PlayerNewStatistics extends StatefulWidget {
@@ -149,10 +151,23 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
         } else if (state is OfflineState) {
           return OfflinePage();
         } else if (state is ErrorState) {
-          return Center(
-              child: MainText(
-                text: state.msg,
-              ));
+          if(AppStorage.isLogged) return Center(child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.not_interested_outlined,color: ColorApp.error,size: 40,),
+              SizedBox(
+                height: 10.h,
+              ),
+              MainText(
+                text: LocaleKeys.packageUnavailable.tr(),
+                font: 15,
+                family: TextFontApp.boldFont,
+                center: true,
+              ),
+            ],
+          ));
+          return ShouldSignUp();
+
         } else {
           return MainText(
             text: LocaleKeys.serverError.tr(),

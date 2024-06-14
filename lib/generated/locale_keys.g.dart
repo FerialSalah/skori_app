@@ -16,6 +16,7 @@ abstract class  LocaleKeys {
   static const orLoginThrough = 'orLoginThrough';
   static const doNotHaveAcc = 'doNotHaveAcc';
   static const createNow = 'createNow';
+  static const accountCreated = 'accountCreated';
   static const loginWithApple = 'loginWithApple';
   static const resetPassword = 'resetPassword';
   static const forgetDesc = 'forgetDesc';
@@ -87,6 +88,7 @@ abstract class  LocaleKeys {
   static const previousComments = 'previousComments';
   static const subscribe = 'subscribe';
   static const leagues = 'leagues';
+  static const tournaments = 'tournaments';
   static const teams = 'teams';
   static const players = 'players';
   static const teamMatches = 'teamMatches';
@@ -166,5 +168,33 @@ abstract class  LocaleKeys {
   static const beta = 'beta';
   static const gallery = 'gallery';
   static const packageUnavailable = 'packageUnavailable';
+  static const transfers = 'transfers';
+  static const date = 'date';
+  static const fee = 'fee';
+  static const rink = 'rink';
+  static const scoring = 'scoring';
+  static const discipline = 'discipline';
+  static const performance = 'performance';
+  static const team = 'team';
+  static const points = 'points';
+  static const performanceDate = 'performanceDate';
+  static const scores = 'scores';
+  static const topScorers = 'topScorers';
+  static const topAssists = 'topAssists';
+  static const assists = 'assists';
+  static const A = 'A';
+  static const Rk = 'Rk';
+  static const P = 'P';
+  static const G = 'G';
+  static const pts = 'pts';
+  static const fa = 'fa';
+  static const lose = 'lose';
+  static const D = 'D';
+  static const w = 'w';
+  static const yc = 'yc';
+  static const rc = 'rc';
+  static const undisclosed = 'undisclosed';
+  static const unknown = 'unknown';
+  static const deleteNotificationMsg = 'deleteNotificationMsg';
 
 }

@@ -52,7 +52,7 @@ class MatchAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      expandedHeight: 275.h,
+      expandedHeight: 280.h,
       pinned: true,
       backgroundColor: ColorApp.primary,
       leadingWidth: 60,

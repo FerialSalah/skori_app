@@ -31,7 +31,7 @@ class ErrorDialog extends StatelessWidget {
               msg,
               textAlign: TextAlign.center,
               style: TextStyle(
-                height: 1.5,
+                height: 1.2,
                 fontFamily: TextFontApp.mediumFont,
                 fontSize: 18,
                 color: ColorApp.red,)

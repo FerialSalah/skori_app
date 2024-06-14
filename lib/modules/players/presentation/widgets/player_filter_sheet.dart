@@ -90,35 +90,18 @@ class _PlayerFilterSheetState extends State<PlayerFilterSheet> {
                     paddingVer: 5,
                     paddingHor: 0,
                     onChanged: (val) {
-                     // BlocProvider.of<PlayersBloc>(context).teamId=val;
+                      BlocProvider.of<PlayersBloc>(context).teamId=val;
                       print(" team val is:$val");
-                      print(val.id);
+                     // print(val.id);
                       // print("name is :${teams.singleWhere((e)=>e.name==val)}");
                       // final team= teams.singleWhere((e)=>e.name==val);
-                      print("val.id: ${val.id}");
-                      print("val.name:${val.name}");
+                      //print("val.id: ${val.id}");
+                     // print("val.name:${val.name}");
                     },
                   );
                 },
               ),
-              // BlocBuilder<CountriesCubit, BaseState>(
-              //   builder: (context, state) {
-              //     final countries = BlocProvider.of<CountriesCubit>(context).countriesModel;
-              //     return DropDownTextField(
-              //       hint: LocaleKeys.countries.tr(),
-              //       icon: AppIcons.filter,
-              //       isModel: true,
-              //       items: countries!.data!,
-              //       team: false,
-              //       country: true,
-              //       paddingVer: 5,
-              //       paddingHor: 0,
-              //       onChanged: (val) {
-              //         BlocProvider.of<PlayersBloc>(context).countryId=val;
-              //       },
-              //     );
-              //   },
-              // ),
+
               SizedBox(height: 20,),
               AppButton(title: LocaleKeys.search.tr(),height: 45.h,onPressed: (){
                 BlocProvider.of<PlayersBloc>(context)

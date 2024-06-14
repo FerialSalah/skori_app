@@ -71,15 +71,18 @@ class _FollowButtonState extends State<FollowButton> {
                         : LocaleKeys.follow.tr(),
                     height: widget.height ?? 35.h,
                     color: widget.color ?? ColorApp.yellow,
-                    // width: widget.width,
+                     width: widget.width,
                     horText: 5,
-                    icon: isFollow == true
-                        ? ProfileIcons.add
-                        : ProfileIcons.remove,
+                    icon:
+                    isFollow == true
+                        ? ProfileIcons.remove
+                        : ProfileIcons.add,
                     font: 12,
                     onPressed: () {
                       setState(() {
                         loading = true;
+                       // isFollow=!isFollow!;
+                        print("isFollow: $isFollow");
                       });
                       cubit.toggleFollow(id: widget.id, type: widget.type);
                     },

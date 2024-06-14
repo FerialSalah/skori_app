@@ -179,6 +179,20 @@ class ProfileRepositoryImp implements ProfileRepository {
     }
   }
 
+  @override
+  Future<Either<Failure, Unit>> deleteNotification({required String id}) async {
+    if (await networkChecker.isDeviceConnected) {
+      try {
+        final result = await baseProfileDataSource.deleteNotification(id:id);
+        return Right(unit);
+      }  on ExceptionServiceCallBack catch (e) {
+        return Left(FailureServiceWithResponse(msg: e.massage));
+      }
+    } else {
+      return Left(FailureOffline());
+    }
+  }
+
 
 
 

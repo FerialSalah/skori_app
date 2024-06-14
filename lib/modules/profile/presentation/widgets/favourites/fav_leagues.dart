@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skori/modules/leagues_and_tabels/presentation/screens/league_profile.dart';
 import '../../../../../core/routes/navigator_push.dart';
 import '../../../../../core/theme/color_app.dart';
 import '../../../../../core/theme/textFont_app.dart';
@@ -14,19 +15,21 @@ class FavLeagueCard extends StatelessWidget {
   final String continent;
   final bool isFollow;
   final bool isFav;
-  const FavLeagueCard({Key? key, required this.id, required this.title, required this.logo, required this.continent, required this.isFollow, required this.isFav}) : super(key: key);
+  final String season;
+  const FavLeagueCard({Key? key, required this.id, required this.title, required this.logo, required this.continent, required this.isFollow, required this.isFav, required this.season}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        RouteManager.navigateTo(LeagueTableScreen(
+        RouteManager.navigateTo(LeagueProfileScreen(
           id: id,
           name: title,
           logo:logo,
           continent: continent,
           isFollowing: isFollow,
           isFav:isFav,
+          season: season,
         ));
       },
       child: Container(

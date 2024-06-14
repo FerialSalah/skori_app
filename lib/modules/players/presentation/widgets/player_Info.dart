@@ -563,6 +563,9 @@ class _PlayerInfoState extends State<PlayerInfo> {
                     ],
                   ),
                 ),
+                SizedBox(
+                  height: 20,
+                )
               ],
             ),
           );

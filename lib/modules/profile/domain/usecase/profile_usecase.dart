@@ -61,5 +61,9 @@ class ProfileUseCase{
       {required String name,required String email,required String message}) async =>
       profileRepository.contactUs(name: name,email: email,message: message);
 
+  Future<Either<Failure, Unit>> deleteNotification(
+      {required String id}) async =>
+      profileRepository.deleteNotification(id: id);
+
 }
 

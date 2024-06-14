@@ -45,7 +45,7 @@ class PlayerStatisticCard extends StatelessWidget {
                           children: [
 
                             statistics[index].icon==null? SizedBox(
-                              width:200,
+                              width:170,
                               child:  MainText(text: "${statistics[index].name}",font: 14,family: TextFontApp.semiBoldFont,
                               ) ,
                             ):

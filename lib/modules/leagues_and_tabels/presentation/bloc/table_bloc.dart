@@ -8,7 +8,7 @@ import 'leagues_event.dart';
 
 class TableBloc extends Bloc<LeaguesEvent, BaseState> {
   final LeaguesUseCase leaguesUsaCase;
-  List<TableEntity> table=[];
+  List<LeagueStageEntity> table=[];
   TableBloc(this.leaguesUsaCase) : super(InitState()) {
 
     on<GetTableData>((event, emit) => _handleGetTableData(event, emit));

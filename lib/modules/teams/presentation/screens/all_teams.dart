@@ -85,7 +85,7 @@ class _AllTeamsState extends State<AllTeams> {
                                   id: result[index].id,
                                   name: result[index].name,
                                   logo: result[index].logo,
-                                  season: result[index].season,
+                                  season: result[index].season??"",
                                   country: result[index].country,
                                   countryFlag: result[index].countryFlag,
                                   isFollow: result[index].isFollow,

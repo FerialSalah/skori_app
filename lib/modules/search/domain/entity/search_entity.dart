@@ -4,6 +4,7 @@ import 'package:skori/modules/leagues_and_tabels/domain/entity/leagues_entity.da
 import 'package:skori/modules/news/domain/entity/news_entity.dart';
 import 'package:skori/modules/players/domain/entity/player_entity.dart';
 import 'package:skori/modules/teams/domain/entity/team_entity.dart';
+import 'package:skori/modules/transfers/domain/entity/transfer_entity.dart';
 
 
 class SearchEntity extends Equatable {
@@ -15,6 +16,7 @@ class SearchEntity extends Equatable {
   List<NewsEntity> newResults;
    // int leaguesResultsCount;
    List<LeagueEntity> leaguesResults;
+  List<TransferEntity> transfersResults;
   SearchEntity(
    {
    // required this.teamResultsCount,
@@ -24,7 +26,9 @@ class SearchEntity extends Equatable {
    // required this.newResultsCount,
    required this.newResults,
    // required this.leaguesResultsCount,
-   required this.leaguesResults
+   required this.leaguesResults,
+     // required this.transfersResultsCount,
+     required this.transfersResults
    });
   @override
   List<Object?> get props => [];

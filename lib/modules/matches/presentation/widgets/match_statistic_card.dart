@@ -8,10 +8,12 @@ import 'package:skori/core/theme/textFont_app.dart';
 import 'package:skori/core/widgets/loader.dart';
 import 'package:skori/modules/matches/presentation/bloc/match_statistics_bloc.dart';
 
+import '../../../../core/app_storage/app_storage.dart';
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/widgets/main_text.dart';
 import '../../../../core/widgets/offline_widget.dart';
+import '../../../../core/widgets/should_sign_up.dart';
 import '../../../../generated/locale_keys.g.dart';
 
 class MatchStatisticCard extends StatefulWidget {
@@ -3235,7 +3237,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                     height: 3.h,
                                   ),
                                   new LinearPercentIndicator(
-                                    width: 310.w,
+                                    width: 300.w,
                                     lineHeight: 10.0,
                                     percent: matchStatistics
                                         .passesAccuracy![index]
@@ -3443,11 +3445,22 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
         } else if (state is OfflineState) {
           return OfflinePage();
         } else if (state is ErrorState) {
-          return Center(
-              child: MainText(
-            text: state.msg,
-            family: TextFontApp.boldFont,
+          if(AppStorage.isLogged) return Center(child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.not_interested_outlined,color: ColorApp.error,size: 40,),
+              SizedBox(
+                height: 10.h,
+              ),
+              MainText(
+                text: LocaleKeys.packageUnavailable.tr(),
+                font: 15,
+                family: TextFontApp.boldFont,
+                center: true,
+              ),
+            ],
           ));
+          return ShouldSignUp();
         } else {
           return MainText(
             text: LocaleKeys.serverError.tr(),

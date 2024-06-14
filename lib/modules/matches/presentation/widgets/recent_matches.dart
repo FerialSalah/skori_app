@@ -10,8 +10,11 @@ import 'package:skori/generated/locale_keys.g.dart';
 import 'package:skori/modules/matches/presentation/bloc/recent_home_matches_bloc.dart';
 import 'package:skori/modules/nav_bar/presentation/widgets/matches_card.dart';
 
+import '../../../../core/app_storage/app_storage.dart';
+import '../../../../core/theme/color_app.dart';
 import '../../../../core/widgets/loader.dart';
 import '../../../../core/widgets/main_text.dart';
+import '../../../../core/widgets/should_sign_up.dart';
 class RecentMatches extends StatefulWidget {
   const RecentMatches({Key? key}) : super(key: key);
 
@@ -76,11 +79,22 @@ class _RecentMatchesState extends State<RecentMatches> {
         } else if (state is OfflineState) {
           return OfflinePage();
         } else if (state is ErrorState) {
-          return Center(
-              child: MainText(
-                text: state.msg,
+          if(AppStorage.isLogged) return Center(child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.not_interested_outlined,color: ColorApp.error,size: 40,),
+              SizedBox(
+                height: 10.h,
+              ),
+              MainText(
+                text: LocaleKeys.packageUnavailable.tr(),
+                font: 15,
                 family: TextFontApp.boldFont,
-              ));
+                center: true,
+              ),
+            ],
+          ));
+          return ShouldSignUp();
         } else {
           return MainText(
             text: LocaleKeys.serverError.tr(),

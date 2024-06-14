@@ -1,7 +1,10 @@
 
 import 'package:dio/dio.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:skori/core/network/urls_app.dart';
+import 'package:skori/generated/locale_keys.g.dart';
 import 'package:skori/modules/news/data/model/news_model.dart';
+import '../../../../core/app_storage/app_storage.dart';
 import '../../../../core/dio_helper/dio_helper.dart';
 import '../../../../core/errors/exception.dart';
 import '../model/player_history_model.dart';
@@ -64,7 +67,9 @@ class PlayersDataSource implements BasePlayersDataSource{
         PlayerStatisticsModel response = PlayerStatisticsModel.fromJson(result.data);
         return response;
       }else if(result.statusCode==401){
-        throw ExceptionServiceCallBack(massage: "You should sign up to see this articles");
+        //!AppStorage.isLogged?
+        throw ExceptionServiceCallBack(massage: result.data['message']);
+
       }else{
         throw ExceptionServiceCallBack(massage: result.data['message']);
       }
@@ -88,7 +93,9 @@ class PlayersDataSource implements BasePlayersDataSource{
         print(response);
         return response;
       }else if(result.statusCode==401){
-        throw ExceptionServiceCallBack(massage: "You should sign up to see this articles");
+
+        throw ExceptionServiceCallBack(massage: result.data['message']);
+
       }else{
         throw ExceptionServiceCallBack(massage: result.data['message']);
       }

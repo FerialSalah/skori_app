@@ -8,6 +8,7 @@ import 'package:skori/core/theme/textFont_app.dart';
 import 'package:skori/core/widgets/main_text.dart';
 import 'package:skori/generated/locale_keys.g.dart';
 import 'package:skori/modules/search/presentation/widgets/search_leagues.dart';
+import 'package:skori/modules/search/presentation/widgets/search_transfers.dart';
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/widgets/customTextFeild.dart';
@@ -77,7 +78,8 @@ class _SearchScreenState extends State<SearchScreen> {
                 style: TextStyle(
                     color: Colors.black54,
                     fontSize: 13,
-                    fontWeight: FontWeight.bold),
+                    fontFamily: TextFontApp.boldFont,
+                    ),
               ),
               GestureDetector(
                 onTap: () {
@@ -100,7 +102,8 @@ class _SearchScreenState extends State<SearchScreen> {
                         children: [
                           Text(
                             BlocProvider.of<SearchBloc>(context).type.tr(),
-                            style: TextStyle(fontSize: 12, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black,
+                            fontFamily: TextFontApp.boldFont),
                           ),
                           Icon(
                             Icons.arrow_drop_down,
@@ -172,6 +175,18 @@ class _SearchScreenState extends State<SearchScreen> {
                           : SearchLeagues(
                               leagues: results.leaguesResults,
                             ),
+                      results.transfersResults.isEmpty
+                          ? SizedBox()
+                          : MainText(
+                        text: "${LocaleKeys.transfers.tr()}(${results.transfersResults.length})",
+                        family: TextFontApp.extraBoldFont,
+                        font: 14,
+                      ),
+                      results.transfersResults.isEmpty
+                          ? SizedBox()
+                          : SearchTransfers(
+                        transfers : results.transfersResults,
+                      ),
                     ],
                   ),
                 );

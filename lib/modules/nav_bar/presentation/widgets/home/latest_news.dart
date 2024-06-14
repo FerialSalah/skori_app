@@ -119,13 +119,31 @@ class LatestNews extends StatelessWidget {
                               Image.asset(NewsImages.redUser,width: 14.w,height: 17.h,),
                               SizedBox(width: 5.w,),
                               SizedBox(
-                                width: 140.w,
+                                width: 85.w,
                                 child: MainText(
                                   text: news[index].writerName,
                                   color:ColorApp.red,
                                   font: 12,
                                   overflow: TextOverflow.ellipsis,
                                   family: TextFontApp.mediumFont,
+                                ),
+                              ),
+                              Container(
+                                width: 65.w,
+                                height: 25.h,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(Radius.circular(25)),
+                                  color: ColorApp.red,
+                                ),
+                                child: Center(
+                                  child: MainText(
+                                    text: news[index].localedType,
+                                    color: ColorApp.white,
+                                    font: 12,
+                                    overflow: TextOverflow.ellipsis,
+                                    family: TextFontApp.mediumFont,
+                                    center: true,
+                                  ),
                                 ),
                               ),
                               // SizedBox(width: 20.w,),

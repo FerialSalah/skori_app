@@ -1,3 +1,4 @@
+
 class PlayerLeagueModel {
   List<Data>? data;
 
@@ -30,7 +31,7 @@ class Data {
   String? description;
   String? startDate;
   String? endDate;
-  Null organizer;
+  Organizer? organizer;
   AgeGroup? ageGroup;
   String? logo;
   bool? isFavorite;
@@ -62,7 +63,9 @@ class Data {
     description = json['description'];
     startDate = json['start_date'];
     endDate = json['end_date'];
-    organizer = json['organizer'];
+    organizer = json['organizer'] != null
+        ? new Organizer.fromJson(json['organizer'])
+        : null;
     ageGroup = json['ageGroup'] != null
         ? new AgeGroup.fromJson(json['ageGroup'])
         : null;
@@ -82,13 +85,40 @@ class Data {
     data['description'] = this.description;
     data['start_date'] = this.startDate;
     data['end_date'] = this.endDate;
-    data['organizer'] = this.organizer;
+    if (this.organizer != null) {
+      data['organizer'] = this.organizer!.toJson();
+    }
     if (this.ageGroup != null) {
       data['ageGroup'] = this.ageGroup!.toJson();
     }
     data['logo'] = this.logo;
     data['is_favorite'] = this.isFavorite;
     data['is_follow'] = this.isFollow;
+    data['is_active'] = this.isActive;
+    return data;
+  }
+}
+
+class Organizer {
+  int? id;
+  String? name;
+  String? abbreviation;
+  bool? isActive;
+
+  Organizer({this.id, this.name, this.abbreviation, this.isActive});
+
+  Organizer.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    name = json['name'];
+    abbreviation = json['abbreviation'];
+    isActive = json['is_active'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['name'] = this.name;
+    data['abbreviation'] = this.abbreviation;
     data['is_active'] = this.isActive;
     return data;
   }

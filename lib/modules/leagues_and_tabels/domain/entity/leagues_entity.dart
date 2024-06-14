@@ -8,6 +8,7 @@ class LeagueEntity extends Equatable {
   final String title;
   final String logo;
   final String continent;
+  final String season;
   final bool isFollow;
   final bool isFavorite;
 
@@ -22,6 +23,7 @@ class LeagueEntity extends Equatable {
      required this.title,
      required this.logo,
      required this.continent,
+     required this.season,
      required this.isFollow,
      required this.isFavorite,
 

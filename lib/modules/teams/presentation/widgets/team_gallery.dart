@@ -1,44 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skori/core/cubit/gallery/gallery_model.dart';
-import 'package:skori/core/cubit/gallery/team_gallery_cubit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skori/core/cubit/gallery/league_gallery_cubit.dart';
+import 'package:skori/core/cubit/gallery/player_gallery_cubit.dart';
 
+import '../../../../core/cubit/gallery/team_gallery_cubit.dart';
+import '../../../../core/cubit/season/season_cubit.dart';
 import '../../../../core/state/base_state.dart';
+import '../../../../core/widgets/empty.dart';
+import '../../../../core/widgets/image_preview.dart';
 class TeamGallery extends StatelessWidget {
-  const TeamGallery({Key? key}) : super(key: key);
+  const TeamGallery({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*.025,right: MediaQuery.of(context).size.width*.025,),
-      child: BlocBuilder<TeamGalleryCubit, BaseState>(
-        builder: (context, state) {
-         GalleryModel? teamGallery = BlocProvider.of<TeamGalleryCubit>(context).galleryModel;
-          print(state);
-          // if(state is LoadingState){
-          //   return ColorLoader();
-          // }else if(state is SuccessState){
-          //
-          // }else {
-          //   return Text("Something Error");
-          // }
-          return teamGallery!.data!.isNotEmpty?
-          ListView.separated(
-            // physics: NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.symmetric(vertical: 25,horizontal: 5),
-              itemCount: teamGallery.data!.length,
-              shrinkWrap: true,
-              primary: false,
-              separatorBuilder:(_,c)=>SizedBox(height: 15,),
-              itemBuilder: (context,index){
-                return Container(
-                  child: Image.network(teamGallery.data![index]),
+    return BlocBuilder<TeamGalleryCubit, BaseState>(
+      builder: (context, state) {
+        final gallery =
+            BlocProvider.of<TeamGalleryCubit>(context).galleryModel;
+
+        return gallery!.data!.isEmpty||gallery.data==null
+            ? emptyShow()
+            : GridView.builder(
+              itemCount: gallery.data!.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, // Number of columns in the grid
+                crossAxisSpacing: 10.0, // Spacing between the columns
+                mainAxisSpacing: 10.0, // Spacing between the rows
+
+              ),
+              itemBuilder: (BuildContext context, int index) {
+                // This function is called for each item in the grid
+                return GestureDetector(
+                  onTap: (){
+                    openGallery(index: index, context: context, images: gallery.data!);
+
+                  },
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5.w),
+                    // Example background color
+                    child: Image.network(gallery.data![index],
+                      height: 200.h,
+                      width: 200.w,
+                    fit: BoxFit.cover,),
+                  ),
                 );
-              }):Container();
-        },
-      ),
-
+              },
+            );
+      },
     );
-
   }
 }

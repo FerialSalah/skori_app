@@ -61,6 +61,7 @@ class _FollowingLeaguesListState extends State<FollowingLeaguesList> {
                         isFollow: result[index].isFollow,
                         isFav: result[index].isFavorite,
                         logo: result[index].logo,
+                        season: result[index].season,
                         continent: result[index].continent),
                     separatorBuilder: (context,_)=>SizedBox(height:10.h,),
                     itemCount: result.length)),

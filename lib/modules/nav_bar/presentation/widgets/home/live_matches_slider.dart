@@ -105,7 +105,7 @@ class LiveMatchesSlider extends StatelessWidget {
                             ))
                       ],
                     ),
-                    SizedBox(width: 20.w,),
+                    SizedBox(width: 10.w,),
                     MainText(text: matches[itemIndex].homeTeamScore,font: 25,family: TextFontApp.boldFont,color: ColorApp.yellow,),
                     Padding(
                       padding:  EdgeInsets.symmetric(horizontal: 35.w),

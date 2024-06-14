@@ -19,6 +19,13 @@ class AppIcons {
   static const String confirm = '$_iconPath/confirm.png';
   static const String location = '$_iconPath/location.png';
   static const String transfer = '$_iconPath/transfer.png';
+  static const String transfers = '$_iconPath/transfers.png';
+  static const String leftTransfer = '$_iconPath/leftTransfer.png';
+  static const String leagues = '$_iconPath/leagues.png';
+  static const String trash = '$_iconPath/trash.png';
+
+
+
 
 
 
@@ -98,7 +105,7 @@ class ProfileIcons {
   static const String en = "$_imagePath/en.png";
   static const String ar = "$_imagePath/ar.png";
   static const String add = "$_iconPath/add.png";
-  static const String remove = "$_iconPath/add.png";
+  static const String remove = "$_iconPath/unfollow.png";
   static const String trash = "$_iconPath/trash.png";
 
 }

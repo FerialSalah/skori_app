@@ -48,4 +48,18 @@ class DioHelper {
     return response;
   }
 
+  static Future<Response<dynamic>> delete(String path){
+    dioSingleton.options.headers.addAll({
+
+      'Accept':"application/json",
+      "Accept-Language":lang,
+
+      if(AppStorage.isLogged)
+        'Authorization': 'Bearer ${AppStorage.getToken}'
+    });
+    final response = dioSingleton.delete("${_baseUrl+path}");
+    // dio.options.headers = null;a
+    return response;
+  }
+
 }

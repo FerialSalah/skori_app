@@ -1,8 +1,10 @@
+import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/constant/app_assets.dart';
+import 'package:skori/core/cubit/gallery/match_gallery_cubit.dart';
 import 'package:skori/core/widgets/main_text.dart';
 import 'package:skori/modules/matches/presentation/bloc/match_statistics_bloc.dart';
 import 'package:skori/modules/matches/presentation/bloc/previous_matches_bloc.dart';
@@ -11,6 +13,7 @@ import 'package:skori/modules/matches/presentation/bloc/recent_home_matches_bloc
 import 'package:skori/modules/matches/presentation/widgets/match_app_bar.dart';
 import 'package:skori/modules/matches/presentation/widgets/match_statistic_card.dart';
 import 'package:skori/modules/matches/presentation/widgets/recent_matches.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 import '../../../../core/injection/injection_app.dart' as di;
 
 import '../../../../core/theme/color_app.dart';
@@ -21,6 +24,7 @@ import '../bloc/match_statistics_event.dart';
 import '../bloc/recent_matches_event.dart';
 import '../widgets/last_head_to_head.dart';
 import '../widgets/recent_away_matches.dart';
+import 'match_gallery.dart';
 
 class StatisticsScreen extends StatefulWidget {
   final int id;
@@ -72,6 +76,8 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   @override
   void initState() {
     // TODO: implement initState
+    BlocProvider.of<MatchGalleryCubit>(context)..getMatchGallery(widget.id);
+
     super.initState();
   }
 
@@ -119,148 +125,203 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
               awayTeamId: widget.awayTeamId,
             )
           ],
-          body: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+          body: DefaultTabController(
+            length: 2,
+            child:Column(
               children: [
-                MatchStatisticCard(
-                  homeTeamLogo: widget.homeTeamLogo,
-                  awayTeamLogo: widget.awayTeamLogo,
-                ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
-                  child: MainText(
-                    text: LocaleKeys.recentMatches.tr(),
-                    family: TextFontApp.boldFont,
-                    font: 18,
+                SizedBox(height: 15,),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                          color: ColorApp.borderGray,
+                          width: .5
+                      )
+                  ),
+                  child: ButtonsTabBar(
+                    backgroundColor: ColorApp.yellow,
+                    unselectedBackgroundColor: ColorApp.white,
+                    borderWidth: 0,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 35,vertical: 10),
+                    borderColor: ColorApp.borderGray,
+                    labelSpacing: 0,
+                    radius: 0,
+                    buttonMargin: EdgeInsets.zero,
+                    labelStyle: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontFamily: TextFontApp.boldFont
+
+                    ),
+                    unselectedLabelStyle: TextStyle(
+                        color: ColorApp.hintGray,
+                        fontSize: 16,
+                        fontFamily: TextFontApp.mediumFont
+                    ),
+                    // Add your tabs here
+                    tabs: [
+                      Tab(text: LocaleKeys.statistics.tr(),),
+                      Tab(text: LocaleKeys.gallery.tr(),),
+
+                    ],
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      recentMatchesHomeIsOpen = !recentMatchesHomeIsOpen;
-                    });
-                  },
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                    height: 50.h,
-                    color: ColorApp.white,
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 40.w,
-                          height: 70.h,
-                          child: CachedImageNetwork(
-                            image: widget.homeTeamLogo,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 25.w,
-                        ),
-                        Column(
+
+                Expanded(
+                  child:   TabBarView(
+                    children: [
+                      SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            MainText(
-                              text: widget.homeTeamName,
-                              font: 14,
-                              family: TextFontApp.semiBoldFont,
+
+                            MatchStatisticCard(
+                              homeTeamLogo: widget.homeTeamLogo,
+                              awayTeamLogo: widget.awayTeamLogo,
                             ),
+                            Padding(
+                              padding:
+                              EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+                              child: MainText(
+                                text: LocaleKeys.recentMatches.tr(),
+                                family: TextFontApp.boldFont,
+                                font: 18,
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  recentMatchesHomeIsOpen = !recentMatchesHomeIsOpen;
+                                });
+                              },
+                              child: Container(
+                                margin: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                                height: 50.h,
+                                color: ColorApp.white,
+                                child: Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 40.w,
+                                      height: 70.h,
+                                      child: CachedImageNetwork(
+                                        image: widget.homeTeamLogo,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 25.w,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        MainText(
+                                          text: widget.homeTeamName,
+                                          font: 14,
+                                          family: TextFontApp.semiBoldFont,
+                                        ),
+                                      ],
+                                    ),
+                                    Spacer(),
+                                    IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            recentMatchesHomeIsOpen =
+                                            !recentMatchesHomeIsOpen;
+                                          });
+                                        },
+                                        icon: Image.asset(
+                                          recentMatchesHomeIsOpen
+                                              ? AppIcons.collapseOpen
+                                              : AppIcons.collapseClose,
+                                          height: 22.h,
+                                          width: 22.w,
+                                        )),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            recentMatchesHomeIsOpen ? RecentMatches() : Container(),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  recentMatchesAwayIsOpen = !recentMatchesAwayIsOpen;
+                                });
+                              },
+                              child: Container(
+                                margin: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                                height: 50.h,
+                                color: ColorApp.white,
+                                child: Row(
+                                  children: [
+                                    SizedBox(
+                                      width: 40.w,
+                                      height: 70.h,
+                                      child: CachedImageNetwork(
+                                        image: widget.awayTeamLogo,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 25.w,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        MainText(
+                                          text: widget.awayTeamName,
+                                          font: 14,
+                                          family: TextFontApp.semiBoldFont,
+                                        ),
+                                      ],
+                                    ),
+                                    Spacer(),
+                                    IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            recentMatchesAwayIsOpen =
+                                            !recentMatchesAwayIsOpen;
+                                          });
+                                        },
+                                        icon: Image.asset(
+                                          recentMatchesAwayIsOpen
+                                              ? AppIcons.collapseOpen
+                                              : AppIcons.collapseClose,
+                                          height: 22.h,
+                                          width: 22.w,
+                                        )),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            recentMatchesAwayIsOpen ? RecentAwayMatches() : Container(),
+                            Padding(
+                              padding:
+                              EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+                              child: MainText(
+                                text: LocaleKeys.previousMatches.tr(),
+                                family: TextFontApp.boldFont,
+                                font: 18,
+                              ),
+                            ),
+                            LastHeadToHeadMatches(),
+                            SizedBox(
+                              height: 20,
+                            )
                           ],
                         ),
-                        Spacer(),
-                        IconButton(
-                            onPressed: () {
-                              setState(() {
-                                recentMatchesHomeIsOpen =
-                                    !recentMatchesHomeIsOpen;
-                              });
-                            },
-                            icon: Image.asset(
-                              recentMatchesHomeIsOpen
-                                  ? AppIcons.collapseOpen
-                                  : AppIcons.collapseClose,
-                              height: 22.h,
-                              width: 22.w,
-                            )),
-                      ],
-                    ),
-                  ),
-                ),
-                recentMatchesHomeIsOpen ? RecentMatches() : Container(),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      recentMatchesAwayIsOpen = !recentMatchesAwayIsOpen;
-                    });
-                  },
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                    height: 50.h,
-                    color: ColorApp.white,
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 40.w,
-                          height: 70.h,
-                          child: CachedImageNetwork(
-                            image: widget.awayTeamLogo,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 25.w,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            MainText(
-                              text: widget.awayTeamName,
-                              font: 14,
-                              family: TextFontApp.semiBoldFont,
-                            ),
-                          ],
-                        ),
-                        Spacer(),
-                        IconButton(
-                            onPressed: () {
-                              setState(() {
-                                recentMatchesAwayIsOpen =
-                                    !recentMatchesAwayIsOpen;
-                              });
-                            },
-                            icon: Image.asset(
-                              recentMatchesAwayIsOpen
-                                  ? AppIcons.collapseOpen
-                                  : AppIcons.collapseClose,
-                              height: 22.h,
-                              width: 22.w,
-                            )),
-                      ],
-                    ),
-                  ),
-                ),
-                recentMatchesAwayIsOpen ? RecentAwayMatches() : Container(),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
-                  child: MainText(
-                    text: LocaleKeys.previousMatches.tr(),
-                    family: TextFontApp.boldFont,
-                    font: 18,
-                  ),
-                ),
-                LastHeadToHeadMatches(),
-                SizedBox(
-                  height: 20,
-                )
+                      ),
+                      MatchGallery(),
+
+
+                    ],
+                  ),),
+
               ],
             ),
-          ),
+          )
+
           // body:  BlocBuilder<TableBloc, BaseState>(
           //   builder: (context, state) {
           //     final result = BlocProvider.of<TableBloc>(context).table;

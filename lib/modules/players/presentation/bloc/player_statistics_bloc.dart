@@ -42,6 +42,7 @@ _handlePlayerStatistics(GetPlayerStatistics event, Emitter<BaseState> emit) asyn
     print("rrrrrrrrrrr:$result");
     print("hereeee");
     result.fold((failure) {
+
       if (failure is FailureOffline) {
         emit(OfflineState(
             msg:"connection network unstable , please try agin after check connection"));

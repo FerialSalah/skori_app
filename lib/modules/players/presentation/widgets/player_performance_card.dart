@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/modules/players/domain/entity/player_new_statistics_entity.dart';
 import 'package:skori/modules/players/presentation/widgets/player_performance_item.dart';
 
@@ -20,7 +21,11 @@ class PlayerPerformanceCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          MainText(text: title,font: 18,family: TextFontApp.boldFont),
+          MainText(
+
+            text: title,font: 16,family: TextFontApp.boldFont,
+          overflow: TextOverflow.clip,
+          maxLines: 2,),
           SizedBox(height: 20,),
           Container(
            // height: 400.h,

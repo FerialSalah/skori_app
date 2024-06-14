@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skori/core/cubit/gallery/player_gallery_cubit.dart';
 import 'package:skori/core/cubit/player_league/player_leagues_cubit.dart';
 import 'package:skori/generated/locale_keys.g.dart';
 import 'package:skori/modules/players/presentation/widgets/player_Info.dart';
@@ -9,6 +10,7 @@ import '../../../../core/cubit/season/player_season_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../widgets/custom_sliver_app_bar.dart';
 import '../widgets/custom_sliver_tabs.dart';
+import '../widgets/player_gallery.dart';
 import '../widgets/player_history.dart';
 import '../widgets/player_news.dart';
 
@@ -27,7 +29,9 @@ class PlayerProfile extends StatefulWidget {
       required this.name,
       required this.avatar,
       required this.clubLogo,
-      required this.clubName, required this.isFollow, required this.isFav})
+      required this.clubName,
+      required this.isFollow,
+      required this.isFav})
       : super(key: key);
 
   @override
@@ -41,18 +45,18 @@ class _PlayerProfileState extends State<PlayerProfile>
   void initState() {
     BlocProvider.of<PlayerSeasonsCubit>(context)..getPlayerSeasons(widget.id);
     BlocProvider.of<PlayerLeaguesCubit>(context)..getPlayerLeagues(widget.id);
-
+    BlocProvider.of<PlayerGalleryCubit>(context)..getPlayerGallery(widget.id);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         body: NestedScrollView(
           physics: ClampingScrollPhysics(),
-          headerSliverBuilder: (context, innerBoxIsScrolled) =>[
+          headerSliverBuilder: (context, innerBoxIsScrolled) => [
             CustomSliverAppBar(
               isPlayerFilter: true,
               name: widget.name,
@@ -70,18 +74,28 @@ class _PlayerProfileState extends State<PlayerProfile>
               tabController: tabController,
               clubName: widget.clubName,
               clubLogo: widget.clubLogo,
-              tabsTitle: [LocaleKeys.playerInfo.tr(),LocaleKeys.statistics.tr(),LocaleKeys.playerContent.tr(),
-                LocaleKeys.playerHistory.tr()],
+              tabsTitle: [
+                LocaleKeys.playerInfo.tr(),
+                LocaleKeys.statistics.tr(),
+                LocaleKeys.playerContent.tr(),
+                LocaleKeys.playerHistory.tr(),
+                LocaleKeys.gallery.tr()
+              ],
             ),
           ],
-          body: TabBarView(
-            physics: ClampingScrollPhysics(),
-              children: [
-                PlayerInfo(id: widget.id,),
-                PlayerNewStatistics(id: widget.id),
-                NewsOfPlayer(id: widget.id,),
-                PlayerHistory(id: widget.id,),
-              ]),
+          body: TabBarView(physics: ClampingScrollPhysics(), children: [
+            PlayerInfo(
+              id: widget.id,
+            ),
+            PlayerNewStatistics(id: widget.id),
+            NewsOfPlayer(
+              id: widget.id,
+            ),
+            PlayerHistory(
+              id: widget.id,
+            ),
+            PlayerGallery()
+          ]),
         ),
       ),
     );

@@ -24,7 +24,7 @@ class LeagueModel extends LeagueEntity {
     required super.logo,
     required super.continent,
     required super.isFollow,
-    required super.isFavorite,
+    required super.isFavorite, required super.season,
   });
 
 
@@ -33,6 +33,7 @@ class LeagueModel extends LeagueEntity {
     title: json["title"],
     logo: json["logo"],
     continent: json["continent_name"],
+    season:  json["season"],
     isFollow: json["is_follow"],
     isFavorite: json["is_favorite"],
 

@@ -37,7 +37,7 @@ class NewsModel extends NewsEntity {
       required super.isFeatured,
       required super.isPaid,
       required super.isProminent,
-      required super.type});
+      required super.type, required super.localedType});
 
   factory NewsModel.fromJson(Map<String, dynamic> json) => NewsModel(
       id: json["id"],
@@ -58,6 +58,7 @@ class NewsModel extends NewsEntity {
       isFeatured: json['is_featured'],
       isProminent: json['is_prominent'],
       type: json['type'],
+      localedType: json['localed_type'],
       isFavorite: json['is_favorite'],
       isPaid: json['is_paid'],
       isActive: json['is_active']);

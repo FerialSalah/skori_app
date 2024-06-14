@@ -97,11 +97,13 @@ class PlayerCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
-                          width: 200,
+                          width: 170.w,
                           child: MainText(
                             text: name,
                             font: 14,
                             family: TextFontApp.boldFont,
+                            overflow: TextOverflow.clip,
+                            maxLines: 2,
                           )),
                       MainText(
                         text: position,

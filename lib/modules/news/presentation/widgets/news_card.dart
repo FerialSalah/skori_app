@@ -25,8 +25,9 @@ class NewsCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(newsEntity.leagueName!.isEmpty);
+   // print(newsEntity.leagueName!.isEmpty);
     print("newsEntity.teamId: ${newsEntity.teamId}");
+    print("localed type:${newsEntity.localedType}");
     return GestureDetector(
       onTap: () {
         RouteManager.navigateTo(NewsDetailsScreen(
@@ -111,6 +112,27 @@ class NewsCart extends StatelessWidget {
                           font: 12,
                           overflow: TextOverflow.ellipsis,
                           family: TextFontApp.mediumFont,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      Container(
+                         width: 65.w,
+                         height: 25.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(25)),
+                          color: ColorApp.red,
+                        ),
+                        child: Center(
+                          child: MainText(
+                            text: newsEntity.localedType,
+                            color: ColorApp.white,
+                            font: 12,
+                            overflow: TextOverflow.ellipsis,
+                            family: TextFontApp.mediumFont,
+                            center: true,
+                          ),
                         ),
                       ),
                       SizedBox(

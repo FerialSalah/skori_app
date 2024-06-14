@@ -81,7 +81,7 @@ class CustomSliverAppBar extends StatelessWidget {
                 isFollow: isFollowing,
                 id: id,
                 type: type,
-                width: 77.w,
+                width: 120.w,
                 height: 30.h,
               ),
               SizedBox(

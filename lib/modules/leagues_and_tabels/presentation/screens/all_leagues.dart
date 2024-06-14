@@ -12,7 +12,6 @@ import '../../../../core/widgets/offline_widget.dart';
 import '../../../../core/widgets/shimmer_widget.dart';
 import '../widgets/league_card.dart';
 
-
 class AllLeaguesScreen extends StatefulWidget {
   const AllLeaguesScreen({Key? key}) : super(key: key);
 
@@ -31,7 +30,6 @@ class _AllLeaguesScreenState extends State<AllLeaguesScreen> {
         await BlocProvider.of<LeaguesBloc>(context)
           ..add(LeaguesPagination());
       }
-
     });
 
     super.initState();
@@ -39,44 +37,48 @@ class _AllLeaguesScreenState extends State<AllLeaguesScreen> {
 
   @override
   void dispose() {
-
     scrollController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBars.appBarTitle(title: LocaleKeys.leagues.tr(),search: true),
-
+        appBar:
+            AppBars.appBarTitle(title: LocaleKeys.leagues.tr(), search: true),
         body: BlocBuilder<LeaguesBloc, BaseState>(
           builder: (context, state) {
             final result = BlocProvider.of<LeaguesBloc>(context).leagues;
             if (state is LoadingState) {
               return ShimmerWidget();
-            } else if (state is SuccessState ||state is PaginateState) {
+            } else if (state is SuccessState || state is PaginateState) {
               if (result.isEmpty) {
                 return emptyShow();
               } else {
                 return Column(
                   children: [
                     Expanded(
-                      child:    ListView.separated(
-                          padding: EdgeInsets.symmetric(horizontal: 16,vertical: 16),
-                          itemBuilder: (context,index)=>LeagueCard(
-                            id: result[index].id,
-                            title:result[index].title,
-                            logo:result[index].logo ,
-                            isFollow:result[index].isFollow ,
-                            isFav:result[index].isFavorite ,
-                            continent:result[index].continent ,
-                          ),
-                          separatorBuilder: (context,_)=>SizedBox(
-                            height: 10,
-                          ),
-                          itemCount: result.length),),
-                    if(state is PaginateState)
-                      ColorLoader(),
-                    SizedBox(height: 50,),
+                      child: ListView.separated(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 16),
+                          itemBuilder: (context, index) => LeagueCard(
+                                id: result[index].id,
+                                title: result[index].title,
+                                logo: result[index].logo,
+                                isFollow: result[index].isFollow,
+                                isFav: result[index].isFavorite,
+                                continent: result[index].continent,
+                                season: result[index].season,
+                              ),
+                          separatorBuilder: (context, _) => SizedBox(
+                                height: 10,
+                              ),
+                          itemCount: result.length),
+                    ),
+                    if (state is PaginateState) ColorLoader(),
+                    SizedBox(
+                      height: 50,
+                    ),
                   ],
                 );
               }
@@ -86,8 +88,6 @@ class _AllLeaguesScreenState extends State<AllLeaguesScreen> {
               return Text("Server error");
             }
           },
-        )
-
-    );
+        ));
   }
 }

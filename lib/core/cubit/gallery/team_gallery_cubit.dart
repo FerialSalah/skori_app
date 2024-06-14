@@ -25,7 +25,7 @@ class TeamGalleryCubit extends Cubit<BaseState>{
 
         print("team gallery are :${r.data}");
         galleryModel = GalleryModel.fromJson(r.data);
-        print(galleryModel!.data!.length);
+        print("galleryModel!.data!.length: ${galleryModel!.data!.length}");
         emit(SuccessState());
       } else {
         emit(ErrorState(msg: ""));

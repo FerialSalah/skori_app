@@ -15,7 +15,7 @@ class PlayersBloc extends Bloc<PlayersEvent, BaseState> {
   String? teamId;
   PlayersBloc(this.playersUsaCase) : super(InitState()) {
     on<GetPlayersData>((event, emit) => _handleGetPlayersData(event, emit));
-    on<PlayersPagination>((event, emit) => _handleNPlayersPagination(event, emit));
+    on<PlayersPagination>((event, emit) => _handlePlayersPagination(event, emit));
   }
 
   _handleGetPlayersData(GetPlayersData event, Emitter<BaseState> emit) async {
@@ -35,9 +35,11 @@ class PlayersBloc extends Bloc<PlayersEvent, BaseState> {
     });
   }
 
-  _handleNPlayersPagination(PlayersPagination event, Emitter<BaseState> emit) async {
+  _handlePlayersPagination(PlayersPagination event, Emitter<BaseState> emit) async {
+    print(currentPage);
     if (state is PaginateState) return;
     try {
+      print("pagenation player");
       emit(PaginateState());
       currentPage++;
       final result = await playersUsaCase.getPlayers(page: currentPage,

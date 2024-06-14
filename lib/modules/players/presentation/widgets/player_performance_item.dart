@@ -29,7 +29,11 @@ class PlayerPerformanceItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              MainText(text: title, font: 18, family: TextFontApp.boldFont),
+              SizedBox(
+                width: 160.w,
+                child: MainText(text: title, font: 16, family: TextFontApp.boldFont,overflow: TextOverflow.clip,
+                maxLines: 2,),
+              ),
               MainText(
                 text: playerPerformanceList[4].value.toString().contains("%")? playerPerformanceList[4].value.toString():
                 playerPerformanceList[4].value.toString()+" %",

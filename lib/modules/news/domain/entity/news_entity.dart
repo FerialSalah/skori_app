@@ -19,12 +19,14 @@ class NewsEntity extends Equatable {
   final bool? isFeatured;
   final bool? isProminent;
   final String? type;
+  final String? localedType;
   final bool? isFavorite;
   final String? isPaid;
   final String? isActive;
 
   NewsEntity(
   {
+   required this.localedType,
     required this.id,
     required this.title,
     required this.body,
