@@ -242,7 +242,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                                         .passes !=
                                                     null
                                                 ? playerInfo.fifaCardEntity
-                                                    .passes!.value
+                                                    .passes!.value.toString()
                                                 : "-",
                                         font: 15,
                                         family: TextFontApp.boldFont,
