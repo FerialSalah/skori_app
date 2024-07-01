@@ -41,10 +41,12 @@ class MyAccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     print("user is logged :${AppStorage.isLogged}");
     return Scaffold(
-            body: ListView(
-              padding: EdgeInsets.symmetric(vertical: 0),
-              children: [
-                !AppStorage.isLogged?SizedBox():Container(
+      body: ListView(
+        padding: EdgeInsets.symmetric(vertical: 0),
+        children: [
+          !AppStorage.isLogged
+              ? SizedBox()
+              : Container(
                   height: 185.h,
                   padding: EdgeInsets.symmetric(horizontal: 15),
                   color: ColorApp.white,
@@ -58,7 +60,6 @@ class MyAccountScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-
                           Stack(
                             // alignment: AlignmentDirectional.center,
                             children: [
@@ -84,15 +85,31 @@ class MyAccountScreen extends StatelessWidget {
                             onTap: () {
                               RouteManager.navigateTo(NotificationsScreen());
                             },
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 9.5.w, vertical: 9.h),
-                              color: ColorApp.red,
-                              child: Image.asset(
-                                AppIcons.notifications,
-                                height: 21.h,
-                                width: 20.w,
-                              ),
+                            child: Stack(
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 9.5.w, vertical: 9.h),
+                                  color: ColorApp.red,
+                                  child: Image.asset(
+                                    AppIcons.notifications,
+                                    height: 21.h,
+                                    width: 20.w,
+                                  ),
+                                ),
+                                !AppStorage.isLogged
+                                    ? SizedBox()
+                                    : AppStorage.notificationCount == 0
+                                        ? Container()
+                                        : Badge(
+                                            label: MainText(
+                                              text: AppStorage.notificationCount
+                                                  .toString(),
+                                              color: ColorApp.white,
+                                              font: 14,
+                                            ),
+                                          )
+                              ],
                             ),
                           ),
                         ],
@@ -117,99 +134,128 @@ class MyAccountScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                !AppStorage.isLogged?SizedBox():BlocBuilder<AvailabilityCubit, BaseState>(
+          !AppStorage.isLogged
+              ? SizedBox()
+              : BlocBuilder<AvailabilityCubit, BaseState>(
                   builder: (context, state) {
-                    return AvailabilityCubit.of(context).availability==false?SizedBox(): AppButton(
-                      title: LocaleKeys.manageYourPackage.tr(),
-                      height: 50.h,
-                      hor: 16,
-                      ver: 15,
-                      onPressed: () {
-                        RouteManager.navigateTo(ManageYourPackageScreen());
-                      },
-                    );
+                    return AvailabilityCubit.of(context).availability == false
+                        ? SizedBox()
+                        : AppButton(
+                            title: LocaleKeys.manageYourPackage.tr(),
+                            height: 50.h,
+                            hor: 16,
+                            ver: 15,
+                            onPressed: () {
+                              RouteManager.navigateTo(
+                                  ManageYourPackageScreen());
+                            },
+                          );
                   },
                 ),
-
-                Container(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
-                  color: ColorApp.white,
-                  child: Column(
-                    children: [
-                       AppStorage.isLogged?SizedBox():SizedBox(height: 100,),
-                      !AppStorage.isLogged?SizedBox():ProfileListTile(
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+            color: ColorApp.white,
+            child: Column(
+              children: [
+                AppStorage.isLogged
+                    ? SizedBox()
+                    : SizedBox(
+                        height: 100,
+                      ),
+                !AppStorage.isLogged
+                    ? SizedBox()
+                    : ProfileListTile(
                         title: LocaleKeys.leagues.tr(),
                         icon: AppIcons.leagues,
                         route: AllLeaguesScreen(),
                       ),
-                      !AppStorage.isLogged?SizedBox(): Divider(),
-                      !AppStorage.isLogged?SizedBox():ProfileListTile(
+                !AppStorage.isLogged ? SizedBox() : Divider(),
+                !AppStorage.isLogged
+                    ? SizedBox()
+                    : ProfileListTile(
                         title: LocaleKeys.transfers.tr(),
                         icon: AppIcons.transfers,
                         route: TransfersScreen(),
                       ),
-
-                      !AppStorage.isLogged?SizedBox(): Divider(),
-                      !AppStorage.isLogged?SizedBox():ProfileListTile(
+                !AppStorage.isLogged ? SizedBox() : Divider(),
+                !AppStorage.isLogged
+                    ? SizedBox()
+                    : ProfileListTile(
                         title: LocaleKeys.editProfile.tr(),
                         icon: ProfileIcons.edit,
                         route: ProfileScreen(),
                       ),
-                      !AppStorage.isLogged?SizedBox(): Divider(),
-                      !AppStorage.isLogged?SizedBox():ProfileListTile(
+                !AppStorage.isLogged ? SizedBox() : Divider(),
+                !AppStorage.isLogged
+                    ? SizedBox()
+                    : ProfileListTile(
                         title: LocaleKeys.changePassword.tr(),
                         icon: ProfileIcons.code,
                         route: ChangePasswordScreen(),
                       ),
-                      !AppStorage.isLogged?SizedBox():Divider(),
-                      !AppStorage.isLogged?SizedBox():ProfileListTile(
+                !AppStorage.isLogged ? SizedBox() : Divider(),
+                !AppStorage.isLogged
+                    ? SizedBox()
+                    : ProfileListTile(
                         title: LocaleKeys.favorites.tr(),
                         icon: ProfileIcons.favorite,
                         route: FavoritesScreen(),
                       ),
-                      !AppStorage.isLogged?SizedBox():Divider(),
-                      !AppStorage.isLogged?SizedBox():ProfileListTile(
+                !AppStorage.isLogged ? SizedBox() : Divider(),
+                !AppStorage.isLogged
+                    ? SizedBox()
+                    : ProfileListTile(
                         title: LocaleKeys.followingList.tr(),
                         icon: ProfileIcons.following,
                         route: FollowingListScreen(),
                       ),
-                      !AppStorage.isLogged?SizedBox():Divider(),
-                      !AppStorage.isLogged?SizedBox(): BlocBuilder<AvailabilityCubit, BaseState>(
+                !AppStorage.isLogged ? SizedBox() : Divider(),
+                !AppStorage.isLogged
+                    ? SizedBox()
+                    : BlocBuilder<AvailabilityCubit, BaseState>(
                         builder: (context, state) {
-                          return AvailabilityCubit.of(context).availability==false?SizedBox():ProfileListTile(
-                            title: LocaleKeys.packages.tr(),
-                            icon: ProfileIcons.packages,
-                            route: PackagesScreen(),
-                          );
+                          return AvailabilityCubit.of(context).availability ==
+                                  false
+                              ? SizedBox()
+                              : ProfileListTile(
+                                  title: LocaleKeys.packages.tr(),
+                                  icon: ProfileIcons.packages,
+                                  route: PackagesScreen(),
+                                );
                         },
                       ),
-                      !AppStorage.isLogged?SizedBox():AvailabilityCubit.of(context).availability==false?SizedBox():Divider(),
-                      ProfileListTile(
-                        title: LocaleKeys.language.tr(),
-                        icon: ProfileIcons.global,
-                        route: LanguageScreen(),
-                      ),
-                      Divider(),
-                      ProfileListTile(
-                        title: LocaleKeys.contactUs.tr(),
-                        icon: ProfileIcons.contact,
-                        route: ContactUsScreen(),
-                      ),
-                      Divider(),
-                      ProfileListTile(
-                        title: LocaleKeys.aboutUs.tr(),
-                        icon: ProfileIcons.information,
-                        route: AboutUsScreen(),
-                      ),
-                      Divider(),
-                      ProfileListTile(
-                        title: LocaleKeys.termsConditions.tr(),
-                        icon: ProfileIcons.terms,
-                        route: TermsAndConditionsScreen(),
-                      ),
-                      Divider(),
-                      !AppStorage.isLogged?SizedBox():ProfileListTile(
+                !AppStorage.isLogged
+                    ? SizedBox()
+                    : AvailabilityCubit.of(context).availability == false
+                        ? SizedBox()
+                        : Divider(),
+                ProfileListTile(
+                  title: LocaleKeys.language.tr(),
+                  icon: ProfileIcons.global,
+                  route: LanguageScreen(),
+                ),
+                Divider(),
+                ProfileListTile(
+                  title: LocaleKeys.contactUs.tr(),
+                  icon: ProfileIcons.contact,
+                  route: ContactUsScreen(),
+                ),
+                Divider(),
+                ProfileListTile(
+                  title: LocaleKeys.aboutUs.tr(),
+                  icon: ProfileIcons.information,
+                  route: AboutUsScreen(),
+                ),
+                Divider(),
+                ProfileListTile(
+                  title: LocaleKeys.termsConditions.tr(),
+                  icon: ProfileIcons.terms,
+                  route: TermsAndConditionsScreen(),
+                ),
+                Divider(),
+                !AppStorage.isLogged
+                    ? SizedBox()
+                    : ProfileListTile(
                         title: LocaleKeys.deleteAccount.tr(),
                         icon: ProfileIcons.trash,
                         onTap: () {
@@ -219,33 +265,49 @@ class MyAccountScreen extends StatelessWidget {
                           );
                         },
                       ),
-                      !AppStorage.isLogged?SizedBox():Divider(),
-                      !AppStorage.isLogged?SizedBox():ProfileListTile(
+                !AppStorage.isLogged ? SizedBox() : Divider(),
+                !AppStorage.isLogged
+                    ? SizedBox()
+                    : ProfileListTile(
                         title: LocaleKeys.logout.tr(),
                         icon: ProfileIcons.logout,
-                        onTap: () async{
+                        onTap: () async {
                           AppStorage.signOut();
                           await GoogleSignInApi.signOut();
-
                         },
                       ),
-                      AppStorage.isLogged?SizedBox():SizedBox(height: 100,),
-                      AppStorage.isLogged?SizedBox():AppButton(title: LocaleKeys.createAcc.tr(),hor: 30,onPressed: (){
-                        RouteManager.navigateAndPopAll(SignUpScreen());
-                      },),
-                      SizedBox(
-                        height: 30,
+                AppStorage.isLogged
+                    ? SizedBox()
+                    : SizedBox(
+                        height: 100,
                       ),
-                      AppStorage.isLogged?SizedBox():AppButton(title: LocaleKeys.login.tr(),hor: 30,onPressed: (){
-                        RouteManager.navigateAndPopAll(LoginScreen());
-                      },),
-
-                    ],
-                  ),
+                AppStorage.isLogged
+                    ? SizedBox()
+                    : AppButton(
+                        title: LocaleKeys.createAcc.tr(),
+                        hor: 30,
+                        onPressed: () {
+                          RouteManager.navigateAndPopAll(SignUpScreen());
+                        },
+                      ),
+                SizedBox(
+                  height: 30,
                 ),
-                SizedBox(height: 110.h),
+                AppStorage.isLogged
+                    ? SizedBox()
+                    : AppButton(
+                        title: LocaleKeys.login.tr(),
+                        hor: 30,
+                        onPressed: () {
+                          RouteManager.navigateAndPopAll(LoginScreen());
+                        },
+                      ),
               ],
             ),
-          );
+          ),
+          SizedBox(height: 110.h),
+        ],
+      ),
+    );
   }
 }

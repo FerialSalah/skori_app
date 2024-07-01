@@ -212,7 +212,7 @@ class LeagueTopScores extends StatelessWidget {
                         color: ColorApp.black,
                       ),
                       SizedBox(
-                        width: 60.w,
+                        width: 70.w,
                       ),
                       MainText(
                         text: LocaleKeys.P.tr(),
@@ -221,13 +221,16 @@ class LeagueTopScores extends StatelessWidget {
                         color: ColorApp.black,
                       ),
                       SizedBox(
-                        width: 25.w,
+                        width: 20.w,
                       ),
                       MainText(
                         text:LocaleKeys.G.tr(),
                         font: 12,
                         family: TextFontApp.semiBoldFont,
                         color: ColorApp.black,
+                      ),
+                      SizedBox(
+                        width: 10.w,
                       ),
 
 

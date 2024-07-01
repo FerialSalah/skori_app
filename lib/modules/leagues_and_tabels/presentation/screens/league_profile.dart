@@ -84,22 +84,7 @@ class _LeagueProfileScreenState extends State<LeagueProfileScreen>
         BlocProvider(
             create: (context) =>
             di.getIt<LeaguePerformanceBloc>()..add(GetLeaguePerformance(id: widget.id))),
-        // BlocProvider(
-        //     create: (context) =>
-        //     di.getIt<MatchesBloc>()..add(GetMatchesData())),
 
-        // BlocProvider(
-        //     create: (context) => di.getIt<TeamStatisticsBloc>()
-        //       ..add(GetTeamStatistics(id: widget.id))),
-        // BlocProvider(
-        //     create: (context) =>
-        //     di.getIt<TeamNewsBloc>()..add(GetTeamNews(id: widget.id))),
-        // BlocProvider(
-        //     create: (context) => di.getIt<TeamPlayersBloc>()
-        //       ..add(GetTeamPlayers(id: widget.id))),
-        // BlocProvider(
-        //     create: (context) =>
-        //     di.getIt<TeamGalleryCubit>()..getTeamGallery(widget.id)),
       ],
       child: DefaultTabController(
         length: 5,
@@ -136,7 +121,6 @@ class _LeagueProfileScreenState extends State<LeagueProfileScreen>
           body: TabBarView(
             physics: ClampingScrollPhysics(),
             children: [
-              //LeagueTableScreen(),
               LeagueRinksScreen(),
               LeagueNews(leagueId: widget.id),
               LeagueStatistics(leagueId: widget.id,),

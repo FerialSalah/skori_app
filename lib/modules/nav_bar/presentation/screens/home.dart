@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skori/core/app_storage/app_storage.dart';
 import 'package:skori/core/theme/textFont_app.dart';
 import 'package:skori/core/widgets/customTextFeild.dart';
 import 'package:skori/core/widgets/loader.dart';
@@ -9,11 +10,13 @@ import 'package:skori/core/widgets/main_text.dart';
 import 'package:skori/generated/locale_keys.g.dart';
 import 'package:skori/modules/nav_bar/presentation/bloc/home_bloc.dart';
 import 'package:skori/modules/nav_bar/presentation/bloc/home_event.dart';
+import 'package:skori/modules/profile/presentation/bloc/notifications/notifications_event.dart';
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/routes/navigator_push.dart';
 import '../../../../core/state/base_state.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/widgets/offline_widget.dart';
+import '../../../profile/presentation/bloc/notifications/notifications_bloc.dart';
 import '../../../profile/presentation/screens/notifications.dart';
 import '../../../search/presentation/screens/search_screen.dart';
 import '../widgets/home/follow_players.dart';
@@ -31,11 +34,9 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
-
     BlocProvider.of<HomeBloc>(context)..add(GetHomeData());
 
     super.initState();
@@ -79,15 +80,31 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       RouteManager.navigateTo(NotificationsScreen());
                     },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 9.5.w, vertical: 9.h),
-                      color: ColorApp.red,
-                      child: Image.asset(
-                        AppIcons.notifications,
-                        height: 21.h,
-                        width: 20.w,
-                      ),
+                    child: Stack(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 9.5.w, vertical: 9.h),
+                          color: ColorApp.red,
+                          child: Image.asset(
+                            AppIcons.notifications,
+                            height: 21.h,
+                            width: 20.w,
+                          ),
+                        ),
+                        !AppStorage.isLogged
+                            ? SizedBox()
+                            : AppStorage.notificationCount == 0
+                                ? Container()
+                                : Badge(
+                                    label: MainText(
+                                      text: AppStorage.notificationCount
+                                          .toString(),
+                                      color: ColorApp.white,
+                                      font: 14,
+                                    ),
+                                  )
+                      ],
                     ),
                   ),
                 ],

@@ -13,11 +13,12 @@ class ImpRepositoryAuth extends BaseRepositoryAuth{
 
 
   @override
-  Future<Either<Failure, Unit>> login({required String email,required String password}) async {
+  Future<Either<Failure, Unit>> login({required String email,required String password, String? firebaseId}) async {
     if (await networkChecker.isDeviceConnected) {
       try {
         final result = await baseDataSourceAuth.login(
-          email: email, password: password);
+          email: email, password: password, firebaseId: firebaseId??"");
+
         return Right(unit);
       } on ExceptionServiceCallBack catch (e) {
         return Left(FailureServiceWithResponse(msg: e.massage));

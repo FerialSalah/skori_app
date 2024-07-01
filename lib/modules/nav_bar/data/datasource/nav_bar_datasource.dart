@@ -39,9 +39,11 @@ class NavBarDataSource implements BaseNavBarDataSource{
 
     try {
       final result = await DioHelper.get("${HOME_URL}");
+      print("--------------------------------------------------------------");
+      print("home players: ${result.data["players"][0]["fifa_card"]}");
       HomeModel response = HomeModel.fromJson(result.data);
       print(result.data);
-      print("home matches:${response.liveMatches.length}");
+
       print("stutaas========${result.statusCode}");
       return response;
     } on DioException catch (e) {

@@ -18,11 +18,13 @@ class AppStorage {
 
   static void cacheToken(String value)=> _box.write('token', value);
   static void cacheId(int id) => _box.write('id', id);
+  static void cachedNotificationCount(int count)=>_box.write('count', count);
 
   static Future<void>  cacheUser(UserModel user) async => await _box.write('user', json.encode(user.toJson()));
   static UserModel get getUserModel => UserModel.fromJson(json.decode(_box.read('user')));
 
   static String get getToken => _box.read("token");
+  static int get notificationCount => _box.read("count");
   static bool get isLogged => _box.hasData('token');
 
   static void signOut()  {

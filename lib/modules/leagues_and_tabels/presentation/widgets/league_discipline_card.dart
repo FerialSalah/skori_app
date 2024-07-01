@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/modules/leagues_and_tabels/domain/entity/league_discipline_entity.dart';
@@ -84,22 +85,25 @@ class LeagueDisciplineCard extends StatelessWidget {
             ],
           ),
 
-          // SizedBox(
-          //   width: 5.w,
-          // ),
+
           Row(
             children: [
               SizedBox(
+                width:context.locale.languageCode=="ar"?35.w: 28.w,
+              ),
+              SizedBox(
                 width: 20.w,
-                child: MainText(
-                  text: leagueDisciplineEntity.matchesNo,
-                  font: 12,
-                  family: TextFontApp.boldFont,
-                 center: true,
+                child: Center(
+                  child: MainText(
+                    text: leagueDisciplineEntity.matchesNo,
+                    font: 12,
+                    family: TextFontApp.boldFont,
+                   center: true,
+                  ),
                 ),
               ),
               SizedBox(
-                width: 25.w,
+                width:context.locale.languageCode=="ar"? 25.w:30.w,
               ),
 
               SizedBox(

@@ -11,7 +11,7 @@ class PlayerEntity extends Equatable {
   final String name;
   final String avatar;
   final String birthDate;
-  final int age;
+  final dynamic age;
   final String gender;
   final String weight;
   final String height;

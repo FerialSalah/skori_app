@@ -36,7 +36,6 @@ class NotificationsScreen extends StatelessWidget {
               builder: (context, state) {
                 final result =
                     BlocProvider.of<NotificationsBloc>(context).notifications;
-                //print("notification body:${result[0].body}");
                 if (state is LoadingState) {
                   return ShimmerWidget();
                 } else if (state is SuccessState) {

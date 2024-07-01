@@ -50,7 +50,7 @@ class _FilterSheetState extends State<FilterSheet> {
 
   Widget build(BuildContext context) {
     return Container(
-      height: 800.h,
+     // height: 700.h,
       color: Colors.transparent, //could change this to Color(0xFF737373),
       child: Material(
         child: Container(

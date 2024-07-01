@@ -205,6 +205,8 @@ class ProfileDataSource implements BaseProfileDataSource{
       NotificationsModel response = NotificationsModel.fromJson(result.data);
       print(result.data);
       print("stutaas========${result.statusCode}");
+      print("count: ${response.unreadCount}");
+      AppStorage.cachedNotificationCount(response.unreadCount??0);
       return response;
     } on DioException catch (e) {
       print(runtimeType);

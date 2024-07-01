@@ -6,9 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/app_storage/app_storage.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
 import '../../../../generated/locale_keys.g.dart';
+import '../../../profile/presentation/bloc/notifications/notifications_bloc.dart';
+import '../../../profile/presentation/bloc/notifications/notifications_event.dart';
 import '../bloc/nav_bar_cubit.dart';
 import '../bloc/nav_bar_state.dart';
 
@@ -61,6 +64,7 @@ class _NavBarScreenState extends State<NavBarScreen>
       Duration(seconds: 1),
           () => _animationController.forward(),
     );
+
   }
   List titleList= [
     LocaleKeys.home.tr(),

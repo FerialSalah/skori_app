@@ -7,7 +7,7 @@ import '../entity/user_entity.dart';
 
 
 abstract class BaseRepositoryAuth extends Equatable {
-  Future<Either<Failure, Unit>> login({required String email,required String password});
+  Future<Either<Failure, Unit>> login({required String email,required String password,String? firebaseId});
 
   Future<Either<Failure, Unit>> signUp({required String firstName,required String lastName,
     required String email ,required String phone, required String gender,required String birthDate,

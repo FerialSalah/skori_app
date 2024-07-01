@@ -9,8 +9,8 @@ class AuthUseCase {
   AuthUseCase( this.baseRepositoryAuth);
   ///login
   Future<Either<Failure, Unit>> loginCall(
-          {required String email,required String password}) async =>
-      baseRepositoryAuth.login(email:email,password: password);
+          {required String email,required String password,String? firebaseId}) async =>
+      baseRepositoryAuth.login(email:email,password: password,firebaseId: firebaseId);
 
 ///Sign_up
   Future<Either<Failure, Unit>> signUpCall(

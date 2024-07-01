@@ -222,7 +222,7 @@ class LeagueTopAssists extends StatelessWidget {
                         color: ColorApp.black,
                       ),
                       SizedBox(
-                        width: 60.w,
+                        width: 70.w,
                       ),
                       MainText(
                         text: LocaleKeys.P.tr(),
@@ -231,7 +231,7 @@ class LeagueTopAssists extends StatelessWidget {
                         color: ColorApp.black,
                       ),
                       SizedBox(
-                        width: 25.w,
+                        width: 20.w,
                       ),
                       MainText(
                         text:LocaleKeys.G.tr(),
@@ -239,7 +239,9 @@ class LeagueTopAssists extends StatelessWidget {
                         family: TextFontApp.semiBoldFont,
                         color: ColorApp.black,
                       ),
-
+                      SizedBox(
+                        width: 5.w,
+                      ),
 
                     ],
                   ),

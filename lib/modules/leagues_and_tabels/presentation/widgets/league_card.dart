@@ -66,8 +66,8 @@ class LeagueCard extends StatelessWidget {
             children: [
               Image.network(
                 logo,
-                height: 60.h,
-                width: 60.w,
+                height: 80.h,
+                width: 80.w,
               ),
               SizedBox(
                 width: 20,

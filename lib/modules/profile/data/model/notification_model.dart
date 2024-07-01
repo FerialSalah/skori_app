@@ -4,12 +4,15 @@ import 'package:skori/modules/profile/domain/entity/notification_entity.dart';
 class NotificationsModel {
   NotificationsModel({
     required this.data,
+    required this.unreadCount,
   });
 
   List<NotificationModel> data;
+  int? unreadCount;
 
   factory NotificationsModel.fromJson(Map<String, dynamic> json) => NotificationsModel(
     data: json["data"] == null ? [] : List<NotificationModel>.from(json["data"]!.map((x) => NotificationModel.fromJson(x))),
+    unreadCount:json["unread_count"] == null ?null:json["unread_count"]
   );
 
 }

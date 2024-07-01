@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/modules/leagues_and_tabels/domain/entity/league_performance_entity.dart';
@@ -49,7 +50,7 @@ class LeaguePerformanceCard extends StatelessWidget {
             )),
           ),
           SizedBox(
-            width: 5.w,
+            width:context.locale.languageCode=="ar"? 5.w:15.w,
           ),
           GestureDetector(
             onTap: () {
@@ -167,7 +168,7 @@ class LeaguePerformanceCard extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 5.w,
+            width:context.locale.languageCode=="ar"? 35.w:30.w,
           ),
           SizedBox(
             //color: Colors.cyan,

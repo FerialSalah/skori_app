@@ -7,11 +7,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 import 'package:skori/core/dio_helper/dio_helper.dart';
+import 'package:skori/core/notification_helper/notification_helper.dart';
 import 'package:skori/core/state/base_state.dart';
 import 'package:skori/core/widgets/button/button_app.dart';
 import 'package:skori/modules/authentication/presentation/screens/forget_password_screen.dart';
 import 'package:skori/modules/authentication/presentation/screens/sign_up__screen.dart';
 import 'package:skori/modules/authentication/social_login/google_sign_in_api.dart';
+import '../../../../core/app_storage/app_storage.dart';
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/routes/navigator_push.dart';
 import '../../../../core/theme/color_app.dart';
@@ -24,6 +26,8 @@ import '../../../../core/widgets/main_text.dart';
 import '../../../../core/widgets/snack_bar.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../../../nav_bar/presentation/screens/nav_bar.dart';
+import '../../../profile/presentation/bloc/notifications/notifications_bloc.dart';
+import '../../../profile/presentation/bloc/notifications/notifications_event.dart';
 import '../bloc/login/login_bloc.dart';
 import '../bloc/login/login_event.dart';
 import '../bloc/login/login_state.dart';
@@ -38,6 +42,12 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  @override
+  void initState() {
+    NotificationHelper.onInit();
+
+    super.initState();
+  }
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final loginKey = GlobalKey<FormState>();
@@ -187,9 +197,15 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               AppButton(title: LocaleKeys.login.tr(), height: 50.h,onPressed: (){
                if(loginKey.currentState!.validate()){
+                 print("NotificationHelper.firebaseToken:${NotificationHelper.firebaseToken}");
+
+
                  BlocProvider.of<LoginBloc>(context)
                    ..add(LoginCall(email: emailController.text,
-                      password: passwordController.text));
+                      password: passwordController.text,
+                   firebaseId:NotificationHelper.firebaseToken ));
+                 BlocProvider.of<NotificationsBloc>(context)..add(GetNotificationsData());
+                 print(AppStorage.notificationCount);
                }else{
                  return;
                }

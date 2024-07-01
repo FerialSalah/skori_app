@@ -9,6 +9,7 @@ abstract class LoginEvent  {
 class LoginCall extends LoginEvent {
   final String email;
   final String password;
+   String? firebaseId;
 
-  LoginCall({required this.email, required this.password});
+  LoginCall({required this.email, required this.password,this.firebaseId});
 }

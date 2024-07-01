@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "997480396737",
+    "project_id": "azraqna-a6abf",
+    "storage_bucket": "azraqna-a6abf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997480396737:android:708184e4c2b300232a6140",
+        "android_client_info": {
+          "package_name": "com.azraqna.sport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997480396737-jivhtuqhnr13svph2lr6nee5bn75at17.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOP6_BXBtN0m8_zzYl6uISrSP7chd8tYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997480396737-jivhtuqhnr13svph2lr6nee5bn75at17.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "997480396737-1bhvjuvr6v1trlqk66cbkr31uncum4f9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.azraqna.sport"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

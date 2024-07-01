@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/modules/leagues_and_tabels/domain/entity/league_discipline_entity.dart';
@@ -125,17 +126,20 @@ class TopScoreCard extends StatelessWidget {
             ],
           ),
         SizedBox(
-         width:  10.w
+         width:context.locale.languageCode=="ar"?  10.w:23.w
         ),
           Row(
             children: [
+              SizedBox(
+                width:context.locale.languageCode=="ar"? 4.w:0.w,
+              ),
               MainText(
                 text: leagueTopEntity.totalMatches,
                 font: 12,
                 family: TextFontApp.boldFont,
               ),
               SizedBox(
-                width: 30.w,
+                width:context.locale.languageCode=="ar"? 38.w:35.w,
               ),
               SizedBox(
                 //width: 30.w,

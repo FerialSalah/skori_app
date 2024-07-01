@@ -95,7 +95,9 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                             height: 10.h,
                                           ),
                                           Image.network(
-                                            playerInfo.teamEntity!=null? playerInfo.teamEntity!.logo:'',
+                                            playerInfo.teamEntity != null
+                                                ? playerInfo.teamEntity!.logo
+                                                : '',
                                             height: 25.h,
                                             width: 25.w,
                                           ),
@@ -123,11 +125,17 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Image.network(
-                                            playerInfo.teamEntity!=null?     playerInfo.teamEntity!.countryFlag:"",
-                                            height: 25.h,
-                                            width: 25.w,
-                                          ),
+                                          playerInfo.teamEntity!.countryFlag
+                                                  .isNotEmpty
+                                              ? Image.network(
+                                                  playerInfo.teamEntity != null
+                                                      ? playerInfo.teamEntity!
+                                                          .countryFlag
+                                                      : "",
+                                                  height: 25.h,
+                                                  width: 25.w,
+                                                )
+                                              : Container(),
                                         ],
                                       ),
                                     ],
@@ -167,9 +175,13 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       MainText(
-                                        text: playerInfo
-                                            .fifaCardEntity.goalsNo
-                                            .toString(),
+                                        text: playerInfo.fifaCardEntity
+                                                    .playingTime !=
+                                                null
+                                            ? playerInfo.fifaCardEntity
+                                                .playingTime!.value
+                                                .toString()
+                                            : "-",
                                         font: 15,
                                         family: TextFontApp.boldFont,
                                       ),
@@ -177,7 +189,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         width: 8,
                                       ),
                                       MainText(
-                                        text: 'Sub',
+                                        text: 'Min',
                                         font: 12,
                                         color: ColorApp.hintGray,
                                       ),
@@ -188,8 +200,13 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       MainText(
-                                        text: playerInfo.fifaCardEntity.playingTime
-                                            .toString(),
+                                        text: playerInfo.fifaCardEntity.win
+                                                .toString()
+                                                .isNotEmpty
+                                            ? playerInfo
+                                                .fifaCardEntity.win!.value
+                                                .toString()
+                                            : "-",
                                         font: 15,
                                         family: TextFontApp.boldFont,
                                       ),
@@ -197,7 +214,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         width: 8,
                                       ),
                                       MainText(
-                                        text: "Min",
+                                        text: "Win",
                                         font: 12,
                                         color: ColorApp.hintGray,
                                       ),
@@ -215,9 +232,18 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       MainText(
-                                        text: playerInfo
-                                            .fifaCardEntity.attemptsAtGoalNo
-                                            .toString(),
+                                        text: playerInfo.fifaCardEntity
+                                                    .attemptsSaved !=
+                                                null
+                                            ? playerInfo.fifaCardEntity
+                                                .attemptsSaved!.value
+                                                .toString()
+                                            : playerInfo.fifaCardEntity
+                                                        .passes !=
+                                                    null
+                                                ? playerInfo.fifaCardEntity
+                                                    .passes!.value
+                                                : "-",
                                         font: 15,
                                         family: TextFontApp.boldFont,
                                       ),
@@ -225,7 +251,11 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         width: 8,
                                       ),
                                       MainText(
-                                        text: 'Lin',
+                                        text:
+                                            playerInfo.fifaCardEntity.passes !=
+                                                    null
+                                                ? 'Pas'
+                                                : "Sav",
                                         font: 12,
                                         color: ColorApp.hintGray,
                                       ),
@@ -257,14 +287,18 @@ class _PlayerInfoState extends State<PlayerInfo> {
                               child: Column(
                                 children: [
                                   Image.network(
-                                    playerInfo.teamEntity!=null?    playerInfo.teamEntity!.logo:"",
+                                    playerInfo.teamEntity != null
+                                        ? playerInfo.teamEntity!.logo
+                                        : "",
                                     width: 30,
                                   ),
                                   SizedBox(
                                     height: 7,
                                   ),
                                   MainText(
-                                    text: playerInfo.teamEntity!=null ?playerInfo.teamEntity!.name: "-",
+                                    text: playerInfo.teamEntity != null
+                                        ? playerInfo.teamEntity!.name
+                                        : "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),
@@ -300,7 +334,9 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                     height: 7,
                                   ),
                                   MainText(
-                                    text: playerInfo.countryName.isNotEmpty ?playerInfo.countryName: "-",
+                                    text: playerInfo.countryName.isNotEmpty
+                                        ? playerInfo.countryName
+                                        : "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
                                   ),

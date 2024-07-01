@@ -56,6 +56,7 @@ const LEAGUE_TOP_SCORE_URL="/top-scorers";
 const LEAGUE_TOP_ASSIST_URL_="/top-assists";
 const LEAGUE_DISCIPLINE_URL="/discipline";
 const LEAGUE_PERFORMANCE_URL="/performance";
+const SEEN_NOTIFICATIONS_URL="notifications/seen";
 
 
 

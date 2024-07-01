@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skori/core/notification_helper/notification_helper.dart';
 import 'core/app_storage/app_storage.dart';
 import 'core/constant/constants.dart';
 import 'core/dio_helper/dio_helper.dart';
@@ -22,7 +23,10 @@ void main() async {
   await di.init();
   await DioHelper.init();
   await AppStorage.init();
+  await NotificationHelper.init();
+
   await EasyLocalization.ensureInitialized();
+
   runApp(
 
     EasyLocalization(

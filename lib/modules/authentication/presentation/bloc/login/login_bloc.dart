@@ -14,7 +14,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   _loginEventHandler(LoginCall event, Emitter<LoginState> emit) async {
     emit(LoginLoading());
     final result = await authUseCase.loginCall(
-        email: event.email,password: event.password);
+        email: event.email,password: event.password,firebaseId: event.firebaseId);
     result.fold((failure) {
       if (failure is FailureOffline) {
         emit(LoginOffline(

@@ -79,22 +79,23 @@ class _LastHeadToHeadMatchesState extends State<LastHeadToHeadMatches> {
         } else if (state is OfflineState) {
           return OfflinePage();
         } else if (state is ErrorState) {
-          if(AppStorage.isLogged) return Center(child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.not_interested_outlined,color: ColorApp.error,size: 40,),
-              SizedBox(
-                height: 10.h,
-              ),
-              MainText(
-                text: LocaleKeys.packageUnavailable.tr(),
-                font: 15,
-                family: TextFontApp.boldFont,
-                center: true,
-              ),
-            ],
-          ));
-          return ShouldSignUp();
+          // if(AppStorage.isLogged) return Center(child: Column(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [
+          //     Icon(Icons.not_interested_outlined,color: ColorApp.error,size: 40,),
+          //     SizedBox(
+          //       height: 10.h,
+          //     ),
+          //     MainText(
+          //       text: LocaleKeys.packageUnavailable.tr(),
+          //       font: 15,
+          //       family: TextFontApp.boldFont,
+          //       center: true,
+          //     ),
+          //   ],
+          // ));
+          // return ShouldSignUp();
+          return Container();
         } else {
           return MainText(
             text: LocaleKeys.serverError.tr(),
