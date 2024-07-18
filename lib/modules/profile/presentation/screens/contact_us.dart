@@ -158,6 +158,7 @@ Future<void> _launchUrl(url) async {
 Widget _socialMedia(String image, String link) {
   return GestureDetector(
     onTap: () {
+      print("link is :$link");
       _launchUrl(Uri.parse(link));
     },
     child: Container(

@@ -111,7 +111,7 @@ class PlayerCard extends StatelessWidget {
                         family: TextFontApp.regularFont,
                         color: ColorApp.hintGray,
                       ),
-                      FollowButton(id: id, type: "player", color: ColorApp.yellow, isFollow: isFollow,width: 80.w,height: 30,)
+                      FollowButton(id: id, type: "player", color: ColorApp.yellow, isFollow: isFollow,width: 110.w,height: 30,)
                     ],
                   ),
                 ],

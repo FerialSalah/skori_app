@@ -14,14 +14,14 @@ class PlayerStatisticCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+      padding: EdgeInsets.symmetric(horizontal: 0,vertical: 15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           MainText(text: title,font: 18,family: TextFontApp.boldFont),
           SizedBox(height: 10,),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 15,vertical: 15),
+            padding: EdgeInsets.symmetric(horizontal: 10,vertical: 15),
             decoration: BoxDecoration(
                 border: Border.all(color: ColorApp.borderGray,width: 1),
                 color: ColorApp.white

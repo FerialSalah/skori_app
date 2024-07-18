@@ -19,11 +19,14 @@ import '../../../../core/widgets/offline_widget.dart';
 import '../../../../core/widgets/should_sign_up.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../bloc/player_statistics_bloc.dart';
+
 class PlayerNewStatistics extends StatefulWidget {
   final int id;
 
-
-  const PlayerNewStatistics({Key? key, required this.id,}) : super(key: key);
+  const PlayerNewStatistics({
+    Key? key,
+    required this.id,
+  }) : super(key: key);
 
   @override
   State<PlayerNewStatistics> createState() => _PlayerNewStatisticsState();
@@ -32,7 +35,8 @@ class PlayerNewStatistics extends StatefulWidget {
 class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
   @override
   void initState() {
-    BlocProvider.of<PlayerStatisticsBloc>(context)..add(GetPlayerNewStatistics(id: widget.id));
+    BlocProvider.of<PlayerStatisticsBloc>(context)
+      ..add(GetPlayerNewStatistics(id: widget.id));
     super.initState();
   }
 
@@ -40,20 +44,21 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
   Widget build(BuildContext context) {
     return BlocBuilder<PlayerStatisticsBloc, BaseState>(
       builder: (context, state) {
-        final playerNewStatistics = BlocProvider.of<PlayerStatisticsBloc>(context)
-            .playerNewStatisticsEntity;
-        //print("player new statistics: ${playerNewStatistics!.playerPerformance}");
+        final playerNewStatistics =
+            BlocProvider.of<PlayerStatisticsBloc>(context)
+                .playerNewStatisticsEntity;
         if (state is LoadingState) {
           return ColorLoader();
         } else if (state is SuccessState) {
-
           return Scaffold(
             body: SingleChildScrollView(
               child: Column(
                 children: [
-                  PlayerStatisticsInfo(mainStats: playerNewStatistics!.mainStats!,),
+                  PlayerStatisticsInfo(
+                    mainStats: playerNewStatistics!.mainStats!,
+                  ),
                   Container(
-                   height:500.h,
+                    height: 500.h,
                     width: 350.w,
                     child: DefaultTabController(
                       length: 2,
@@ -63,9 +68,8 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
                             height: 5,
                           ),
                           Container(
-
                             //height: 100.h,
-                            width: 315.w,
+                           // width: 315.w,
                             decoration: BoxDecoration(
                                 border: Border.all(
                                     color: ColorApp.borderGray, width: .5)),
@@ -74,7 +78,7 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
                               unselectedBackgroundColor: ColorApp.white,
                               borderWidth: 0,
                               contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 40.w, vertical: 10.h),
+                                  horizontal:context.locale.languageCode=="ar"? 50.w:30.w, vertical: 10.h),
                               borderColor: ColorApp.borderGray,
                               labelSpacing: 0,
                               radius: 0,
@@ -101,10 +105,10 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
                           Expanded(
                             child: TabBarView(
                               children: [
-
                                 SingleChildScrollView(
                                   child: PlayerStatisticCard(
-                                    statistics: playerNewStatistics.featuredStats!,
+                                    statistics:
+                                        playerNewStatistics.featuredStats!,
                                     title: LocaleKeys.featured_statistics.tr(),
                                   ),
                                 ),
@@ -114,22 +118,30 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
                                     // primary: true,
                                     // physics: ScrollPhysics(),
                                     children: [
-                                      PlayerPerformanceCard(playerPerformance: playerNewStatistics.playerPerformance!,
-                                        title: LocaleKeys.playerPerformance.tr(),),
+                                      PlayerPerformanceCard(
+                                        playerPerformance: playerNewStatistics
+                                            .playerPerformance!,
+                                        title:
+                                            LocaleKeys.playerPerformance.tr(),
+                                      ),
                                       PlayerNewStatisticCard(
-                                        statistics: playerNewStatistics.defensive!,
+                                        statistics:
+                                            playerNewStatistics.defensive!,
                                         title: LocaleKeys.defensive.tr(),
                                       ),
                                       PlayerNewStatisticCard(
-                                        statistics: playerNewStatistics.offensive!,
+                                        statistics:
+                                            playerNewStatistics.offensive!,
                                         title: LocaleKeys.offensive.tr(),
                                       ),
                                       PlayerNewStatisticCard(
-                                        statistics: playerNewStatistics.administrative!,
+                                        statistics:
+                                            playerNewStatistics.administrative!,
                                         title: LocaleKeys.administrative.tr(),
                                       ),
                                       PlayerNewStatisticCard(
-                                        statistics: playerNewStatistics.ballLost!,
+                                        statistics:
+                                            playerNewStatistics.ballLost!,
                                         title: LocaleKeys.ballLost.tr(),
                                       ),
                                     ],
@@ -142,8 +154,6 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
                       ),
                     ),
                   ),
-
-
                 ],
               ),
             ),
@@ -151,23 +161,28 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
         } else if (state is OfflineState) {
           return OfflinePage();
         } else if (state is ErrorState) {
-          if(AppStorage.isLogged) return Center(child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.not_interested_outlined,color: ColorApp.error,size: 40,),
-              SizedBox(
-                height: 10.h,
-              ),
-              MainText(
-                text: LocaleKeys.packageUnavailable.tr(),
-                font: 15,
-                family: TextFontApp.boldFont,
-                center: true,
-              ),
-            ],
-          ));
+          if (AppStorage.isLogged)
+            return Center(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.not_interested_outlined,
+                  color: ColorApp.error,
+                  size: 40,
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                MainText(
+                  text: LocaleKeys.packageUnavailable.tr(),
+                  font: 15,
+                  family: TextFontApp.boldFont,
+                  center: true,
+                ),
+              ],
+            ));
           return ShouldSignUp();
-
         } else {
           return MainText(
             text: LocaleKeys.serverError.tr(),
@@ -175,6 +190,5 @@ class _PlayerNewStatisticsState extends State<PlayerNewStatistics> {
         }
       },
     );
-
   }
 }

@@ -63,9 +63,12 @@ abstract class Validations {
         // return LocaleKeys.phoneIsInvalid.tr();
       }
     }
-    if (!RegExp(r'^(?:[0-9])').hasMatch(mobileNo))
-      // return LocaleKeys.phoneIsInvalid.tr();
-    // if (mobileNo.length != 11) return 'Mobile No must have 11 digits.';
+    if (mobileNo.trim().isEmpty) {
+      return LocaleKeys.emptyField.tr();
+    }
+      if (!RegExp(r'^(?:[0-9])').hasMatch(mobileNo))
+       return LocaleKeys.phoneIsInvalid.tr();
+     if (mobileNo.length != 11)  return LocaleKeys.phoneIsInvalid.tr();
     return null;
     return null;
   }

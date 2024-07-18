@@ -5,6 +5,8 @@
   "signInToAcc": "Sign in to your Account",
   "emailAddress": "Email Address",
   "emailIsInvalid": "incorrect email",
+  "phoneIsInvalid": "Mobile No must have 11 digits.",
+
   "password": "Password",
   "confirmPassword": "Confirm Password",
   "passwordL": "The password must be at least 8 characters long",

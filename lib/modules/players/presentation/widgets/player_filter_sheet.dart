@@ -12,6 +12,7 @@ import '../../../../core/constant/app_assets.dart';
 import '../../../../core/state/base_state.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
+import '../../../../core/widgets/button/border_button.dart';
 import '../../../../core/widgets/drop_down_text_field.dart';
 import '../../../../core/widgets/main_text.dart';
 import '../../../../generated/locale_keys.g.dart';
@@ -54,6 +55,30 @@ class _PlayerFilterSheetState extends State<PlayerFilterSheet> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     GestureDetector(
+              //         onTap: () {
+              //           BlocProvider.of<PlayersBloc>(context).playerName="";
+              //           BlocProvider.of<PlayersBloc>(context).teamId="";
+              //           BlocProvider.of<PlayersBloc>(context)
+              //             ..add(GetPlayersData());
+              //           RouteManager.pop();
+              //         },
+              //         child: MainText(
+              //           text: LocaleKeys.clear.tr(),
+              //           font: 16,
+              //           color: ColorApp.primary,
+              //           family: TextFontApp.boldFont,
+              //         )),
+              //     GestureDetector(
+              //         onTap: () {
+              //           RouteManager.pop();
+              //         },
+              //         child: Icon(Icons.close)),
+              //   ],
+              // ),
               MainText(
                 text: LocaleKeys.searchType.tr(),
                 font: 20,
@@ -103,11 +128,38 @@ class _PlayerFilterSheetState extends State<PlayerFilterSheet> {
               ),
 
               SizedBox(height: 20,),
-              AppButton(title: LocaleKeys.search.tr(),height: 45.h,onPressed: (){
-                BlocProvider.of<PlayersBloc>(context)
-                  ..add(GetPlayersData());
-                RouteManager.pop();
-              },),
+              Row(
+                children: [
+                  AppButton(title: LocaleKeys.search.tr(),height: 45.h,
+                    width: 160.w,
+                    onPressed: (){
+                    BlocProvider.of<PlayersBloc>(context)
+                      ..add(GetPlayersData());
+                    RouteManager.pop();
+                  },),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  BorderButton(
+                      hor: 10.w,
+                      title: LocaleKeys.clear.tr(),
+                      color: ColorApp.white,
+                      borderColor: ColorApp.darkBlue,
+                      width:  160.w,
+                      height: 45.h,
+                      textColor: ColorApp.darkBlue,
+
+                      onPressed: () async {
+                        BlocProvider.of<PlayersBloc>(context).playerName="";
+                        BlocProvider.of<PlayersBloc>(context).teamId="";
+                        BlocProvider.of<PlayersBloc>(context)
+                          ..add(GetPlayersData());
+                        RouteManager.pop();
+                      }
+
+                  )
+                ],
+              ),
 
 
               SizedBox(

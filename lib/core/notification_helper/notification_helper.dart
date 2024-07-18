@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -25,11 +27,14 @@ InitializationSettings? _initializationSettings;
 class NotificationHelper {
   static init() async {
     await Firebase.initializeApp(
-        options: FirebaseOptions(
+        name:"Azraqna",
+        options:
+        FirebaseOptions(
             apiKey: "AIzaSyBOP6_BXBtN0m8_zzYl6uISrSP7chd8tYA",
             appId: "1:997480396737:ios:03a4e1ec2339ba892a6140",
             messagingSenderId: "997480396737",
-            projectId: "azraqna-a6abf"));
+            projectId: "azraqna-a6abf")
+    );
     FirebaseMessaging.onBackgroundMessage(_fireBaseBackgroundHandler);
     FirebaseMessaging.instance.requestPermission();
     await FirebaseMessaging.instance
@@ -55,8 +60,8 @@ static String? firebaseToken;
     });
 
     ///======================== Welcome notification ========================
-    FlutterRingtonePlayer.playNotification().then((value) =>
-        print("<<<<<<<<<<<<notification played successfully>>>>>>>>>>>>"));
+    // FlutterRingtonePlayer.playNotification().then((value) =>
+    //     print("<<<<<<<<<<<<notification played successfully>>>>>>>>>>>>"));
     // _showNotification("Consumer plus", "welcome to consumer plus");
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
@@ -137,6 +142,14 @@ Future _initNotification() async {
 }
 
 Future<void> _fireBaseBackgroundHandler(RemoteMessage message) async {
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+      name:'Azraqna',
+      options:
+      FirebaseOptions(
+          apiKey: "AIzaSyBOP6_BXBtN0m8_zzYl6uISrSP7chd8tYA",
+          appId: "1:997480396737:ios:03a4e1ec2339ba892a6140",
+          messagingSenderId: "997480396737",
+          projectId: "azraqna-a6abf")
+  );
   print("Handling a background message: ${message.messageId}");
 }

@@ -277,10 +277,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               SizedBox(height: 10,),
               Platform.isAndroid?SizedBox():AppButton(
-                title: "Apple",
+                title: LocaleKeys.loginWithApple.tr(),
                 height: 50.h,
                 color: ColorApp.black,
                 width:150.w,
+                icon: AuthIcons.apple,
                 onPressed: (){
                   _loginWithApple();
                 },

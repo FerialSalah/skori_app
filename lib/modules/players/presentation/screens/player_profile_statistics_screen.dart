@@ -89,6 +89,7 @@ class _PlayerProfileStatisticsScreenState
                                   height: 15,
                                 ),
                                 Container(
+
                                   //height: 100.h,
                                   decoration: BoxDecoration(
                                       border: Border.all(

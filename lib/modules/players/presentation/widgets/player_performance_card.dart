@@ -17,7 +17,7 @@ class PlayerPerformanceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 5),
+      padding: EdgeInsets.symmetric(horizontal: 0,vertical: 5),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

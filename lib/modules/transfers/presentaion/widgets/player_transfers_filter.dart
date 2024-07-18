@@ -12,6 +12,7 @@ import '../../../../core/constant/app_assets.dart';
 import '../../../../core/cubit/season/season_cubit.dart';
 import '../../../../core/routes/navigator_push.dart';
 import '../../../../core/theme/textFont_app.dart';
+import '../../../../core/widgets/button/border_button.dart';
 import '../../../../core/widgets/button/button_app.dart';
 import '../../../../core/widgets/drop_down_text_field.dart';
 import '../../../../core/widgets/main_text.dart';
@@ -58,29 +59,29 @@ class _PlayerTransfersFilterSheetState extends State<PlayerTransfersFilterSheet>
                 SizedBox(
                   height: 10.h,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                        onTap: () {
-                          BlocProvider.of<TransfersBloc>(context).tournamentId ="";
-                              BlocProvider.of<TransfersBloc>(context).seasonId = "";
-                          BlocProvider.of<TransfersBloc>(context)..add(GetTransfersData());
-                          RouteManager.pop();
-                        },
-                        child: MainText(
-                          text: LocaleKeys.clear.tr(),
-                          font: 16,
-                          color: ColorApp.primary,
-                          family: TextFontApp.boldFont,
-                        )),
-                    GestureDetector(
-                        onTap: () {
-                          RouteManager.pop();
-                        },
-                        child: Icon(Icons.close)),
-                  ],
-                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     GestureDetector(
+                //         onTap: () {
+                //           BlocProvider.of<TransfersBloc>(context).tournamentId ="";
+                //               BlocProvider.of<TransfersBloc>(context).seasonId = "";
+                //           BlocProvider.of<TransfersBloc>(context)..add(GetTransfersData());
+                //           RouteManager.pop();
+                //         },
+                //         child: MainText(
+                //           text: LocaleKeys.clear.tr(),
+                //           font: 16,
+                //           color: ColorApp.primary,
+                //           family: TextFontApp.boldFont,
+                //         )),
+                //     GestureDetector(
+                //         onTap: () {
+                //           RouteManager.pop();
+                //         },
+                //         child: Icon(Icons.close)),
+                //   ],
+                // ),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -187,17 +188,43 @@ class _PlayerTransfersFilterSheetState extends State<PlayerTransfersFilterSheet>
                 ),
 
                 // SizedBox(height: 1,),
-                BlocBuilder<PlayerStatisticsBloc, BaseState>(
-                  builder: (context, state) {
-                    return  AppButton(
-                      title: LocaleKeys.apply.tr(),
-                      onPressed: () async{
-                        BlocProvider.of<TransfersBloc>(context)
-                          ..add(GetTransfersData());
-                        RouteManager.pop();
+                Row(
+                  children: [
+                    BlocBuilder<PlayerStatisticsBloc, BaseState>(
+                      builder: (context, state) {
+                        return  AppButton(
+                          title: LocaleKeys.apply.tr(),
+                          width: 160.w,
+                          onPressed: () async{
+                            BlocProvider.of<TransfersBloc>(context)
+                              ..add(GetTransfersData());
+                            RouteManager.pop();
+                          },
+                        );
                       },
-                    );
-                  },
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    BorderButton(
+                        hor: 10.w,
+                        title: LocaleKeys.clear.tr(),
+                        color: ColorApp.white,
+                        borderColor: ColorApp.darkBlue,
+                        width:  160.w,
+                        height: 45.h,
+                        textColor: ColorApp.darkBlue,
+
+                        onPressed: () async {
+                          BlocProvider.of<TransfersBloc>(context).tournamentId ="";
+                          BlocProvider.of<TransfersBloc>(context).seasonId = "";
+                          BlocProvider.of<TransfersBloc>(context)..add(GetTransfersData());
+
+                          RouteManager.pop();
+                        }
+
+                    )
+                  ],
                 ),
 
 

@@ -45,6 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     NotificationHelper.onInit();
+    BlocProvider.of<NotificationsBloc>(context)..add(GetNotificationsData());
 
     super.initState();
   }
@@ -204,8 +205,7 @@ class _LoginScreenState extends State<LoginScreen> {
                    ..add(LoginCall(email: emailController.text,
                       password: passwordController.text,
                    firebaseId:NotificationHelper.firebaseToken ));
-                 BlocProvider.of<NotificationsBloc>(context)..add(GetNotificationsData());
-                 print(AppStorage.notificationCount);
+                // print(AppStorage.notificationCount);
                }else{
                  return;
                }

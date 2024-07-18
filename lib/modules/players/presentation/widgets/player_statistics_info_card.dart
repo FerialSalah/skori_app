@@ -13,7 +13,7 @@ class PlayStatisticInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15,vertical: 8),
+      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 8),
 
       child: Container(
          width: 167.w,

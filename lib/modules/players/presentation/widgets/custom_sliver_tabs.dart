@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
+import '../../../../core/widgets/button/follow_button.dart';
 import '../../../../core/widgets/main_text.dart';
 
 class CustomSliverLogo extends StatelessWidget {
@@ -15,25 +16,32 @@ class CustomSliverLogo extends StatelessWidget {
   final String? clubLogo;
   final String? clubName;
   final List<String> tabsTitle;
+  final int id;
+  final bool isFollowing;
 
-  const CustomSliverLogo(
-      {super.key,
-      required this.logo,
-      required this.name,
-      this.continent,
-      this.clubLogo,
-      this.clubName,
-      this.tabController,
-      required this.expandedHeight,
-      required this.tabsTitle,
-      required this.season,
-      });
+  final String type;
+
+  const CustomSliverLogo({
+    super.key,
+    required this.logo,
+    required this.name,
+    this.continent,
+    this.clubLogo,
+    this.clubName,
+    this.tabController,
+    required this.expandedHeight,
+    required this.tabsTitle,
+    required this.season,
+    required this.id,
+    required this.isFollowing,
+    required this.type,
+  });
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
       expandedHeight: expandedHeight,
       backgroundColor: ColorApp.primary,
-      pinned: true,
+     pinned: true,
       toolbarHeight: 0,
       collapsedHeight: 0,
       elevation: 0,
@@ -59,21 +67,27 @@ class CustomSliverLogo extends StatelessWidget {
               MainText(
                 text: name,
                 color: Colors.white,
-                family: TextFontApp.semiBoldFont,
+                family: TextFontApp.boldFont,
                 font: 16,
               ),
-              SizedBox(
-                height: 8.h,
-              ),
-              MainText(
-                text: season,
-                color: Colors.white,
-                family: TextFontApp.regularFont,
-                font: 14,
-              ),
-              SizedBox(
-                height: 3.h,
-              ),
+              season.isNotEmpty
+                  ? SizedBox(
+                      height: 8.h,
+                    )
+                  : SizedBox(),
+              season.isNotEmpty
+                  ? MainText(
+                      text: season,
+                      color: Colors.white,
+                      family: TextFontApp.regularFont,
+                      font: 14,
+                    )
+                  : SizedBox(),
+              season.isNotEmpty
+                  ? SizedBox(
+                      height: 3.h,
+                    )
+                  : SizedBox(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -95,6 +109,14 @@ class CustomSliverLogo extends StatelessWidget {
                   ),
                 ],
               ),
+              FollowButton(
+                color: ColorApp.white.withOpacity(.20),
+                isFollow: isFollowing,
+                id: id,
+                type: type,
+                width: 120.w,
+                height: 30.h,
+              ),
               SizedBox(
                 height: 20.h,
               ),
@@ -102,7 +124,9 @@ class CustomSliverLogo extends StatelessWidget {
           ),
         ),
         expandedTitleScale: 1,
-        titlePadding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+
+        titlePadding: EdgeInsets.symmetric(vertical: 0, horizontal:0),
+
         title: TabBar(
           indicatorColor: ColorApp.yellow,
           indicatorSize: TabBarIndicatorSize.tab,
@@ -119,6 +143,7 @@ class CustomSliverLogo extends StatelessWidget {
           ),
           unselectedLabelColor: Colors.white,
           isScrollable: true,
+          tabAlignment: TabAlignment.start,
           tabs: [
             Tab(
               text: tabsTitle[0],

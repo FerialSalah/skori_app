@@ -89,7 +89,7 @@ class _TeamProfileState extends State<TeamProfile>
               isFollowing: widget.isFollowing,
             ),
             CustomSliverLogo(
-              expandedHeight: 200.h,
+              expandedHeight: 230.h,
               name: widget.name,
               logo: widget.logo,
               season: widget.season,
@@ -97,6 +97,9 @@ class _TeamProfileState extends State<TeamProfile>
               tabController: tabController,
               clubName: widget.countryName,
               clubLogo: widget.countryFlag,
+              type: "team",
+              isFollowing: widget.isFollowing,
+              id: widget.id,
               tabsTitle: [
                 LocaleKeys.teamMatches.tr(),
                 LocaleKeys.statistics.tr(),

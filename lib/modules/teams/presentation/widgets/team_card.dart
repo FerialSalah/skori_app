@@ -107,7 +107,7 @@ class TeamCard extends StatelessWidget {
                 type: "team",
                 color: ColorApp.red,
                 isFollow: isFollow,
-                width: 80.w,
+                width: 110.w,
                 height: 30,
               )
             ],

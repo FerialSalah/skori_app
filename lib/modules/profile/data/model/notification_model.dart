@@ -8,7 +8,7 @@ class NotificationsModel {
   });
 
   List<NotificationModel> data;
-  int? unreadCount;
+  dynamic unreadCount;
 
   factory NotificationsModel.fromJson(Map<String, dynamic> json) => NotificationsModel(
     data: json["data"] == null ? [] : List<NotificationModel>.from(json["data"]!.map((x) => NotificationModel.fromJson(x))),

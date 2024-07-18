@@ -48,8 +48,8 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                     text: LocaleKeys.SpecificStatistics.tr(),
                     font: 18,
                     family: TextFontApp.boldFont,
-                    hor: 10.w,
-                    ver: 10.h),
+                    hor: 20.w,
+                    ver: 13.h),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
@@ -61,7 +61,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(
-                        height: 200.h,
+                        height: 210.h,
                         child: ListView.separated(
                             shrinkWrap: true,
                             physics: NeverScrollableScrollPhysics(),
@@ -95,7 +95,7 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                     text: matchStatistics
                                                             .possession![index]
                                                             .value
-                                                            .homePossession ??
+                                                            .homePossession.toString()+
                                                         "" + "%",
                                                     family:
                                                         TextFontApp.boldFont,
@@ -123,12 +123,18 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
                                                           .value
                                                           .toString() !=
                                                       "premium"
-                                                  ? double.parse(matchStatistics
+                                                  ?context.locale.languageCode=="ar"?1- (double.parse(matchStatistics
                                                           .possession![index]
                                                           .value
                                                           .awayPossession
                                                           .toString()) /
-                                                      100
+                                                      100):
+                                          double.parse(matchStatistics
+                                              .possession![index]
+                                              .value
+                                              .awayPossession
+                                              .toString()) /
+                                              100
                                                   : 0.0
                                               : 0.0,
                                           header: MainText(
@@ -256,10 +262,10 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam:
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam :percentageHomeTeam:
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
 
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -394,11 +400,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1- percentageHomeTeam:percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
                                     : maxPercentage;
@@ -537,11 +543,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        : context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -691,11 +697,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 10
@@ -848,10 +854,10 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam :
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -1001,10 +1007,10 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam :
+                                        ? context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -1160,11 +1166,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                  maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print( percentageHomeTeam == percentageAwayTeam);
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
@@ -1312,11 +1318,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -1466,11 +1472,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"? percentageAwayTeam:1-percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 10
@@ -1618,11 +1624,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -1772,11 +1778,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -1921,11 +1927,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -2066,11 +2072,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1- percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? 1 - maxPercentage / 100
@@ -2209,11 +2215,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -2359,11 +2365,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -2515,11 +2521,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -2663,11 +2669,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -2815,11 +2821,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        : context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -2977,11 +2983,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                     percentageHomeTeam > percentageAwayTeam
-                                        ? percentageHomeTeam
+                                        ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                         :
                                     percentageHomeTeam == percentageAwayTeam?
                                     0.5
-                                        : 1 - percentageAwayTeam;
+                                        :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -3146,11 +3152,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                 percentageHomeTeam > percentageAwayTeam
-                                    ? percentageHomeTeam
+                                    ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                     :
                                 percentageHomeTeam == percentageAwayTeam?
                                 0.5
-                                    : 1 - percentageAwayTeam;
+                                    :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100
@@ -3315,11 +3321,11 @@ class _MatchStatisticCardState extends State<MatchStatisticCard> {
 
                                 maxPercentage =
                                 percentageHomeTeam > percentageAwayTeam
-                                    ? percentageHomeTeam
+                                    ?context.locale.languageCode=="ar"?1-percentageHomeTeam: percentageHomeTeam
                                     :
                                 percentageHomeTeam == percentageAwayTeam?
                                 0.5
-                                    : 1 - percentageAwayTeam;
+                                    :context.locale.languageCode=="ar"?percentageAwayTeam: 1 - percentageAwayTeam;
                                 print("maxPercentage : $maxPercentage");
                                 maxPercentage = maxPercentage > 1.0
                                     ? maxPercentage / 100

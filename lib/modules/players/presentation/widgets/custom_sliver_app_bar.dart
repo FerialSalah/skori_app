@@ -54,7 +54,7 @@ class CustomSliverAppBar extends StatelessWidget {
                 padding: EdgeInsets.all(5),
                 height: 30.h,
                 width: 30.w,
-                color: ColorApp.white.withOpacity(.15),
+              //  color: ColorApp.white.withOpacity(.15),
                 child: GestureDetector(
                     onTap: (){
                       showSlidingBottomSheet(context, builder: (_) {
@@ -73,17 +73,7 @@ class CustomSliverAppBar extends StatelessWidget {
                     },
                     child: Image.asset(AppIcons.filter,height: 16.h,width: 16.w,color: ColorApp.white,)),
               ):Container(),
-              SizedBox(
-                width: 10,
-              ),
-              FollowButton(
-                color: ColorApp.white.withOpacity(.20),
-                isFollow: isFollowing,
-                id: id,
-                type: type,
-                width: 120.w,
-                height: 30.h,
-              ),
+
               SizedBox(
                 width: 6,
               ),
@@ -93,7 +83,7 @@ class CustomSliverAppBar extends StatelessWidget {
                       padding: EdgeInsets.all(5),
                       height: 30.h,
                       width: 30.w,
-                      color: ColorApp.white.withOpacity(.15),
+                      //color: ColorApp.white.withOpacity(.15),
                       child: FavoriteButton(
                         id: id,
                         type: type,

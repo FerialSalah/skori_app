@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/cubit/favorite_cubit.dart';
+import 'package:skori/core/theme/color_app.dart';
 
 import '../../app_storage/app_storage.dart';
 import '../../constant/app_assets.dart';
@@ -56,6 +57,7 @@ class _FavoriteButtonState extends State<FavoriteButton> {
                 isFav==true?ProfileIcons.fillFav:ProfileIcons.favorite,
                 height: 18.h,
                 width: 20.w,
+                color: isFav==true? ColorApp.red:ColorApp.white,
               )),
         );
       },

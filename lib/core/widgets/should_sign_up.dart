@@ -13,20 +13,22 @@ class ShouldSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        MainText(text: LocaleKeys.shouldSignUp.tr(),font: 18,family: TextFontApp.boldFont,),
-        SizedBox(height: 30,),
-        AppButton(title: LocaleKeys.createAcc.tr(),hor: 30,onPressed: (){
-          RouteManager.navigateAndPopAll(SignUpScreen());
-        },),
-        SizedBox(height: 30,),
-        AppButton(title: LocaleKeys.login.tr(),hor: 30,onPressed: (){
-          RouteManager.navigateAndPopAll(LoginScreen());
-        },),
-
-      ],
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          MainText(text: LocaleKeys.shouldSignUp.tr(),font: 18,family: TextFontApp.boldFont,),
+          SizedBox(height: 30,),
+          AppButton(title: LocaleKeys.createAcc.tr(),hor: 30,onPressed: (){
+            RouteManager.navigateAndPopAll(SignUpScreen());
+          },),
+          SizedBox(height: 30,),
+          AppButton(title: LocaleKeys.login.tr(),hor: 30,onPressed: (){
+            RouteManager.navigateAndPopAll(LoginScreen());
+          },),
+      
+        ],
+      ),
     );
   }
 }

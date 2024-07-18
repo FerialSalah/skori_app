@@ -53,8 +53,6 @@ class _LeagueProfileScreenState extends State<LeagueProfileScreen>
   TabController? tabController;
   @override
   void initState() {
-    // BlocProvider.of<PlayerSeasonsCubit>(context)..getPlayerSeasons(widget.id);
-    // BlocProvider.of<PlayerLeaguesCubit>(context)..getPlayerLeagues(widget.id);
     BlocProvider.of<MatchesBloc>(context).tournamentId=widget.id.toString();
     BlocProvider.of<LeagueGalleryCubit>(context)..getLeagueGallery(widget.id);
 
@@ -101,7 +99,7 @@ class _LeagueProfileScreenState extends State<LeagueProfileScreen>
               isFollowing: widget.isFollowing,
             ),
             CustomSliverLogo(
-              expandedHeight: 200.h,
+              expandedHeight: 220.h,
               name: widget.name,
               logo: widget.logo,
               season: widget.season,
@@ -109,6 +107,9 @@ class _LeagueProfileScreenState extends State<LeagueProfileScreen>
               tabController: tabController,
               clubName: '',
               clubLogo: '',
+              id: widget.id,
+              type: "league",
+              isFollowing: widget.isFollowing,
               tabsTitle: [
                 LocaleKeys.rink.tr(),
                 LocaleKeys.latestNews.tr(),

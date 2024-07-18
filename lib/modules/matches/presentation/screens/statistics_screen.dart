@@ -141,7 +141,8 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                     backgroundColor: ColorApp.yellow,
                     unselectedBackgroundColor: ColorApp.white,
                     borderWidth: 0,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 35,vertical: 10),
+                    contentPadding: EdgeInsets.symmetric(horizontal:context.locale.languageCode=="ar"?50.w:
+                    60.w,vertical: 10),
                     borderColor: ColorApp.borderGray,
                     labelSpacing: 0,
                     radius: 0,

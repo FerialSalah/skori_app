@@ -6,6 +6,7 @@ abstract class  LocaleKeys {
   static const signInToAcc = 'signInToAcc';
   static const emailAddress = 'emailAddress';
   static const emailIsInvalid = 'emailIsInvalid';
+  static const phoneIsInvalid = 'phoneIsInvalid';
   static const password = 'password';
   static const confirmPassword = 'confirmPassword';
   static const passwordL = 'passwordL';

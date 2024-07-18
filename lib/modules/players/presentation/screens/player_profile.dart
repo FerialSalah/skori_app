@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skori/core/cubit/gallery/player_gallery_cubit.dart';
@@ -46,12 +47,14 @@ class _PlayerProfileState extends State<PlayerProfile>
     BlocProvider.of<PlayerSeasonsCubit>(context)..getPlayerSeasons(widget.id);
     BlocProvider.of<PlayerLeaguesCubit>(context)..getPlayerLeagues(widget.id);
     BlocProvider.of<PlayerGalleryCubit>(context)..getPlayerGallery(widget.id);
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+
       length: 5,
       child: Scaffold(
         body: NestedScrollView(
@@ -70,10 +73,13 @@ class _PlayerProfileState extends State<PlayerProfile>
               name: widget.name,
               logo: widget.avatar,
               continent: '',
-              season: '',
+              season:'',
               tabController: tabController,
               clubName: widget.clubName,
               clubLogo: widget.clubLogo,
+              id: widget.id,
+              isFollowing: widget.isFollow,
+              type: "player",
               tabsTitle: [
                 LocaleKeys.playerInfo.tr(),
                 LocaleKeys.statistics.tr(),
@@ -83,7 +89,11 @@ class _PlayerProfileState extends State<PlayerProfile>
               ],
             ),
           ],
-          body: TabBarView(physics: ClampingScrollPhysics(), children: [
+          body: TabBarView(
+              physics: ClampingScrollPhysics(),
+              dragStartBehavior: DragStartBehavior.start,
+              clipBehavior: Clip.hardEdge,
+              children: [
             PlayerInfo(
               id: widget.id,
             ),

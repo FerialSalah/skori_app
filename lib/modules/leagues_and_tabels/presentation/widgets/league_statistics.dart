@@ -21,6 +21,7 @@ import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
 import '../../../../core/widgets/drop_down_text_field.dart';
 import '../../../../generated/locale_keys.g.dart';
+
 class LeagueStatistics extends StatefulWidget {
   final int leagueId;
   const LeagueStatistics({super.key, required this.leagueId});
@@ -30,14 +31,12 @@ class LeagueStatistics extends StatefulWidget {
 }
 
 class _LeagueStatisticsState extends State<LeagueStatistics> {
-
   int selectedIndex = 0;
   PageController pageController = PageController();
   List pages = [
     LeagueStatisticsScoring(),
     LeagueStatisticsDiscipline(),
     LeagueStatisticsPerformance(),
-
   ];
 
   @override
@@ -46,14 +45,16 @@ class _LeagueStatisticsState extends State<LeagueStatistics> {
       length: 3,
       child: Column(
         children: [
-          SizedBox(height: 15,),
+          SizedBox(
+            height: 15,
+          ),
           BlocBuilder<SeasonsCubit, BaseState>(
             builder: (context, state) {
               final seasons =
                   BlocProvider.of<SeasonsCubit>(context).seasonModel;
               print("seasons in league statistics  : ${seasons!.data}");
               return Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 10.w),
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: DropDownTextField(
                   hint: LocaleKeys.stages.tr(),
                   icon: AppIcons.filter,
@@ -66,11 +67,16 @@ class _LeagueStatisticsState extends State<LeagueStatistics> {
                   paddingVer: 5,
                   paddingHor: 0,
                   onChanged: (val) {
-                    BlocProvider.of<LeagueTopScoresBloc>(context).seasonId = val;
-                    BlocProvider.of<LeagueTopAssistsBloc>(context).seasonId = val;
-                    BlocProvider.of<LeagueDisciplineBloc>(context).seasonId = val;
-                    BlocProvider.of<LeaguePerformanceBloc>(context).seasonId = val;
-                    print(BlocProvider.of<LeagueDisciplineBloc>(context).seasonId);
+                    BlocProvider.of<LeagueTopScoresBloc>(context).seasonId =
+                        val;
+                    BlocProvider.of<LeagueTopAssistsBloc>(context).seasonId =
+                        val;
+                    BlocProvider.of<LeagueDisciplineBloc>(context).seasonId =
+                        val;
+                    BlocProvider.of<LeaguePerformanceBloc>(context).seasonId =
+                        val;
+                    print(BlocProvider.of<LeagueDisciplineBloc>(context)
+                        .seasonId);
                     BlocProvider.of<LeagueTopScoresBloc>(context)
                       ..add(GetLeagueTopScores(id: widget.leagueId));
                     BlocProvider.of<LeagueTopAssistsBloc>(context)
@@ -89,16 +95,14 @@ class _LeagueStatisticsState extends State<LeagueStatistics> {
           ),
           Container(
             decoration: BoxDecoration(
-                border: Border.all(
-                    color: ColorApp.borderGray,
-                    width: .5
-                )
-            ),
+                border: Border.all(color: ColorApp.borderGray, width: .5)),
             child: ButtonsTabBar(
               backgroundColor: ColorApp.yellow,
               unselectedBackgroundColor: ColorApp.white,
               borderWidth: 0,
-              contentPadding: EdgeInsets.symmetric(horizontal: 40,vertical: 10),
+              contentPadding: EdgeInsets.symmetric(
+                  horizontal: context.locale.languageCode == "ar" ? 37 : 23,
+                  vertical: 10),
               borderColor: ColorApp.borderGray,
               labelSpacing: 0,
               radius: 0,
@@ -106,34 +110,34 @@ class _LeagueStatisticsState extends State<LeagueStatistics> {
               labelStyle: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
-                  fontFamily: TextFontApp.boldFont
-
-              ),
+                  fontFamily: TextFontApp.boldFont),
               unselectedLabelStyle: TextStyle(
                   color: ColorApp.hintGray,
                   fontSize: 16,
-                  fontFamily: TextFontApp.mediumFont
-              ),
+                  fontFamily: TextFontApp.mediumFont),
               // Add your tabs here
               tabs: [
-                Tab(text: LocaleKeys.scoring.tr(),),
-                Tab(text: LocaleKeys.discipline.tr(),),
-                Tab(text: LocaleKeys.performance.tr(),),
-
+                Tab(
+                  text: LocaleKeys.scoring.tr(),
+                ),
+                Tab(
+                  text: LocaleKeys.discipline.tr(),
+                ),
+                Tab(
+                  text: LocaleKeys.performance.tr(),
+                ),
               ],
             ),
           ),
-              Expanded(
-                child: TabBarView(
-                  children: [
-                    LeagueStatisticsScoring(),
-                    LeagueStatisticsDiscipline(),
-                    LeagueStatisticsPerformance(),
-                
-                  ],
-                ),
-              ),
-
+          Expanded(
+            child: TabBarView(
+              children: [
+                LeagueStatisticsScoring(),
+                LeagueStatisticsDiscipline(),
+                LeagueStatisticsPerformance(),
+              ],
+            ),
+          ),
         ],
       ),
     );

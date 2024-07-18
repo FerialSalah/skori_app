@@ -16,6 +16,7 @@ import 'package:skori/modules/teams/presentation/bloc/team_event.dart';
 import 'package:table_calendar/table_calendar.dart';
 import '../../../../core/constant/constants.dart';
 import '../../../../core/theme/color_app.dart';
+import '../../../../core/widgets/button/border_button.dart';
 import '../../../../core/widgets/button/button_app.dart';
 import '../../../../core/widgets/drop_down_text_field.dart';
 import '../../../../generated/locale_keys.g.dart';
@@ -68,30 +69,12 @@ class _FilterSheetState extends State<FilterSheet> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      GestureDetector(
-                          onTap: () {
-                            BlocProvider.of<MatchesBloc>(context).date = "";
-                            BlocProvider.of<MatchesBloc>(context).teamId = "";
-                            BlocProvider.of<MatchesBloc>(context).tournamentId =
-                                "";
-                            BlocProvider.of<MatchesBloc>(context).countryId = "";
-                            BlocProvider.of<MatchesBloc>(context).seasonId = "";
-              
-                            BlocProvider.of<MatchesBloc>(context)
-                              ..add(GetMatchesData());
-                            RouteManager.pop();
-                          },
-                          child: MainText(
-                            text: LocaleKeys.clear.tr(),
-                            font: 16,
-                            color: ColorApp.primary,
-                            family: TextFontApp.boldFont,
-                          )),
-                      GestureDetector(
-                          onTap: () {
-                            RouteManager.pop();
-                          },
-                          child: Icon(Icons.close)),
+
+                      // GestureDetector(
+                      //     onTap: () {
+                      //       RouteManager.pop();
+                      //     },
+                      //     child: Icon(Icons.close)),
                     ],
                   ),
               
@@ -252,19 +235,52 @@ class _FilterSheetState extends State<FilterSheet> {
                   ),
                   // SizedBox(height: 1,),
               
-                  BlocBuilder<MatchesBloc, BaseState>(
-                    builder: (context, state) {
-                      return AppButton(
-                        title: LocaleKeys.apply.tr(),
-                        onPressed: () {
-                          // BlocProvider.of<MatchesBloc>(context).date="";
-              
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      BlocBuilder<MatchesBloc, BaseState>(
+                        builder: (context, state) {
+                          return AppButton(
+                            title: LocaleKeys.apply.tr(),
+                            width: 160.w,
+                            height: 45.h,
+                            onPressed: () {
+                              // BlocProvider.of<MatchesBloc>(context).date="";
+
+                              BlocProvider.of<MatchesBloc>(context)
+                                ..add(GetMatchesData());
+                              RouteManager.pop();
+                            },
+                          );
+                        },
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      BorderButton(
+                        hor: 10.w,
+                        title: LocaleKeys.clear.tr(),
+                        color: ColorApp.white,
+                        borderColor: ColorApp.darkBlue,
+                        width:  160.w,
+                        height: 45.h,
+                        textColor: ColorApp.darkBlue,
+
+                        onPressed: () async {
+                          BlocProvider.of<MatchesBloc>(context).date = "";
+                          BlocProvider.of<MatchesBloc>(context).teamId = "";
+                          BlocProvider.of<MatchesBloc>(context).tournamentId =
+                          "";
+                          BlocProvider.of<MatchesBloc>(context).countryId = "";
+                          BlocProvider.of<MatchesBloc>(context).seasonId = "";
+
                           BlocProvider.of<MatchesBloc>(context)
                             ..add(GetMatchesData());
                           RouteManager.pop();
-                        },
-                      );
-                    },
+                          }
+
+                      )
+                    ],
                   ),
                 ],
               ),

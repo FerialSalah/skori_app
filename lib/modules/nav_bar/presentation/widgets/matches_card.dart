@@ -10,6 +10,7 @@ import '../../../../core/constant/app_assets.dart';
 import '../../../../core/theme/color_app.dart';
 import '../../../../core/theme/textFont_app.dart';
 import '../../../../core/widgets/main_text.dart';
+import '../../../../core/widgets/should_sign_up.dart';
 import '../../../../generated/locale_keys.g.dart';
 import '../../../authentication/presentation/screens/login_screen.dart';
 import '../../../matches/presentation/screens/match_profile.dart';
@@ -318,7 +319,7 @@ class MatchesCard extends StatelessWidget {
                               print("match type is: $type");
                               print("match link is :$watchLink");
                               if (!AppStorage.isLogged) {
-                                RouteManager.navigateTo(LoginScreen());
+                                RouteManager.navigateTo(ShouldSignUp());
                               } else if (type == "live" &&
                                   watchLink.isNotEmpty) {
                                 watchLink.toString().contains('mp4')?
@@ -370,7 +371,7 @@ class MatchesCard extends StatelessWidget {
                             id: id,
                           ));
                         } else {
-                          RouteManager.navigateTo(LoginScreen());
+                          RouteManager.navigateTo(ShouldSignUp());
                         }
                       },
                     )

@@ -19,7 +19,7 @@ class PlayerNewStatisticCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,13 +28,12 @@ class PlayerNewStatisticCard extends StatelessWidget {
             height: 10,
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
             decoration: BoxDecoration(
                 border: Border.all(color: ColorApp.borderGray, width: 1),
                 color: ColorApp.white),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,33 +47,34 @@ class PlayerNewStatisticCard extends StatelessWidget {
                       ],
                     ),
                     Spacer(),
-                   Row(
-                     mainAxisAlignment: MainAxisAlignment.start,
-                     children: [
-                       MainText(
-                         text: LocaleKeys.absolute.tr(),
-                         font: 13,
-                         family: TextFontApp.boldFont,
-                       ),
-
-                       SizedBox(
-                         width: 5,
-                       ),
-                       MainText(
-                         text: LocaleKeys.per90.tr(),
-
-                         font: 13,
-                         family: TextFontApp.boldFont,
-                       ),
-                     ],
-                   )
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        MainText(
+                          text: LocaleKeys.absolute.tr(),
+                          font: 13,
+                          family: TextFontApp.boldFont,
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        MainText(
+                          text: LocaleKeys.per90.tr(),
+                          font: 13,
+                          family: TextFontApp.boldFont,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                      ],
+                    )
                   ],
                 ),
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 20.h),
                   child: ListView.separated(
                       shrinkWrap: true,
-                    //  physics: NeverScrollableScrollPhysics(),
+                      //  physics: NeverScrollableScrollPhysics(),
                       physics: ScrollPhysics(),
                       padding: EdgeInsets.zero,
                       itemBuilder: (context, index) {
@@ -82,59 +82,71 @@ class PlayerNewStatisticCard extends StatelessWidget {
                         return Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                           Row(
-                             children: [
-                               SizedBox(
-                                 width: 155.w,
-                                 child: MainText(
-                                   text: "${statistics[index].name}",
-                                   font: 13,
-                                   family: TextFontApp.semiBoldFont,
-                                   overflow: TextOverflow.clip,
-                                 ),
-                               ),
-                             ],
-                           ),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width: 155.w,
+                                  child: MainText(
+                                    text: "${statistics[index].name}",
+                                    font: 13,
+                                    family: TextFontApp.semiBoldFont,
+                                    overflow: TextOverflow.clip,
+                                  ),
+                                ),
+                              ],
+                            ),
                             Spacer(),
-                           Row(
-                             mainAxisAlignment: MainAxisAlignment.start,
-                             crossAxisAlignment: CrossAxisAlignment.start,
-                             children: [
-                               statistics[index].absoluteValue=="premium"?SizedBox(
-                                 width:70.w,
-                                   child: Image.asset(AppIcons.premium,height: 30,width: 30,)):
-                               SizedBox(
-                                 width:70.w,
-                                 child: MainText(
-                                     text: "${statistics[index].absoluteValue.toString()}",
-                                     font: 16,
-                                     family: TextFontApp.mediumFont,
-                                     hor: 20,
-                                     color: Colors.black,
-
-                                     center:true),
-                               ),
-
-                               statistics[index].absoluteValue=="premium"?SizedBox(
-                                 width:70.w,
-                                   child: Image.asset(AppIcons.premium,height: 30,width: 30,)):
-                               SizedBox(
-                                 width:70.w,
-                                 child: MainText(
-
-                                     text: "${statistics[index].per90Value}",
-                                     font: 16,
-                                     family: TextFontApp.mediumFont,
-                                     hor: 20,
-                                     color: Colors.black,
-                                   center: true,
-                                 ),
-                               ),
-                               // SizedBox(
-                               //   width:  statistics[index].absoluteValue=="premium"? 15:5,
-                               // ),
-                             ],
-                           )
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                statistics[index].absoluteValue == "premium"
+                                    ? SizedBox(
+                                        width: 70.w,
+                                        child: Image.asset(
+                                          AppIcons.premium,
+                                          height: 30,
+                                          width: 30,
+                                        ))
+                                    : SizedBox(
+                                        width: 70.w,
+                                        child: MainText(
+                                            text:
+                                                "${statistics[index].absoluteValue.toString()}",
+                                            font: 16,
+                                            family: TextFontApp.mediumFont,
+                                            hor: 20,
+                                            color: Colors.black,
+                                            center: true),
+                                      ),
+                                SizedBox(
+                                  width: 25,
+                                ),
+                                statistics[index].absoluteValue == "premium"
+                                    ? SizedBox(
+                                        width: 70.w,
+                                        child: Image.asset(
+                                          AppIcons.premium,
+                                          height: 30,
+                                          width: 30,
+                                        ))
+                                    : SizedBox(
+                                        width: 75.w,
+                                        child: MainText(
+                                          text:
+                                              "${statistics[index].per90Value}",
+                                          font: 16,
+                                          family: TextFontApp.mediumFont,
+                                          hor: 20,
+                                          color: Colors.black,
+                                          center: true,
+                                        ),
+                                      ),
+                                // SizedBox(
+                                //   width:  statistics[index].absoluteValue=="premium"? 15:5,
+                                // ),
+                              ],
+                            )
                           ],
                         );
                       },

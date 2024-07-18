@@ -90,6 +90,7 @@ class _AllPlayersState extends State<AllPlayers> {
                                 isFollow: result[index].isFollow,
                                 isFavorite: result[index].isFavourite,
                                 number: result[index].clubShirtNumber,
+
                               ),
                           separatorBuilder: (context, _) => SizedBox(
                                 height: 10.h,
