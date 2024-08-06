@@ -31,7 +31,7 @@ class BorderButton extends StatelessWidget {
         width: width,
         decoration: BoxDecoration(
           color: ColorApp.white,
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(0),
           border: Border.all(color:borderColor?? ColorApp.primary,width: 1),
           // border: Border.all(width: 1,
           //     color:borderColor!)

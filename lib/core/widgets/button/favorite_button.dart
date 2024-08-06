@@ -55,8 +55,8 @@ class _FavoriteButtonState extends State<FavoriteButton> {
               alignment: Alignment.topCenter,
               child: Image.asset(
                 isFav==true?ProfileIcons.fillFav:ProfileIcons.favorite,
-                height: 18.h,
-                width: 20.w,
+                height: 40.h,
+                width: 40.w,
                 color: isFav==true? ColorApp.red:ColorApp.white,
               )),
         );

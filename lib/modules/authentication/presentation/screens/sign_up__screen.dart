@@ -67,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
   Future getUserToken()async{
     await user?.authentication.then((value){
-      SocialLoginCubit.of(context).googleSocialLogin(value.accessToken!);
+      SocialLoginCubit.of(context).googleSocialLogin(value.accessToken!,context);
       setState(() {
         token = value.accessToken;
       });
@@ -89,7 +89,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     if (credential.email == null) {
       print('identityToken: ${credential.identityToken}');
-      SocialLoginCubit.of(context).appleSocialLogin(credential.identityToken!);
+      SocialLoginCubit.of(context).appleSocialLogin(credential.identityToken!,context);
       // Get user from backend by identity token
     } else {
       // ToDo

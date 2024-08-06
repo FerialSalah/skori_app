@@ -94,7 +94,7 @@ class _LeagueProfileScreenState extends State<LeagueProfileScreen>
               isPlayerFilter: false,
               name: widget.name,
               id: widget.id,
-              type: "league",
+              type: "tournament",
               isFav: widget.isFav,
               isFollowing: widget.isFollowing,
             ),
@@ -108,7 +108,7 @@ class _LeagueProfileScreenState extends State<LeagueProfileScreen>
               clubName: '',
               clubLogo: '',
               id: widget.id,
-              type: "league",
+              type: "tournament",
               isFollowing: widget.isFollowing,
               tabsTitle: [
                 LocaleKeys.rink.tr(),

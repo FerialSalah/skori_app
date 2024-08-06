@@ -324,7 +324,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                             child: Container(
                               child: Column(
                                 children: [
-                                  playerInfo.countryLogo == ""
+                                  playerInfo.countryLogo.isEmpty||playerInfo.countryLogo == ""
                                       ? SizedBox()
                                       : Image.network(
                                           playerInfo.countryLogo,
@@ -339,6 +339,7 @@ class _PlayerInfoState extends State<PlayerInfo> {
                                         : "-",
                                     font: 15,
                                     family: TextFontApp.boldFont,
+                                    center: true,
                                   ),
                                   SizedBox(
                                     height: 7,

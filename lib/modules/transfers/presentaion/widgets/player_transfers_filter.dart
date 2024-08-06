@@ -189,12 +189,13 @@ class _PlayerTransfersFilterSheetState extends State<PlayerTransfersFilterSheet>
 
                 // SizedBox(height: 1,),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     BlocBuilder<PlayerStatisticsBloc, BaseState>(
                       builder: (context, state) {
                         return  AppButton(
                           title: LocaleKeys.apply.tr(),
-                          width: 160.w,
+                          width: 155.w,
                           onPressed: () async{
                             BlocProvider.of<TransfersBloc>(context)
                               ..add(GetTransfersData());
@@ -211,7 +212,7 @@ class _PlayerTransfersFilterSheetState extends State<PlayerTransfersFilterSheet>
                         title: LocaleKeys.clear.tr(),
                         color: ColorApp.white,
                         borderColor: ColorApp.darkBlue,
-                        width:  160.w,
+                        width:  155.w,
                         height: 45.h,
                         textColor: ColorApp.darkBlue,
 

@@ -5,17 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca48b040-1399-4100-a3af-b2ae2f44d221" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/android.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.flutter-plugins" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.flutter-plugins-dependencies" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/../.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/notification_helper/notification_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/notification_helper/notification_helper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/widgets/button/border_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/widgets/button/border_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/core/widgets/button/favorite_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/core/widgets/button/favorite_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/authentication/presentation/bloc/social_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/authentication/presentation/bloc/social_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/authentication/presentation/screens/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/authentication/presentation/screens/login_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/authentication/presentation/screens/sign_up__screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/authentication/presentation/screens/sign_up__screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/leagues_and_tabels/presentation/screens/league_profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/leagues_and_tabels/presentation/screens/league_profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/leagues_and_tabels/presentation/widgets/league_discipline_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/leagues_and_tabels/presentation/widgets/league_discipline_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/leagues_and_tabels/presentation/widgets/league_performance_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/leagues_and_tabels/presentation/widgets/league_performance_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/leagues_and_tabels/presentation/widgets/league_top_assists.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/leagues_and_tabels/presentation/widgets/league_top_assists.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/leagues_and_tabels/presentation/widgets/top_score_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/leagues_and_tabels/presentation/widgets/top_score_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/custom_sliver_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/custom_sliver_app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/custom_sliver_tabs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/custom_sliver_tabs.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_Info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/players/presentation/widgets/player_Info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/profile/presentation/screens/following_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/profile/presentation/screens/following_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/modules/teams/presentation/widgets/team_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/modules/teams/presentation/widgets/team_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +58,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2h8S4zlmbYRysCrDdmeDRJGS2Gk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -69,6 +78,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/ahmedshaker/StudioProjects/skori_app/android",
     "settings.editor.selected.configurable": "flutter.settings",

@@ -146,7 +146,7 @@ class _TeamFilterSheetState extends State<TeamFilterSheet> {
                 children: [
                   AppButton(
                     title: LocaleKeys.search.tr(),height: 45.h,
-                    width: 160.w,
+                    width: 155.w,
                     onPressed: (){
                     BlocProvider.of<TeamsBloc>(context)
                       ..add(GetTeamsData());
@@ -160,7 +160,7 @@ class _TeamFilterSheetState extends State<TeamFilterSheet> {
                       title: LocaleKeys.clear.tr(),
                       color: ColorApp.white,
                       borderColor: ColorApp.darkBlue,
-                      width:  160.w,
+                      width:  155.w,
                       height: 45.h,
                       textColor: ColorApp.darkBlue,
 

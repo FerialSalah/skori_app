@@ -168,7 +168,7 @@ class LeaguePerformanceCard extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width:context.locale.languageCode=="ar"? 35.w:30.w,
+            width:25.w,
           ),
           SizedBox(
             //color: Colors.cyan,

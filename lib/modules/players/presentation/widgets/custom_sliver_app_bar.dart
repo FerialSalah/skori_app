@@ -81,8 +81,8 @@ class CustomSliverAppBar extends StatelessWidget {
                   ? SizedBox()
                   : Container(
                       padding: EdgeInsets.all(5),
-                      height: 30.h,
-                      width: 30.w,
+                      height: 35.h,
+                      width: 35.w,
                       //color: ColorApp.white.withOpacity(.15),
                       child: FavoriteButton(
                         id: id,

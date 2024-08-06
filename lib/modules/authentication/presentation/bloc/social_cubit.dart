@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skori/core/routes/navigator_push.dart';
 import 'package:skori/modules/nav_bar/presentation/screens/nav_bar.dart';
@@ -5,6 +6,7 @@ import '../../../../../core/dio_helper/dio_helper.dart';
 import '../../../../../core/network/network_checker.dart';
 import '../../../../../core/state/base_state.dart';
 import '../../../../core/app_storage/app_storage.dart';
+import '../../../nav_bar/presentation/bloc/nav_bar_cubit.dart';
 import '../../data/model/user_model.dart';
 
 
@@ -15,7 +17,7 @@ class SocialLoginCubit extends Cubit<BaseState>{
 
   NetworkChecker networkChecker;
 
-  Future<void> googleSocialLogin( String token) async {
+  Future<void> googleSocialLogin( String token,BuildContext context) async {
     if (await networkChecker.isDeviceConnected) {
 
       emit(LoadingState());
@@ -29,6 +31,8 @@ class SocialLoginCubit extends Cubit<BaseState>{
           AppStorage.cacheUser(userModel);
           AppStorage.cacheToken(response.data['token']);
           emit(SuccessState());
+         // NavBarCubit.of(context).currentIndex=0;
+
           RouteManager.navigateAndPopAll(NavBarScreen());
         }else{
           print("====================ccccccccc");
@@ -43,7 +47,7 @@ class SocialLoginCubit extends Cubit<BaseState>{
     }
   }
 
-  Future<void> appleSocialLogin( String token) async {
+  Future<void> appleSocialLogin( String token,BuildContext context) async {
     if (await networkChecker.isDeviceConnected) {
 
       emit(LoadingState());
@@ -56,6 +60,8 @@ class SocialLoginCubit extends Cubit<BaseState>{
           AppStorage.cacheUser(userModel);
           AppStorage.cacheToken(response.data['token']);
           emit(SuccessState());
+         // NavBarCubit.of(context).currentIndex=0;
+
           RouteManager.navigateAndPopAll(NavBarScreen());
         }else{
           print("====================ccccccccc");

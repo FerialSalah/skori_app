@@ -231,7 +231,7 @@ class LeagueTopAssists extends StatelessWidget {
                         color: ColorApp.black,
                       ),
                       SizedBox(
-                        width: 20.w,
+                        width: 15.w,
                       ),
                       MainText(
                         text:LocaleKeys.G.tr(),

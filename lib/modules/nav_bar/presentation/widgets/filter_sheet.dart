@@ -233,8 +233,8 @@ class _FilterSheetState extends State<FilterSheet> {
                       );
                     },
                   ),
-                  // SizedBox(height: 1,),
-              
+
+                  SizedBox(height: 5,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -242,7 +242,7 @@ class _FilterSheetState extends State<FilterSheet> {
                         builder: (context, state) {
                           return AppButton(
                             title: LocaleKeys.apply.tr(),
-                            width: 160.w,
+                            width: 155.w,
                             height: 45.h,
                             onPressed: () {
                               // BlocProvider.of<MatchesBloc>(context).date="";
@@ -262,7 +262,7 @@ class _FilterSheetState extends State<FilterSheet> {
                         title: LocaleKeys.clear.tr(),
                         color: ColorApp.white,
                         borderColor: ColorApp.darkBlue,
-                        width:  160.w,
+                        width:  155.w,
                         height: 45.h,
                         textColor: ColorApp.darkBlue,
 
@@ -282,6 +282,8 @@ class _FilterSheetState extends State<FilterSheet> {
                       )
                     ],
                   ),
+                  SizedBox(height: 5,),
+
                 ],
               ),
             )),

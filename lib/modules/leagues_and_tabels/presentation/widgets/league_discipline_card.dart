@@ -129,7 +129,7 @@ class LeagueDisciplineCard extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: 40.w,
+                width: 30.w,
               ),
               SizedBox(
                 width: 20.w,

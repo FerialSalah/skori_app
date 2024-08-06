@@ -38,6 +38,7 @@ class CustomSliverLogo extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    print("type: $type");
     return SliverAppBar(
       expandedHeight: expandedHeight,
       backgroundColor: ColorApp.primary,

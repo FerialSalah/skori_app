@@ -13,6 +13,7 @@ import 'package:skori/core/widgets/button/button_app.dart';
 import 'package:skori/modules/authentication/presentation/screens/forget_password_screen.dart';
 import 'package:skori/modules/authentication/presentation/screens/sign_up__screen.dart';
 import 'package:skori/modules/authentication/social_login/google_sign_in_api.dart';
+import 'package:skori/modules/nav_bar/presentation/bloc/nav_bar_cubit.dart';
 import '../../../../core/app_storage/app_storage.dart';
 import '../../../../core/constant/app_assets.dart';
 import '../../../../core/routes/navigator_push.dart';
@@ -68,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
  }
   Future getUserToken()async{
     await user?.authentication.then((value){
-      SocialLoginCubit.of(context).googleSocialLogin(value.accessToken!);
+      SocialLoginCubit.of(context).googleSocialLogin(value.accessToken!,context);
       setState(() {
         token = value.accessToken;
       });
@@ -90,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (credential.email == null) {
       print('identityToken: ${credential.identityToken}');
-      SocialLoginCubit.of(context).appleSocialLogin(credential.identityToken!);
+      SocialLoginCubit.of(context).appleSocialLogin(credential.identityToken!,context);
       // Get user from backend by identity token
     } else {
       // ToDo
@@ -110,6 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
           if (state is LoginOffline) {
             showSnackBar(state.msg);
           } else if (state is LoginSuccess) {
+            //NavBarCubit.of(context).currentIndex=0;
             RouteManager.navigateAndPopAll(NavBarScreen());
           } else if (state is LoginField) {
             print(state.msg);

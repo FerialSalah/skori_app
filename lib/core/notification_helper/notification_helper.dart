@@ -27,7 +27,7 @@ InitializationSettings? _initializationSettings;
 class NotificationHelper {
   static init() async {
     await Firebase.initializeApp(
-        name:"Azraqna",
+       // name:"Azraqna",
         options:
         FirebaseOptions(
             apiKey: "AIzaSyBOP6_BXBtN0m8_zzYl6uISrSP7chd8tYA",

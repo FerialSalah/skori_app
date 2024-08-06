@@ -70,10 +70,15 @@ class TeamCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MainText(
-                    text: name,
-                    font: 14,
-                    family: TextFontApp.semiBoldFont,
+                  SizedBox(
+                    width: 120.w,
+                    child: MainText(
+                      text: name,
+                      font: 14,
+                      family: TextFontApp.semiBoldFont,
+                      maxLines: 2,
+                      overflow: TextOverflow.clip,
+                    ),
                   ),
                   SizedBox(
                     height: 10,
